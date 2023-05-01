@@ -12,9 +12,22 @@
 
 #include "../includes/so_long.h"
 
-int	main(int argc, char **av)
+
+//int	main(void)
+//{
+//	void	*mlx_ptr;
+//	void	*win_ptr;
+//	mlx_ptr = mlx_init();
+//	win_ptr = mlx_new_window(mlx_ptr, 400, 700, "mlx_example");
+//	mlx_loop(mlx_ptr);
+//}
+
+
+int	main(void)
 {
-	(void)av;
-	if (argc != 1)
-		ft_printf("Please do ./so_long <map_n.ber>\n");
+	void	*mlx_ptr;
+
+	mlx_ptr = mlx_init();
+	mlx_new_window(mlx_ptr, 700, 500, "mlx_example");
+	mlx_loop(mlx_ptr);
 }

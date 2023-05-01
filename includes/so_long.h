@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-# define SO_LONG_H
+#define SO_LONG_H
 
-# include <unistd.h>
-# include <stdio.h>
+# include <math.h>
 # include <string.h>
 # include <stdlib.h>
+# include "../mlx/mlx.h"
 # include "../src/LIBFT/ft_libft/libft.h"
 # include "../src/LIBFT/libftprintf/ft_printf.h"
 
@@ -26,7 +26,4 @@ typedef struct s_vars
 	void	*win;
 } t_vars;
 
-typedef struct t_window
-{
-	int
-};
+#endif
