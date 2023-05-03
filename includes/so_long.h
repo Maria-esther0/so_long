@@ -20,10 +20,13 @@
 # include "../src/LIBFT/ft_libft/libft.h"
 # include "../src/LIBFT/libftprintf/ft_printf.h"
 
-typedef struct s_vars
+typedef struct s_mlx
 {
-	void	*mlx;
-	void	*win;
-} t_vars;
+	void	*mlx_ptr;
+	void 	*win_ptr;
+	int 	y;
+	int 	x;
+	int 	color;
+}	t_mlx;
 
 #endif
