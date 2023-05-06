@@ -12,31 +12,31 @@
 
 #include "../includes/so_long.h"
 
-
-
-int count_moves(int key, void *param)
+int count_moves(void)
 {
-	(void)key;
-	( void)param;
-	ft_printf("SUS\n");
+	static int mv;
+
+	mv++;
+	ft_printf("mv %d\n", mv);
 	return (0);
 }
 
-int close_window()
+
+int close_window(t_mlx mlx)
 {
-	ft_printf("Game closed successfully\n");
-	exit(0);
+	mlx_destroy_window(mlx.mlx_ptr, mlx.win_ptr);
+//	exit(1);
 }
 
 int	main(void)
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
-	mlx_ptr = mlx_init();
-	win_ptr = mlx_new_window(mlx_ptr, 700, 500, "mlx_example");
-	win_ptr = mlx_new_window(mlx_ptr, 700, 500, "mlx_example2");
-	mlx_key_hook(win_ptr, count_moves, (void *)0);
-	mlx_hook(win_ptr, 17, 0, close_window, NULL);
-	mlx_loop(mlx_ptr);
+	t_mlx mlx;
+	mlx.mlx_ptr = mlx_init();
+	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
+	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
+	mlx_mouse_hook(mlx.win_ptr, count_moves, (void *)0);
+	mlx_hook(mlx.win_ptr, 17, 0, close_window, NULL);
+	mlx_loop(mlx.mlx_ptr);
+	return (0);
 }
 

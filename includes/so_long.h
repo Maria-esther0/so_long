@@ -13,6 +13,9 @@
 #ifndef SO_LONG_H
 #define SO_LONG_H
 
+# define WINDOW_WIDTH 700
+# define WINDOW_HEIGHT 500
+
 # include <math.h>
 # include <string.h>
 # include <stdlib.h>
@@ -24,9 +27,12 @@ typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void 	*win_ptr;
+	void	*param;
 	int 	y;
 	int 	x;
 	int 	color;
+	int 	button;
+	int 	close;
 }	t_mlx;
 
 #endif

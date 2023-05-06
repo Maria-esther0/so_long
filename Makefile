@@ -11,7 +11,7 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
-#			src/\
+			src/util1.c\
 #			src/\
 #			src/\
 #			src/\
