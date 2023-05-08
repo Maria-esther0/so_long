@@ -15,6 +15,8 @@
 
 # define WINDOW_WIDTH 700
 # define WINDOW_HEIGHT 500
+# define IMG_WIDTH 100
+# define IMG_HEIGHT 100
 
 # include <math.h>
 # include <string.h>
@@ -27,9 +29,14 @@ typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void 	*win_ptr;
+	void	*img_ptr;
 	void	*param;
 	int 	y;
 	int 	x;
+	int		img_width;
+	int		img_height;
+	void	*img;
+	char	*img_path;
 	int 	color;
 	int 	button;
 	int 	close;
