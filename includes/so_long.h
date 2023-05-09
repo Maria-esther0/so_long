@@ -13,10 +13,28 @@
 #ifndef SO_LONG_H
 #define SO_LONG_H
 
-# define WINDOW_WIDTH 700
-# define WINDOW_HEIGHT 500
-# define IMG_WIDTH 100
-# define IMG_HEIGHT 100
+# define WINDOW_WIDTH 1000
+# define WINDOW_HEIGHT 1000
+
+# define K_ESC 53
+# define K_UP 126
+# define K_DOWN 125
+# define K_LEFT 123
+# define K_RIGHT 124
+# define K_W 13
+#  define K_S 1
+#  define K_A 0
+#  define K_D 2
+#  define K_P 35
+#  define K_MINUS 27
+#  define K_PLUS 24
+#  define K_R 15
+#  define K_U 32
+#  define K_J 38
+#  define K_I 34
+#  define K_K 40
+#  define K_O 31
+#  define K_L 37
 
 # include <math.h>
 # include <string.h>
@@ -41,5 +59,10 @@ typedef struct s_mlx
 	int 	button;
 	int 	close;
 }	t_mlx;
+
+int	close_window(void);
+int count_moves(void);
+void	manage_image(t_mlx mlx);
+int	key_hooks(int key, t_mlx *mlx);
 
 #endif
