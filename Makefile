@@ -5,6 +5,7 @@ ENDCOLOR	= \033[0m
 NAME	= so_long
 LIB		= src/LIBFT/ft_libft/libft.a
 LIB2	= src/LIBFT/libftprintf/libftprintf.a
+LIB2	= src/LIBFT/libftprintf/libftprintf.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
