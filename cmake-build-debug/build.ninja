@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_so_long: phony || CMakeFiles/so_long.dir
 build CMakeFiles/so_long.dir/src/main.c.o: C_COMPILER__so_long_Debug /Users/mvillarr/Documents/so_long/src/main.c || cmake_object_order_depends_target_so_long
   DEP_FILE = CMakeFiles/so_long.dir/src/main.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -Wall -Werror -Wextra -std=gnu99
-  INCLUDES = -I/System/Library/Frameworks -I/Users/mvillarr/Documents/so_long/includes -I/Users/mvillarr/Documents/so_long/mlx -I/Users/mvillarr/Documents/so_long/src/LIBFT/ft_libft -I/Users/mvillarr/Documents/so_long/src/LIBFT/libftprintf -I/Users/mvillarr/Documents/so_long/src/LIBFT/get_next_line
+  INCLUDES = -I/System/Library/Frameworks -I/Users/mvillarr/Documents/so_long/includes -I/Users/mvillarr/Documents/so_long/mlx -I/Users/mvillarr/Documents/so_long/src/libft -I/Users/mvillarr/Documents/so_long/src/LIBFT/printf -I/Users/mvillarr/Documents/so_long/src/libft/get_next_line
   OBJECT_DIR = CMakeFiles/so_long.dir
   OBJECT_FILE_DIR = CMakeFiles/so_long.dir/src
 
@@ -66,8 +66,8 @@ build CMakeFiles/so_long.dir/src/main.c.o: C_COMPILER__so_long_Debug /Users/mvil
 
 build so_long: C_EXECUTABLE_LINKER__so_long_Debug CMakeFiles/so_long.dir/src/main.c.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15
-  LINK_LIBRARIES = -Wl,-rpath,/Users/mvillarr/Documents/so_long/src/LIBFT/ft_libft -Wl,-rpath,/Users/mvillarr/Documents/so_long/src/LIBFT/libftprintf -Wl,-rpath,/Users/mvillarr/Documents/so_long/mlx  -lmlx  -lft  -framework  OpenGL  -framework  AppKit
-  LINK_PATH = -L/Users/mvillarr/Documents/so_long/src/LIBFT/ft_libft   -L/Users/mvillarr/Documents/so_long/src/LIBFT/libftprintf   -L/Users/mvillarr/Documents/so_long/mlx
+  LINK_LIBRARIES = -Wl,-rpath,/Users/mvillarr/Documents/so_long/src/libft -Wl,-rpath,/Users/mvillarr/Documents/so_long/src/libft/printf -Wl,-rpath,/Users/mvillarr/Documents/so_long/mlx  -lmlx  -lft  -framework  OpenGL  -framework  AppKit
+  LINK_PATH = -L/Users/mvillarr/Documents/so_long/src/libft   -L/Users/mvillarr/Documents/so_long/src/libft/printf   -L/Users/mvillarr/Documents/so_long/mlx
   OBJECT_DIR = CMakeFiles/so_long.dir
   POST_BUILD = :
   PRE_LINK = :

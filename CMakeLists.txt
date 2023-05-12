@@ -20,9 +20,9 @@ else ()
     SET(LIBS ${LIBS} Xext X11 m)
 endif ()
 
-include_directories(includes mlx src/LIBFT/ft_libft src/LIBFT/libftprintf src/LIBFT/get_next_line)
+include_directories(includes mlx src/libft src/LIBFT/printf src/libft/get_next_line)
 
-link_directories(src/LIBFT/ft_libft src/LIBFT/libftprintf mlx)
+link_directories(src/libft src/libft/printf mlx)
 
 add_executable(
         so_long

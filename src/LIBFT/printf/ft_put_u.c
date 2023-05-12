@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 16:21:20 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/01/04 22:09:54 by mvillarr         ###   ########.fr       */
+/*   Created: 2022/11/29 15:10:26 by mvillarr          #+#    #+#             */
+/*   Updated: 2022/12/06 14:50:36 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include "../libft.h"
+#include "ft_printf.h"
 
-char	*get_next_line(int fd);
-char	*stash_filling(int fd, char *stash, char *buffer);
-char	*extract_new_stash(char *stash);
-char	*extract_line(char *stash, char *line);
+int	ft_put_u(unsigned int number)
+{
+	int	counter;
 
-#endif
+	counter = 0;
+	if (number > 9)
+	{
+		counter = counter + ft_put_d_i(number / 10);
+		counter = counter + ft_put_d_i(number % 10);
+	}
+	else if (number >= 0 && number < 10)
+	{
+		counter = counter + ft_putchar_fd(number + '0', 0);
+	}
+	else if (counter < 0)
+	{
+		return (-1);
+	}
+	return (counter);
+}

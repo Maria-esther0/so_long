@@ -3,9 +3,7 @@ MAGENTA		= \033[0;95m
 ENDCOLOR	= \033[0m
 
 NAME	= so_long
-LIB		= src/LIBFT/ft_libft/libft.a
-LIB2	= src/LIBFT/libftprintf/libftprintf.a
-LIB2	= src/LIBFT/libftprintf/libftprintf.a
+LIB		= src/libft/libft.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
@@ -13,17 +11,7 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
 			src/util1.c\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/\
-#			src/
+
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 

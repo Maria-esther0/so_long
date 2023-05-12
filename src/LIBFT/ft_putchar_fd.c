@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util1.c                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvillarr <mvillarr@student.42.ch>          +#+  +:+       +#+        */
+/*   By: mvillarr <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 16:11:01 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/05/12 16:11:03 by mvillarr         ###   ########.fr       */
+/*   Created: 2022/11/08 17:18:45 by mvillarr          #+#    #+#             */
+/*   Updated: 2022/11/09 12:24:28 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "../includes/so_long.h"
-
-int count_moves(void)
+int	ft_putchar_fd(char c, int fd)
 {
-	static int mv;
-
-	mv++;
-	ft_printf("mv %d\n", mv);
-	return (0);
+	return (write(fd, &c, 1));
 }
+/*
+int main ()
+{
+	char letter = 'A';
+	ft_putchar_fd(letter, 2);
+	return(0);
+}*/

@@ -19,15 +19,9 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include "../libft.h"
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlen(const char *str);
-void	*ft_calloc(size_t count, size_t size);
-
 char	*stash_filling(int fd, char *stash, char *buffer);
 char	*extract_new_stash(char *stash);
 char	*extract_line(char *stash, char *line);

@@ -1,3 +1,5 @@
 # ninja log v5
-11	131	1683038079000000000	CMakeFiles/so_long.dir/src/main.c.o	dcb78e7cdc15fb03
+2	148	1683899953000000000	CMakeFiles/so_long.dir/src/main.c.o	dcb78e7cdc15fb03
 6	315	1682956924000000000	so_long	fda1b77fdbad590d
+2	1059	1683900065000000000	CMakeFiles/so_long.dir/src/main.c.o	a3231a001fa6a720
+1060	1377	1683900065000000000	so_long	e198dfaf309fca12

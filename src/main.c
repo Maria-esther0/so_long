@@ -11,16 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-#include "LIBFT/get_next_line/get_next_line.h"
-
-int count_moves(void)
-{
-	static int mv;
-
-	mv++;
-	ft_printf("mv %d\n", mv);
-	return (0);
-}
 
 int close_window(void)
 {
@@ -77,11 +67,11 @@ int	manage_fd(char *av)
 	return (0);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-	if (ac != 2)
+	if (argc != 2)
 		return (1);
-	manage_fd(av[1]);
+	manage_fd(argv[1]);
 	t_mlx mlx;
 	mlx.mlx_ptr = mlx_init();
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");

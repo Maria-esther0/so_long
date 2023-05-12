@@ -30,9 +30,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include "../mlx/mlx.h"
-# include "../src/LIBFT/ft_libft/libft.h"
-# include "../src/LIBFT/libftprintf/ft_printf.h"
-# include "../src/LIBFT/get_next_line/get_next_line.h"
+# include "../src/libft/libft.h"
+# include "../src/libft/printf/ft_printf.h"
+# include "../src/libft/get_next_line/get_next_line.h"
 
 typedef struct s_mlx
 {
