@@ -48,15 +48,12 @@ SRCS	= 	ft_atoi.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-
-
 CCAF 	= gcc -Wall -Wextra -Werror
 
 RM		= rm -f
 
 ${NAME}:	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
-
 
 #			${CCAF} -o ${NAME} ${SRC}
 	

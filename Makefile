@@ -21,11 +21,7 @@ export MAKEFLAGS += --silent
 
 $(LIB):
 		@echo "Building $@..."
-		make --silent -C src/LIBFT/ft_libft/
-
-$(LIB2):
-		@echo "Building $@..."
-		make --silent -C src/LIBFT/libftprintf/
+		make --silent -C src/libft/
 
 $(MLX):
 		@echo "Building $@..."
@@ -54,21 +50,16 @@ draw:
 		@echo ""
 		@echo "${ENDCOLOR}"
 
-$(NAME): $(LIB) $(LIB2) $(OBJ) $(MLX)
-		$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJ) $(LIB) $(LIB2) $(MLX) -o $(NAME)
+$(NAME): $(LIB) $(OBJ) $(MLX)
+		$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJ) $(LIB) $(MLX) -o $(NAME)
 
 clean:
 		rm -rf $(OBJ)
-		make -C src/LIBFT/ft_libft clean
-		make -C src/LIBFT/libftprintf clean
 		make -C mlx clean
-
 
 fclean:
 	rm -rf $(OBJ)
 	rm -rf $(NAME)
-	make -C src/LIBFT/ft_libft fclean
-	make -C src/LIBFT/libftprintf fclean
 	make -C mlx clean
 
 re: fclean all

@@ -20,7 +20,7 @@ else ()
     SET(LIBS ${LIBS} Xext X11 m)
 endif ()
 
-include_directories(includes mlx src/libft src/LIBFT/printf src/libft/get_next_line)
+include_directories(includes mlx src/libft src/libft/printf src/libft/get_next_line)
 
 link_directories(src/libft src/libft/printf mlx)
 

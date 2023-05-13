@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_so_long: phony || CMakeFiles/so_long.dir
 build CMakeFiles/so_long.dir/src/main.c.o: C_COMPILER__so_long_Debug /Users/mvillarr/Documents/so_long/src/main.c || cmake_object_order_depends_target_so_long
   DEP_FILE = CMakeFiles/so_long.dir/src/main.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -Wall -Werror -Wextra -std=gnu99
-  INCLUDES = -I/System/Library/Frameworks -I/Users/mvillarr/Documents/so_long/includes -I/Users/mvillarr/Documents/so_long/mlx -I/Users/mvillarr/Documents/so_long/src/libft -I/Users/mvillarr/Documents/so_long/src/LIBFT/printf -I/Users/mvillarr/Documents/so_long/src/libft/get_next_line
+  INCLUDES = -I/System/Library/Frameworks -I/Users/mvillarr/Documents/so_long/includes -I/Users/mvillarr/Documents/so_long/mlx -I/Users/mvillarr/Documents/so_long/src/libft -I/Users/mvillarr/Documents/so_long/src/libft/printf -I/Users/mvillarr/Documents/so_long/src/libft/get_next_line
   OBJECT_DIR = CMakeFiles/so_long.dir
   OBJECT_FILE_DIR = CMakeFiles/so_long.dir/src
 

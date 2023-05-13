@@ -20,8 +20,8 @@ int close_window(void)
 
 void	manage_image(t_mlx mlx)
 {
-	mlx.x = 500;
-	mlx.y = 500;
+	mlx.x = 200;
+	mlx.y = 200;
 	mlx.img_width = 0;
 	mlx.img_width = 0;
 	mlx.img_path = "./img/character_from_side.xpm";
@@ -53,18 +53,43 @@ int	key_hooks(int key, t_mlx *mlx)
 	return 0;
 }
 
-int	manage_fd(char *av)
+int manage_fd(char *av)
 {
-	int		i;
 	int		fd;
-	char	*output;
+//	char	*output;
 
-	i = 0;
 	fd = open(av, O_RDONLY);
-	output = get_next_line(fd);
-	while (output[i++])
-		printf("%c", output[i]);
-	return (0);
+	if (fd == -1)
+		return (0);
+	close(fd);
+	return (1);
+}
+
+int map_is_valid(char *file)
+{
+	int lenght;
+
+	lenght = (int)ft_strlen(file);
+	return (lenght > 4 &&)
+}
+
+//int	manage_fd(char *av)
+//{
+//	int		i;
+//	int		fd;
+//	char	*output;
+//
+//	i = 0;
+//	fd = open(av, O_RDONLY);
+//	output = get_next_line(fd);
+//	while (output[i++])
+//		printf("%c", output[i]);
+//	return (0);
+//}
+
+int	going_forward(t_mlx mlx, int y, int x)
+{
+
 }
 
 int	main(int argc, char **argv)
@@ -77,6 +102,7 @@ int	main(int argc, char **argv)
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
 	manage_image(mlx);
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
+	mlx_key_hook(mlx.win_ptr, going_forward, (void *)0)
 	mlx_key_hook(mlx.win_ptr, key_hooks, (void *)0);
 	mlx_hook(mlx.win_ptr, 2, 1L, key_hooks, &mlx);
 	mlx_hook(mlx.win_ptr, 17, 0, close_window, NULL);
