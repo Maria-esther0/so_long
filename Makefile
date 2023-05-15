@@ -11,6 +11,10 @@ CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
 			src/util1.c\
+			src/draw_map.c\
+			src/manage_map.c\
+			src/manage_player.c\
+			src/move_player.c\
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

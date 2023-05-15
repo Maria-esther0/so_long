@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util1.c                                            :+:      :+:    :+:   */
+/*   manage_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvillarr <mvillarr@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 16:11:01 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/05/12 16:11:03 by mvillarr         ###   ########.fr       */
+/*   Created: 2023/05/15 15:18:46 by mvillarr          #+#    #+#             */
+/*   Updated: 2023/05/15 15:18:49 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int count_moves(void)
+// encore a revoir
+int map_is_valid(char *file)
 {
-	static int mv;
+	int len;
 
-	mv++;
-	ft_printf("mv %d\n", mv);
+	len = (int)ft_strlen(file);
+	return (len  > 5 && ft_strcmp(file + len  - 5, ".ber"));
+}
+
+int	manage_fd(char *av)
+{
+	int		i;
+	int		fd;
+	char	*output;
+
+	i = 0;
+	fd = open(av, O_RDONLY);
+	output = get_next_line(fd);
+	if (fd == -1)
+		return (0);
+	while (output[i++])
+		printf("%c", output[i]);
 	return (0);
 }
 
-int	ft_strcmp(char *str1, char *str2)
-{
-	int	i;
-
-	i = 0;
-	while ((str1[i] != '\0' && str2[i] != '\0') && (str1[i] == str2[i]))
-		i++;
-	return (str1[i] - str2[i]);
-}

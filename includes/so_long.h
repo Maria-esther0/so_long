@@ -13,8 +13,8 @@
 #ifndef SO_LONG_H
 #define SO_LONG_H
 
-# define WINDOW_WIDTH 600
-# define WINDOW_HEIGHT 600
+# define WINDOW_WIDTH 500
+# define WINDOW_HEIGHT 400
 
 # define K_ESC 53
 # define K_UP 126
@@ -53,8 +53,12 @@ typedef struct s_mlx
 
 int		close_window(void);
 int		count_moves(void);
-void	manage_image(t_mlx mlx);
+void	put_player(t_mlx mlx);
 int		key_hooks(int key, t_mlx *mlx);
 int		manage_fd(char *av);
+int		ft_strcmp(char *str1, char *str2);
+int		map_is_valid(char *file);
+//int		going_forward(int key, t_mlx mlx);
+void	put_wall(t_mlx mlx);
 
 #endif
