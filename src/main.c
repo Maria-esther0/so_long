@@ -14,7 +14,7 @@
 
 int close_window(void)
 {
-	ft_printf("game closed successfully\n");
+	ft_printf("Game closed successfully!\n");
 	exit(0);
 }
 
@@ -42,28 +42,17 @@ int	key_hooks(int key, t_mlx *mlx)
 	return 0;
 }
 
-//int manage_fd(char *av)
-//{
-//	int		fd;
-//
-//	fd = open(av, O_RDONLY);
-//	if (fd == -1)
-//		return (0);
-//	close(fd);
-//	return (1);
-//}
-
 int	main(int argc, char **argv)
 {
 	t_mlx mlx;
 	if (argc != 2)
 		return (1);
-	if (!map_is_valid(argv[1]))
+	if (!check_map(argv[1]))
 	{
 		ft_printf("Map is not valid. Please do map_n.ber\n");
 		return (1);
 	}
-	manage_fd(argv[1]);
+//	manage_fd(argv[1]);
 	mlx.mlx_ptr = mlx_init();
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
 	put_player(mlx);

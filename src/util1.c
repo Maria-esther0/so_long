@@ -16,7 +16,10 @@ int count_moves(void)
 {
 	static int mv;
 
-	mv++;
+	if (!mv)
+		return (0);
+	while (mv)
+		mv++;
 	ft_printf("mv %d\n", mv);
 	return (0);
 }

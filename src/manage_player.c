@@ -14,11 +14,13 @@
 
 void	put_player(t_mlx mlx)
 {
+	t_img	img;
+
 	mlx.x = 200;
 	mlx.y = 200;
-	mlx.img_width = 0;
-	mlx.img_width = 0;
-	mlx.img_path = "./img/character_from_side.xpm";
-	mlx.img = mlx_xpm_file_to_image(mlx.mlx_ptr, mlx.img_path, &mlx.img_width, &mlx.img_height);
-	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, mlx.img, mlx.x, mlx.y);
+	img.img_width = 0;
+	img.img_width = 0;
+	img.img_path = "./img/still_cat.xpm";
+	img.img = mlx_xpm_file_to_image(mlx.mlx_ptr, img.img_path, &img.img_width, &img.img_height);
+	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, img.img, mlx.x, mlx.y);
 }

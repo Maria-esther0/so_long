@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
-#define SO_LONG_H
+# define SO_LONG_H
 
 # define WINDOW_WIDTH 500
 # define WINDOW_HEIGHT 400
@@ -22,10 +22,11 @@
 # define K_LEFT 123
 # define K_RIGHT 124
 # define K_W 13
-#  define K_S 1
-#  define K_A 0
-#  define K_D 2
+# define K_S 1
+# define K_A 0
+# define K_D 2
 
+# include <fcntl.h>
 # include <math.h>
 # include <string.h>
 # include <stdlib.h>
@@ -37,19 +38,35 @@
 typedef struct s_mlx
 {
 	void	*mlx_ptr;
-	void 	*win_ptr;
-	void	*img_ptr;
+	void	*win_ptr;
 	void	*param;
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
+	char	**map;
+	int		color;
+	int		button;
+	int		close;
+}	t_mlx;
+
+typedef struct s_img
+{
+	void	*img_ptr;
 	int		img_width;
 	int		img_height;
 	void	*img;
+	int 	lignes;
 	char	*img_path;
-	int 	color;
-	int 	button;
-	int 	close;
-}	t_mlx;
+	t_mlx	game;
+}	t_img;
+
+typedef struct s_map
+{
+	t_img	img;
+	t_img	**img_params;
+	t_mlx	map;
+	char	*name;
+	char	*path;
+}	t_map;
 
 int		close_window(void);
 int		count_moves(void);
@@ -60,5 +77,6 @@ int		ft_strcmp(char *str1, char *str2);
 int		map_is_valid(char *file);
 //int		going_forward(int key, t_mlx mlx);
 void	put_wall(t_mlx mlx);
+int		check_map(char *av);
 
 #endif

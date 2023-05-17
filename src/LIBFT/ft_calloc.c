@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*esto se hace para verificar que malloc funciona, porque a veces se crashea
-*/
-
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)

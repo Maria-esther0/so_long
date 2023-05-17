@@ -28,11 +28,6 @@ add_executable(
         so_long
         includes/so_long.h
         src/main.c
-#        src/utils1.c
-#        src/manage_map.c
-#        src/manage_player.c
-#        src/move_player.c
-#        src/draw_map.c
 )
 
 TARGET_LINK_LIBRARIES(so_long ${LIBS})
