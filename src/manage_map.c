@@ -81,6 +81,16 @@ void	ft_free(char **tab)
  	for every line.
 	it'll copy at each loop the character of line in the box corresponding
  	to the matrix map.
+
+ 	-Explicacion precisa para entender la sintaxos de la funcion de abajo-
+
+ 	En la línea de código que mencionas, "data->map.ligne", se están accediendo
+ 	a dos estructuras anidadas. "data" es un puntero a una estructura, y "->" se
+ 	utiliza para acceder a un miembro de la estructura apuntada por el puntero.
+ 	"map" es el miembro de la estructura "data", y a su vez es una estructura que
+ 	contiene un miembro llamado "ligne". Por lo tanto, "data->map.ligne"se refiere
+ 	al miembro "ligne" de la estructura "map" que es miembro de la estructura
+ 	apuntada por "data".
 */
 
 void	mem_set_range_line(int range, int col, int i, t_mlx *game)
@@ -137,6 +147,10 @@ void	stock_map(char *map_fd, t_mlx *game)
 	mem_set_range_line(range, col, i, game);
 	close(game->map.fd);
 }
+
+/*
+	This function is used to initiate the map.
+*/
 
 void	map_init(t_mlx *params)
 {
