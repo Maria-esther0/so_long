@@ -13,9 +13,11 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+// definition de la resolution de mes images
 # define WINDOW_WIDTH 500
 # define WINDOW_HEIGHT 400
 
+// definition des touches
 # define K_ESC 53
 # define K_UP 126
 # define K_DOWN 125
@@ -26,6 +28,13 @@
 # define K_A 0
 # define K_D 2
 
+// definition des paths des sprints
+# define WOODEN_FLOOR "./img/wooden.xpm"
+# define STILL_CAT "./img/still_cat.xpm"
+# define JUMPING_CAT "./img/jumping_cat.xpm"
+# define STANDING_CAT "./img/standing_cat.xpm"
+
+// includes & paths
 # include <fcntl.h>
 # include <math.h>
 # include <string.h>
@@ -39,13 +48,8 @@ typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	void	*param;
-	int		y;
-	int		x;
-	char	**map;
-	int		color;
-	int		button;
-	int		close;
+	int 	y;
+	int 	x;
 }	t_mlx;
 
 typedef struct s_img
@@ -61,11 +65,11 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	t_img	img;
-	t_img	**img_params;
 	t_mlx	map;
+	int 	map_width;
+	int 	map_height;
 	char	*name;
-	char	*path;
+	char	**data;
 }	t_map;
 
 int		close_window(void);
@@ -78,5 +82,12 @@ int		map_is_valid(char *file);
 //int		going_forward(int key, t_mlx mlx);
 void	put_wall(t_mlx mlx);
 int		check_map(char *av);
+int 	get_line(char *map_fd);
+void	ft_free(char **tab);
+char	**read_map(int fd);
+void	exit_error(const char *error_msg);
+int		set_map_data(t_map *map, char *av);
+int		set_map_size(t_map *map, char *av);
+t_map	map_creation(char *av);
 
 #endif

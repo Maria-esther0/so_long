@@ -28,6 +28,81 @@ int	check_map(char *av)
 	return (1);
 }
 
+t_map	map_creation(char *av)
+{
+	t_map	*map;
+
+	map = (t_map *)malloc(sizeof(t_map));
+	if (!map)
+		exit_error("Error: Could not create a map\n");
+	map->map_width = 0;
+	map->map_height = 1;
+	map->name = ft_strdup(av);
+	if (!map->name)
+		exit_error("Error: Could not create a map\n");
+	if (!set_map_size(map, av))
+		exit(EXIT_FAILURE);
+	if (!set_map_data(map, av))
+		exit(EXIT_FAILURE);
+	return (*map);
+}
+
+int	set_map_data(t_map *map, char *av)
+{
+	int		fd;
+	char	*line;
+	size_t 	line_len;
+	int 	i;
+
+	i = -1;
+	fd = open(av, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	map->data = (char **)malloc(sizeof(char *) * map->map_height);
+	if (!map->data)
+		exit_error("Could not create a map\n");
+	while (i++ < map->map_height)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			exit_error("Could not create the map\n");
+		line_len = ft_strlen(line) - 1;
+		while (line_len > 0 && (line[line_len] == 10 || line_len == 13))
+			line[line_len--] = '\0';
+		map->data[i] = line;
+	}
+	close(fd);
+	return (1);
+}
+
+int set_map_size(t_map *map, char *av)
+{
+	int 	fd;
+	char	*line;
+	int 	line_len;
+
+	fd = open(av, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	line = get_next_line(fd);
+	line_len = ft_strlen(line);
+	while (line_len > 0 && (line[line_len - 1] == 10 && line[line_len -1] == 13))
+		line_len--;
+	map->map_width = line_len;
+	if (!line || !(map->map_width))
+		return (0);
+	free(line);
+	line = get_next_line(fd);
+	while (line)
+	{
+		free(line);
+		get_next_line(fd);
+		map->map_height++;
+	}
+	close(fd);
+	return (1);
+}
+
 /*
 	this function counts the lines of the map which will eventually define
  	its height.
@@ -37,7 +112,8 @@ int	check_map(char *av)
  	on every loop, it'll send afterwards the lines variable once the entire
  	file is read.
  */
-int get_line(char *map_fd) {
+int get_line(char *map_fd)
+{
 	int fd;
 	int lines;
 	char *tmp;
@@ -59,138 +135,38 @@ int get_line(char *map_fd) {
 	return (lines);
 }
 
-void	ft_free(char **tab)
+char	**read_map(int fd)
 {
-	size_t	i;
+	int		i;
+	char	*str;
+	char	**map;
 
 	i = 0;
-	while (tab[i])
+	map = (char **)ft_calloc(sizeof(char), 9999);
+	while(map)
 	{
-		free(tab[i]);
+		str = get_next_line(fd);
+		if (!str)
+			break;
+		map[i] = str;
 		i++;
 	}
-	free(tab);
-	tab = NULL;
-	return ;
+	map[i] = NULL;
+	return (map);
 }
 
-/*
-	this function sets up dynamic mem of the map while managing a char.
-	it reads and stocks the first line of the file on the line variable.
- 	it'll loop while it finds something to read (line) and will stock mem
- 	for every line.
-	it'll copy at each loop the character of line in the box corresponding
- 	to the matrix map.
-
- 	-Explicacion precisa para entender la sintaxos de la funcion de abajo-
-
- 	En la línea de código que mencionas, "data->map.ligne", se están accediendo
- 	a dos estructuras anidadas. "data" es un puntero a una estructura, y "->" se
- 	utiliza para acceder a un miembro de la estructura apuntada por el puntero.
- 	"map" es el miembro de la estructura "data", y a su vez es una estructura que
- 	contiene un miembro llamado "ligne". Por lo tanto, "data->map.ligne"se refiere
- 	al miembro "ligne" de la estructura "map" que es miembro de la estructura
- 	apuntada por "data".
-*/
-
-void	mem_set_range_line(int range, int col, int i, t_mlx *game)
+int	manage_fd(char *av)
 {
-	char	*line;
+	int		i;
+	int		fd;
+	char	*output;
 
-	line = get_next_line(game->map.fd);
-	while (line)
-	{
-		game->map.map[range] = ft_calloc(ft_strlen(line) + 1, sizeof(char));
-		if (!game->map.map[range])
-			return (ft_free(game->map.map));
-		while (line[i])
-		{
-			game->map.map[range][col] = line[i];
-			i++;
-			col++;
-		}
-		game->map.map[range++][col] = '\0';
-		col = 0;
-		i = 0;
-		free(line);
-		line = get_next_line(game->map.fd);
-	}
-	game->map.map[range] = NULL;
-}
-
-/*
-	this function stocks data + allocates the mem using mem_set_range_line and get_nb_line.
-	it also stocks the file's name in map_fd.
-	it'll allocate memory for a string with calloc and store it in map.map.
-	it allows to manage errors if the fd isn't compatible.
-	then it'll close the fd with the close function.
-*/
-
-void	stock_map(char *map_fd, t_mlx *game)
-{
-	size_t	col;
-	int 	range;
-	int 	i;
-
-	col = 0;
-	range = 0;
 	i = 0;
-	game->map.lignes = get_next_line(map_fd);
-	if (!game->map.lignes)
-		ft_printf("Error: Empty map!\n");
-	game->map.fd = open(map_fd, O_RDONLY);
-	if (game->map.fd == -1)
-	{
-		perror("Found Error, can't open file!\n");
-		exit(EXIT_FAILURE);
-	}
-	mem_set_range_line(range, col, i, game);
-	close(game->map.fd);
+	fd = open(av, O_RDONLY);
+	output = get_next_line(fd);
+	if (fd == -1)
+		return (0);
+	while (output[i++])
+		printf("%c", output[i]);
+	return (0);
 }
-
-/*
-	This function is used to initiate the map.
-*/
-
-void	map_init(t_mlx *params)
-{
-	params->x = 0;
-	params->y = 0;
-	//a continuer
-}
-
-//char	**read_map(int fd)
-//{
-//	int		i;
-//	char	*str;
-//	char	**map;
-//
-//	i = 0;
-//	map = (char **)ft_calloc(sizeof(char), 9999);
-//	while(map)
-//	{
-//		str = get_next_line(fd);
-//		if (!str)
-//			break;
-//		map[i] = str;
-//		i++;
-//	}
-//	map[i] = NULL;
-//	return (map);
-//}
-
-//int	manage_fd(char *av)
-//{
-//	int		i;
-//	int		fd;
-//	char	*output;
-//
-//	i = 0;
-//	fd = open(av, O_RDONLY);
-//	output = get_next_line(fd);
-//	if (fd == -1)
-//		return (0);
-//	while (output[i++])
-//		printf("%c", output[i]);
-//	return (0);
-//}

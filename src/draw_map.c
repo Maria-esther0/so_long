@@ -22,5 +22,6 @@ void	put_wall(t_mlx mlx)
 	img.img_width = 0;
 	img.img_path = "./img/wooden.xpm";
 	img.img = mlx_xpm_file_to_image(mlx.mlx_ptr, img.img_path, &img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, img.img, mlx.x, mlx.y);
+	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, img.img,
+	mlx.x * 100, mlx.y * 100);
 }

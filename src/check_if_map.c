@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util1.c                                            :+:      :+:    :+:   */
+/*   check_if_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvillarr <mvillarr@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 16:11:01 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/05/12 16:11:03 by mvillarr         ###   ########.fr       */
+/*   Created: 2023/05/20 15:29:15 by mvillarr          #+#    #+#             */
+/*   Updated: 2023/05/20 15:29:18 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int count_moves(void)
+int	map_is_rectangle(t_map *map)
 {
-	static int mv;
+	long unsigned int	width;
+	int 				i;
 
-	if (!mv)
+	i = -1;
+	width = ft_strlen(map->data[i]);
+	if (map == NULL || map->data == NULL || map->map_width <= 0 || map->map_height <= 0)
 		return (0);
-	while (mv)
-		mv++;
-	ft_printf("mv %d\n", mv);
-	return (0);
+	while (++i < map->map_height)
+	{
+		if (ft_strlen(map->data[i]) != width)
+			return (0);
+	}
+	return (1);
 }
 
-int	ft_strcmp(char *str1, char *str2)
+int	there_is_a_map(char	*name)
 {
-	int	i;
+	int fd;
 
-	i = 0;
-	while ((str1[i] != '\0' && str2[i] != '\0') && (str1[i] == str2[i]))
-		i++;
-	return (str1[i] - str2[i]);
-}
-
-void	exit_error(const char *error_msg)
-{
-	perror(error_msg);
-	exit(1);
+	fd = open(name, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	close(fd);
+	return (1);
 }

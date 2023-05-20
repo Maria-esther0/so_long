@@ -55,8 +55,9 @@ int	main(int argc, char **argv)
 //	manage_fd(argv[1]);
 	mlx.mlx_ptr = mlx_init();
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
+	//map_creation(*argv);
 	put_player(mlx);
-	put_wall(mlx);
+	//put_wall(mlx);
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
 //	mlx_key_hook(mlx.win_ptr, going_forward, (void *)0);
 	mlx_key_hook(mlx.win_ptr, key_hooks, (void *)0);
