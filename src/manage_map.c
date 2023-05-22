@@ -12,22 +12,6 @@
 
 #include "../includes/so_long.h"
 
-int	check_map(char *av)
-{
-	int i;
-
-	i = 0;
-	while (!av)
-		return (0);
-	if (av[i])
-		i++;
-	i -= 1;
-	if (av[i] == 'r' && av[i - 1] == 'e' && av[i - 2] == 'b'
-		&& av[i - 3] == '.' )
-		return (0);
-	return (1);
-}
-
 t_map	map_creation(char *av)
 {
 	t_map	*map;

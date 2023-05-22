@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 /*
 ligne 23 la chaine de char commence des 0
-ligne 25 tant que 0 est plus petit que la cantite de caises qu'on veur remplir,
+ligne 25 tant que 0 est plus petit que la cantite de caises qu'on veut remplir,
 ex2
 */
 #include "libft.h"

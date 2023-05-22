@@ -19,7 +19,8 @@ int	map_is_rectangle(t_map *map)
 
 	i = -1;
 	width = ft_strlen(map->data[i]);
-	if (map == NULL || map->data == NULL || map->map_width <= 0 || map->map_height <= 0)
+	if (map == NULL || map->data == NULL || map->map_width <= 0
+		|| map->map_height <= 0)
 		return (0);
 	while (++i < map->map_height)
 	{
@@ -38,4 +39,41 @@ int	there_is_a_map(char	*name)
 		return (0);
 	close(fd);
 	return (1);
+}
+
+int	check_map_name(char *av)
+{
+	int i;
+
+	i = 0;
+	while (!av)
+		return (0);
+	if (av[i])
+		i++;
+	i -= 1;
+	if (av[i] == 'r' && av[i - 1] == 'e' && av[i - 2] == 'b'
+		&& av[i - 3] == '.' )
+		return (0);
+	return (1);
+}
+
+int	map_check(char *name)
+{
+//	t_map *map;
+	if (!check_map_name(name))
+	{
+		ft_printf("Map's name is not valid ! \n");
+		exit (1);
+	}
+	if (!there_is_a_map(name))
+	{
+		ft_printf("No map found\n");
+		exit(1);
+	}
+//	if (!map_is_rectangle(map))
+//	{
+//		ft_printf("Map is not valid: not rectangular map!\n");
+//		return (0);
+//	}
+	return (0);
 }

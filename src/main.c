@@ -42,17 +42,17 @@ int	key_hooks(int key, t_mlx *mlx)
 	return 0;
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_mlx mlx;
-	if (argc != 2)
+	if (ac != 2)
 		return (1);
-	if (!check_map(argv[1]))
-	{
-		ft_printf("Map is not valid. Please do map_n.ber\n");
-		return (1);
-	}
-//	manage_fd(argv[1]);
+//	if (!map_check(av[1]))
+//	{
+//		ft_printf("Map is not valid:\n");
+//		return (1);
+//	}
+	manage_fd(av[1]);
 	mlx.mlx_ptr = mlx_init();
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
 	//map_creation(*argv);
@@ -66,4 +66,3 @@ int	main(int argc, char **argv)
 	mlx_loop(mlx.mlx_ptr);
 	return (0);
 }
-

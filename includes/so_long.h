@@ -28,11 +28,15 @@
 # define K_A 0
 # define K_D 2
 
+// taille des images
+# define IMG_SIZE 	32
+
 // definition des paths des sprints
-# define WOODEN_FLOOR "./img/wooden.xpm"
-# define STILL_CAT "./img/still_cat.xpm"
+# define WOODEN_FLOOR "../img/wooden.xpm"
+# define STILL_CAT "../img/still_cat.xpm"
 # define JUMPING_CAT "./img/jumping_cat.xpm"
 # define STANDING_CAT "./img/standing_cat.xpm"
+# define MOVING_CAT "./img/moving_cat.xmp"
 
 // includes & paths
 # include <fcntl.h>
@@ -58,6 +62,11 @@ typedef struct s_img
 	int		img_width;
 	int		img_height;
 	void	*img;
+	void	*wooden_floor;
+	void	*still_cat;
+	void	*jumping_cat;
+	void	*standing_cat;
+	void	*moving_cat;
 	int 	lignes;
 	char	*img_path;
 	t_mlx	game;
@@ -72,22 +81,34 @@ typedef struct s_map
 	char	**data;
 }	t_map;
 
-int		close_window(void);
-int		count_moves(void);
-void	put_player(t_mlx mlx);
-int		key_hooks(int key, t_mlx *mlx);
-int		manage_fd(char *av);
-int		ft_strcmp(char *str1, char *str2);
-int		map_is_valid(char *file);
-//int		going_forward(int key, t_mlx mlx);
-void	put_wall(t_mlx mlx);
-int		check_map(char *av);
-int 	get_line(char *map_fd);
-void	ft_free(char **tab);
-char	**read_map(int fd);
-void	exit_error(const char *error_msg);
-int		set_map_data(t_map *map, char *av);
-int		set_map_size(t_map *map, char *av);
+// map functions
+int	map_check(char *name);
 t_map	map_creation(char *av);
+int		set_map_size(t_map *map, char *av);
+int		set_map_data(t_map *map, char *av);
+char	**read_map(int fd);
+int		check_map_name(char *av);
+int		map_is_valid(char *file);
+int 	get_line(char *map_fd);
+int		manage_fd(char *av);
+void	put_wall(t_mlx mlx);
+
+// window functions
+int		close_window(void);
+
+
+int		count_moves(void);
+
+// player functions
+void	put_player(t_mlx mlx);
+
+// hooks functions
+int		key_hooks(int key, t_mlx *mlx);
+
+// other utils
+int		ft_strcmp(char *str1, char *str2);
+//int		going_forward(int key, t_mlx mlx);
+void	ft_free(char **tab);
+void	exit_error(const char *error_msg);
 
 #endif
