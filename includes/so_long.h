@@ -31,12 +31,14 @@
 // taille des images
 # define IMG_SIZE 	32
 
-// definition des paths des sprints
-# define WOODEN_FLOOR "../img/wooden.xpm"
-# define STILL_CAT "../img/still_cat.xpm"
+// definition des paths des sprints, el path tiene que estar escrito de la
+// siguiente manera con un punto al comienzo sino hace errores raros que no entiendo
+# define WOODEN_FLOOR "./img/wooden.xpm"
+# define STILL_CAT "./img/still_cat.xpm"
 # define JUMPING_CAT "./img/jumping_cat.xpm"
 # define STANDING_CAT "./img/standing_cat.xpm"
 # define MOVING_CAT "./img/moving_cat.xmp"
+# define GRASS "./img/grass.xpm"
 
 // includes & paths
 # include <fcntl.h>
@@ -89,8 +91,9 @@ int		set_map_data(t_map *map, char *av);
 char	**read_map(int fd);
 int		check_map_name(char *av);
 int		map_is_valid(char *file);
-int 	get_line(char *map_fd);
-int		manage_fd(char *av);
+int 	map_height(char *map_fd);
+int 	map_width(char *av);
+t_map		*manage_fd(char *av);
 void	put_wall(t_mlx mlx);
 
 // window functions

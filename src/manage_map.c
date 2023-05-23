@@ -79,7 +79,7 @@ int set_map_size(t_map *map, char *av)
 	line = get_next_line(fd);
 	while (line)
 	{
-		free(line);
+//		free(line);
 		get_next_line(fd);
 		map->map_height++;
 	}
@@ -87,16 +87,7 @@ int set_map_size(t_map *map, char *av)
 	return (1);
 }
 
-/*
-	this function counts the lines of the map which will eventually define
- 	its height.
- 	it'll open the fd and check if it's a valid formula.
- 	it'll read each line of the map till it founds a \0 and will increase the
- 	lines variable
- 	on every loop, it'll send afterwards the lines variable once the entire
- 	file is read.
- */
-int get_line(char *map_fd)
+int map_height(char *map_fd)
 {
 	int fd;
 	int lines;
@@ -104,10 +95,13 @@ int get_line(char *map_fd)
 
 	lines = 0;
 	fd = open(map_fd, O_RDONLY);
-	if (fd == -1) {
+	if (fd == -1)
+	{
 		perror("Found Error in file\n");
 		exit(EXIT_FAILURE);
-	} else {
+	}
+	else
+	{
 		tmp = get_next_line(fd);
 		while (tmp) {
 			free(tmp);
@@ -117,6 +111,29 @@ int get_line(char *map_fd)
 		close(fd);
 	}
 	return (lines);
+}
+
+int map_width(char *av)
+{
+	int 	fd;
+	int 	width;
+	char	*ligne;
+
+	width = 0;
+	fd = open(av, O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Found Error in file\n");
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		ligne = get_next_line(fd);
+		width = ft_strlen(ligne);
+		free (ligne);
+		close(fd);
+	}
+	return (width);
 }
 
 char	**read_map(int fd)
@@ -139,18 +156,35 @@ char	**read_map(int fd)
 	return (map);
 }
 
-int	manage_fd(char *av)
+t_map	*init_map(char *av)
+{
+	t_map	*map;
+
+	map = (t_map *)malloc(sizeof (t_map));
+	if (!map)
+		exit(EXIT_FAILURE);
+	map->map_height = map_height(av);
+	map->map_width = map_width(av);
+	map->data = (char **)ft_calloc(map->map_height, sizeof(char *));
+	return (map);
+}
+
+t_map	*manage_fd(char *av)
 {
 	int		i;
 	int		fd;
 	char	*output;
+	t_map	*map;
 
-	i = 0;
+	i = -1;
+	map = init_map(av);
 	fd = open(av, O_RDONLY);
-	output = get_next_line(fd);
 	if (fd == -1)
-		return (0);
-	while (output[i++])
-		printf("%c", output[i]);
-	return (0);
+		exit(1);
+	while (++i < map->map_height)
+	{
+		output = get_next_line(fd);
+		map->data[i] = output;
+	}
+	return (map);
 }
