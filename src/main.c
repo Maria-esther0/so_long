@@ -50,7 +50,7 @@ int	main(int ac, char **av)
 		return (1);
 	map = manage_fd(av[1]);
 	mlx.mlx_ptr = mlx_init();
-//	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, map->map_width, map->map_height, "NEW WINDOW");
+//	mlx->win_ptr = mlx_new_window(mlx.mlx_ptr, map->map_width, map->map_height, "NEW WINDOW");
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "NEW WINDOW");
 //	map_creation(*av);
 	put_player(mlx);

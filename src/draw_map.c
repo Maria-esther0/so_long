@@ -20,11 +20,22 @@ void	put_wall(t_mlx mlx)
 	mlx.y = 0;
 	img.img_width = 0;
 	img.img_width = 0;
-//	img.img_path = "./img/wooden.xpm";
 	img.img = mlx_xpm_file_to_image(mlx.mlx_ptr, WOODEN_FLOOR,
 			&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr,img.img,
 	mlx.x * 100, mlx.y * 100);
+}
+
+void	draw_wooden_floor(t_mlx *mlx, int w, int h)
+{
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
+			WOODEN_FLOOR, w	* IMG_SIZE, h * IMG_SIZE);
+}
+
+void	draw_wall(t_mlx *mlx, int w, int h)
+{
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
+			WALL, w * IMG_SIZE, h * IMG_SIZE);
 }
 
 void	img_init(t_img *img)
@@ -43,13 +54,3 @@ void	img_init(t_img *img)
 			MOVING_CAT, &img->img_width, &img->img_height);
 }
 
-void	player_sprites(t_map *map, int width, int x, int y)
-{
-	if (map->data[y][x] == '1')
-	{
-		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
-			WOODEN_FLOOR, width, y * IMG_SIZE);
-		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
-			GRASS, width, y * IMG_SIZE);
-	}
-}

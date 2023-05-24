@@ -79,13 +79,15 @@ int set_map_size(t_map *map, char *av)
 	line = get_next_line(fd);
 	while (line)
 	{
-//		free(line);
+		free(line);
 		get_next_line(fd);
 		map->map_height++;
 	}
 	close(fd);
 	return (1);
 }
+
+//--------------------**-------------------------
 
 int map_height(char *map_fd)
 {
@@ -183,6 +185,7 @@ t_map	*manage_fd(char *av)
 		exit(1);
 	while (++i < map->map_height)
 	{
+		read_map(fd);
 		output = get_next_line(fd);
 		map->data[i] = output;
 	}

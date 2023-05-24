@@ -39,6 +39,7 @@
 # define STANDING_CAT "./img/standing_cat.xpm"
 # define MOVING_CAT "./img/moving_cat.xmp"
 # define GRASS "./img/grass.xpm"
+# define WALL "./img/wall.xpm"
 
 // includes & paths
 # include <fcntl.h>
@@ -97,13 +98,20 @@ t_map		*manage_fd(char *av);
 void	put_wall(t_mlx mlx);
 
 // window functions
+void	img_init(t_img *img);
 int		close_window(void);
+void	put_wall(t_mlx mlx);
+void	draw_wooden_floor(t_mlx *mlx, int w, int h);
+void	draw_wall(t_mlx *mlx, int w, int h);
+
+// drawing functions
+void	player_sprites(t_map *map, int width, int x, int y);
 
 
 int		count_moves(void);
 
 // player functions
-void	put_player(t_mlx mlx);
+void	put_player(t_mlx *mlx);
 
 // hooks functions
 int		key_hooks(int key, t_mlx *mlx);
