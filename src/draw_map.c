@@ -28,8 +28,16 @@ void	put_wall(t_mlx mlx)
 
 void	draw_wooden_floor(t_mlx *mlx, int w, int h)
 {
+	t_img	img;
+
+
+	img.img_width = 0;
+	img.img_width = 0;
+	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, WOODEN_FLOOR,
+									&img.img_width, &img.img_height);
+
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-			WOODEN_FLOOR, w	* IMG_SIZE, h * IMG_SIZE);
+							img.img, w	* 64, h * 64);
 }
 
 void	img_init(t_img *img)
@@ -51,11 +59,21 @@ void	img_init(t_img *img)
 // faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les
 // images avec leur char
 
-//void	draw_map(t_map map)
-//{
-//	int i;
-//	int j;
-//
-//	i = -1;
-//	while (++i < )
-//}
+void	draw_map(t_map *map, t_mlx *mlx)
+{
+	int 	i;
+	int 	j;
+
+	i = -1;
+	while (++i < map->map_height)
+	{
+		j = -1;
+		while (++j < map->map_width)
+		{
+			if (map->data[i][j] == '1')
+				draw_wooden_floor(mlx, i, j);
+			else if (map->data[i][j] == 'P')
+				put_player(*mlx, 64 * j, 64 * i);
+		}
+	}
+}

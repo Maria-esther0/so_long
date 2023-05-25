@@ -28,51 +28,70 @@ int map_height(int fd)
 	return (lines);
 }
 
-int map_width(char	*av)
+int map_width(int fd)
 {
 	int 	width;
 	char	*ligne;
-	int 	fd;
 
 	width = 0;
-	fd = open(av, O_RDONLY);
 	ligne = get_next_line(fd);
-	width = ft_strlen(ligne);
+	width = (int)ft_strlen(ligne);
 	free (ligne);
 	close(fd);
 	return (width);
 }
 
-char	**read_map(int fd)
+int	get_w_h_map(int fd, t_map **map)
+{
+	char *tmp;
+
+	tmp = get_next_line(fd);
+	(*map)->map_width = ft_strlen(tmp);
+	while (tmp)
+	{
+		free(tmp);
+		tmp = NULL;
+		tmp = get_next_line(fd);
+		(*map)->map_height++;
+	}
+	free(tmp);
+	tmp = NULL;
+	return (0);
+}
+
+int	read_map(t_map **m, char *av)
 {
 	int		i;
-	char	*str;
-	char	**map;
+	int		fd;
 
-	i = 0;
-	map = (char **)ft_calloc(sizeof(char), 9999);
-	while(map)
+	fd = open(av, O_RDONLY);
+	if (fd == -1)
 	{
-		str = get_next_line(fd);
-		if (!str)
-			break;
-		map[i] = str;
+		perror("Couldn't open file\n");
+		exit(EXIT_FAILURE);
+	}
+	i = 0;
+	(*m)->data = (char **)ft_calloc(sizeof(char), ((*m)->map_width) * ((*m)->map_height));
+	while (i < (*m)->map_height)
+	{
+		(*m)->data[i] = get_next_line(fd);
 		i++;
 	}
-	map[i] = NULL;
-	return (map);
+	return (0);
 }
 
 t_map	*init_map(int fd, char	*av)
 {
 	t_map	*map;
+	(void)av;
 
 	map = (t_map *)malloc(sizeof (t_map));
 	if (!map)
 		exit(EXIT_FAILURE);
-	map->map_height = map_height(fd);
-	map->map_width = map_width(av);
-	map->data = read_map(fd);
+	map->map_width = 0;
+	map->map_height = 0;
+	get_w_h_map(fd, &map);
+
 	return (map);
 }
 
@@ -87,7 +106,8 @@ t_map	*manage_fd(char *av)
 		perror("Found Error in file\n");
 		exit(EXIT_FAILURE);
 	}
-	map =init_map(fd, av);
+	map = init_map(fd, av);
 	close(fd);
+	read_map(&map, av);
 	return (map);
 }

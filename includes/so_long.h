@@ -88,17 +88,18 @@ typedef struct s_map
 
 t_map	*init_map(int fd, char *av);
 //int	map_check(char *name);
-char	**read_map(int fd);
+int	read_map(t_map **m, char *av);
 //int		check_map_name(char *av);
 //int		map_is_valid(char *file);
 int 	map_height(int fd);
-int 	map_width(char *av);
+int 	map_width(int fd);
 t_map		*manage_fd(char *av);
 
 // window functions
 int		close_window(void);
 
 // drawing functions
+void	draw_map(t_map *map, t_mlx *mlx);
 void	player_sprites(t_map *map, int width, int x, int y);
 void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
@@ -106,7 +107,7 @@ void	put_wall(t_mlx mlx);
 void	draw_wall(t_mlx *mlx, int w, int h);
 
 // player functions
-void	put_player(t_mlx mlx);
+void	put_player(t_mlx mlx, int x, int y);
 
 // hooks functions
 int		key_hooks(int key, t_mlx *mlx);
