@@ -32,12 +32,6 @@ void	draw_wooden_floor(t_mlx *mlx, int w, int h)
 			WOODEN_FLOOR, w	* IMG_SIZE, h * IMG_SIZE);
 }
 
-void	draw_wall(t_mlx *mlx, int w, int h)
-{
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-			WALL, w * IMG_SIZE, h * IMG_SIZE);
-}
-
 void	img_init(t_img *img)
 {
 	img->img_height = WINDOW_HEIGHT;
@@ -54,3 +48,14 @@ void	img_init(t_img *img)
 			MOVING_CAT, &img->img_width, &img->img_height);
 }
 
+// faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les
+// images avec leur char
+
+//void	draw_map(t_map map)
+//{
+//	int i;
+//	int j;
+//
+//	i = -1;
+//	while (++i < )
+//}

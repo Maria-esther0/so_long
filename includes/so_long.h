@@ -85,33 +85,28 @@ typedef struct s_map
 }	t_map;
 
 // map functions
-int	map_check(char *name);
-t_map	map_creation(char *av);
-int		set_map_size(t_map *map, char *av);
-int		set_map_data(t_map *map, char *av);
+
+t_map	*init_map(int fd, char *av);
+//int	map_check(char *name);
 char	**read_map(int fd);
-int		check_map_name(char *av);
-int		map_is_valid(char *file);
-int 	map_height(char *map_fd);
+//int		check_map_name(char *av);
+//int		map_is_valid(char *file);
+int 	map_height(int fd);
 int 	map_width(char *av);
 t_map		*manage_fd(char *av);
-void	put_wall(t_mlx mlx);
 
 // window functions
-void	img_init(t_img *img);
 int		close_window(void);
-void	put_wall(t_mlx mlx);
-void	draw_wooden_floor(t_mlx *mlx, int w, int h);
-void	draw_wall(t_mlx *mlx, int w, int h);
 
 // drawing functions
 void	player_sprites(t_map *map, int width, int x, int y);
-
-
-int		count_moves(void);
+void	img_init(t_img *img);
+void	draw_wooden_floor(t_mlx *mlx, int w, int h);
+void	put_wall(t_mlx mlx);
+void	draw_wall(t_mlx *mlx, int w, int h);
 
 // player functions
-void	put_player(t_mlx *mlx);
+void	put_player(t_mlx mlx);
 
 // hooks functions
 int		key_hooks(int key, t_mlx *mlx);
@@ -121,5 +116,6 @@ int		ft_strcmp(char *str1, char *str2);
 //int		going_forward(int key, t_mlx mlx);
 void	ft_free(char **tab);
 void	exit_error(const char *error_msg);
+int		count_moves(void);
 
 #endif
