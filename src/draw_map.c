@@ -26,18 +26,28 @@ void	put_wall(t_mlx mlx)
 	mlx.x * 100, mlx.y * 100);
 }
 
+void	put_grass(t_mlx *mlx, int w, int h)
+{
+	t_img	img;
+
+	img.img_width = 0;
+	img.img_height = 0;
+	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, GRASS,
+				&img.img_width, &img.img_height);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
+				img.img, w * 64, h * 64);
+}
+
 void	draw_wooden_floor(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
 
-
 	img.img_width = 0;
 	img.img_width = 0;
 	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, WOODEN_FLOOR,
-									&img.img_width, &img.img_height);
-
+				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-							img.img, w	* 64, h * 64);
+							img.img, w * 64, h * 64);
 }
 
 void	img_init(t_img *img)
@@ -73,7 +83,9 @@ void	draw_map(t_map *map, t_mlx *mlx)
 			if (map->data[i][j] == '1')
 				draw_wooden_floor(mlx, i, j);
 			else if (map->data[i][j] == 'P')
-				put_player(*mlx, 64 * j, 64 * i);
+				put_player(mlx, 64 * i, 64 * j);
+			else if (map->data[i][j] == '0')
+				put_grass(mlx, i, j);
 		}
 	}
 }

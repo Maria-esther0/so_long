@@ -18,30 +18,6 @@ int close_window(void)
 	exit(0);
 }
 
-int	key_hooks(int key, t_mlx *mlx)
-{
-	if (key == K_ESC)
-		close_window();
-	else if (key == K_W)
-		ft_printf("Pressed W\n");
-	else if (key == K_S)
-		ft_printf("Pressed S\n");
-	else if (key == K_A)
-		ft_printf("Pressed A\n");
-	else if (key == K_D)
-		ft_printf("Pressed D\n");
-	else if (key == K_UP)
-		ft_printf("Pressed Up key\n");
-	else if (key == K_DOWN)
-		ft_printf("Pressed Down key\n");
-	else if (key == K_LEFT)
-		ft_printf("Pressed Left key\n");
-	else if (key == K_RIGHT)
-		ft_printf("Pressed Right key\n");
-	(void)mlx;
-	return 0;
-}
-
 int	main(int ac, char **av)
 {
 	t_mlx mlx;
@@ -57,6 +33,7 @@ int	main(int ac, char **av)
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT,
 			"NEW WINDOW");
 	draw_map(map, &mlx);
+	movements(K_W, &mlx, mlx.y, mlx.x);
 //	put_player(mlx);
 	//put_wall(mlx);
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);

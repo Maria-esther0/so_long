@@ -12,4 +12,8 @@
 
 #include "../includes/so_long.h"
 
-
+void	player_move(t_mlx *mlx, int x, int y)
+{
+	mlx->y += y;
+	mlx->x += x;
+}

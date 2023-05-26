@@ -38,6 +38,7 @@ add_executable(
         src/manage_player.c
         src/move_player.c
         src/util1.c
+        src/manage_hook.c
 )
 
 TARGET_LINK_LIBRARIES(so_long ${LIBS})

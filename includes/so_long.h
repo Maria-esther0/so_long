@@ -15,7 +15,7 @@
 
 // definition de la resolution de mes images
 # define WINDOW_WIDTH 500
-# define WINDOW_HEIGHT 400
+# define WINDOW_HEIGHT 500
 
 // definition des touches
 # define K_ESC 53
@@ -29,7 +29,7 @@
 # define K_D 2
 
 // taille des images
-# define IMG_SIZE 	32
+# define IMG_SIZE 	64
 
 // definition des paths des sprints, el path tiene que estar escrito de la
 // siguiente manera con un punto al comienzo sino hace errores raros que no entiendo
@@ -100,6 +100,7 @@ int		close_window(void);
 
 // drawing functions
 void	draw_map(t_map *map, t_mlx *mlx);
+void	put_grass(t_mlx *mlx, int w, int h);
 void	player_sprites(t_map *map, int width, int x, int y);
 void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
@@ -107,9 +108,11 @@ void	put_wall(t_mlx mlx);
 void	draw_wall(t_mlx *mlx, int w, int h);
 
 // player functions
-void	put_player(t_mlx mlx, int x, int y);
+void	put_player(t_mlx *mlx, int x, int y);
+void	player_move(t_mlx *mlx, int x, int y);
+void	movements(int key, t_mlx *mlx, int y, int x);
 
-// hooks functions
+// hook functions
 int		key_hooks(int key, t_mlx *mlx);
 
 // other utils
