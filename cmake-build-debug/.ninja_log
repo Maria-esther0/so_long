@@ -23,3 +23,5 @@
 108	205	1685116096000000000	CMakeFiles/so_long.dir/src/move_player.c.o	3e9dd72edd2eb7d7
 164	216	1685116096000000000	CMakeFiles/so_long.dir/src/manage_hook.c.o	50f8fbf0635cf1ee
 139	225	1685116096000000000	CMakeFiles/so_long.dir/src/util1.c.o	6f18f6db2cfd218
+8	137	1685279464000000000	CMakeFiles/so_long.dir/src/main.c.o	491a24fd268357b0
+138	343	1685279464000000000	so_long	45052e07b67040fb
