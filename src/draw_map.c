@@ -74,10 +74,10 @@ void	draw_map(t_map *map, t_mlx *mlx)
 	int 	i;
 	int 	j;
 
-	i = -1;
+	i = 0;
 	while (++i < map->map_height)
 	{
-		j = -1;
+		j = 0;
 		while (++j < map->map_width)
 		{
 			if (map->data[i][j] == '1')
