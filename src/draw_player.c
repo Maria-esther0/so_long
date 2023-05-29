@@ -23,4 +23,16 @@ void	player_sprites(t_map *map, int width, int x, int y)
 	}
 }
 
+void	load_player_sprites(t_mlx *mlx, char **frames, int num_frames, void **dest)
+{
+
+
+//	char *loading[4];
+//
+//	loading [0] = CAT_SPRITE1;
+//	loading [1] = CAT_SPRITE2;
+//	loading [2] = CAT_SPRITE3;
+//	loading [3] = CAT_SPRITE4;
+}
+
 

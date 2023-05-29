@@ -39,6 +39,10 @@
 # define STANDING_CAT "./img/standing_cat.xpm"
 # define MOVING_CAT "./img/moving_cat.xmp"
 # define GRASS "./img/grass.xpm"
+# define CAT_SPRITE1 "./img/cat_sprite1_64.xpm"
+# define CAT_SPRITE2 "./img/cat_sprite2_64.xpm"
+# define CAT_SPRITE3 "./img/cat_sprite3_64.xpm"
+# define CAT_SPRITE4 "./img/cat_sprite4_64.xpm"
 # define WALL "./img/wall.xpm"
 
 // includes & paths
@@ -106,6 +110,7 @@ void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
 void	put_wall(t_mlx mlx);
 void	draw_wall(t_mlx *mlx, int w, int h);
+void	load_player_sprites(t_mlx *mlx, char **frames, int num_frames, void **dest);
 
 // player functions
 void	put_player(t_mlx *mlx, int x, int y);
