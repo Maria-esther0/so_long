@@ -53,6 +53,8 @@ int	get_w_h_map(int fd, t_map **map)
 		tmp = NULL;
 		tmp = get_next_line(fd);
 		(*map)->map_height++;
+//		ft_printf("Map Height : %d\n", (*map)->map_height);
+//		ft_printf("Map Width : %d\n", (*map)->map_width);
 	}
 	free(tmp);
 	tmp = NULL;
@@ -75,9 +77,10 @@ int	read_map(t_map **m, char *av)
 	while (i < (*m)->map_height)
 	{
 		(*m)->data[i] = get_next_line(fd);
+//		ft_printf("Map : %s", (*m)->data[i]);
 		i++;
 	}
-	return (0);
+	return (0    );
 }
 
 t_map	*init_map(int fd, char	*av)
@@ -108,5 +111,6 @@ t_map	*manage_fd(char *av)
 	map = init_map(fd, av);
 	close(fd);
 	read_map(&map, av);
+	ft_printf("Reading map : %d\n", &read_map);
 	return (map);
 }
