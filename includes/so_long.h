@@ -69,6 +69,7 @@ typedef struct s_img
 	int		img_width;
 	int		img_height;
 	void	*img;
+	void	*load_cat[4];
 	void	*wooden_floor;
 	void	*still_cat;
 	void	*jumping_cat;
@@ -110,7 +111,9 @@ void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
 void	put_wall(t_mlx mlx);
 void	draw_wall(t_mlx *mlx, int w, int h);
-void	load_player_sprites(t_mlx *mlx, char **frames, int num_frames, void **dest);
+void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
+void	load_cat_frame(t_mlx *mlx, t_img *img);
+void	load_img(t_mlx *mlx, t_img *img);
 
 // player functions
 void	put_player(t_mlx *mlx, int x, int y);

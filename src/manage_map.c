@@ -91,7 +91,6 @@ t_map	*init_map(int fd, char	*av)
 	map->map_width = 0;
 	map->map_height = 0;
 	get_w_h_map(fd, &map);
-
 	return (map);
 }
 

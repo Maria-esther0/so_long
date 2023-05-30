@@ -23,16 +23,34 @@ void	player_sprites(t_map *map, int width, int x, int y)
 	}
 }
 
-void	load_player_sprites(t_mlx *mlx, char **frames, int num_frames, void **dest)
+void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest)
 {
+	int	i;
+	int	width;
+	int height;
 
-
-//	char *loading[4];
-//
-//	loading [0] = CAT_SPRITE1;
-//	loading [1] = CAT_SPRITE2;
-//	loading [2] = CAT_SPRITE3;
-//	loading [3] = CAT_SPRITE4;
+	i = -1;
+	while (++i < num_frames)
+	{
+		dest[i] = mlx_xpm_file_to_image(mlx->mlx_ptr, frames[i], &width, &height);
+		if (dest[i] == NULL)
+			exit_error("Couldn't load player sprites correctly");
+	}
 }
 
+void	load_cat_frame(t_mlx *mlx, t_img *img)
+{
+	char *loading[4];
 
+	loading [0] = CAT_SPRITE1;
+	loading [1] = CAT_SPRITE2;
+	loading [2] = CAT_SPRITE3;
+	loading [3] = CAT_SPRITE4;
+	load_frames(mlx, loading, sizeof(loading) / sizeof(char *), (void **)img->load_cat);
+}
+
+//void	load_img(t_mlx *mlx, t_img *img)
+//{
+//	load_cat_frame(mlx, img);
+//	// can add other cat frames
+//}
