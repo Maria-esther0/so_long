@@ -46,7 +46,7 @@ int	get_w_h_map(int fd, t_map **map)
 	char *tmp;
 
 	tmp = get_next_line(fd);
-	(*map)->map_width = ft_strlen(tmp);
+	(*map)->map_width = ft_strlen(tmp + 1);
 	while (tmp)
 	{
 		free(tmp);
@@ -81,7 +81,7 @@ int	read_map(t_map **m, char *av)
 		ft_printf("Map : %s", (*m)->data[i]);
 		i++;
 	}
-	return (0    );
+	return (0);
 }
 
 t_map	*init_map(int fd, char	*av)

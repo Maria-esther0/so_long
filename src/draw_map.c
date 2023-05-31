@@ -12,19 +12,17 @@
 
 #include "../includes/so_long.h"
 
-//void	put_wall(t_mlx mlx)
-//{
-//	t_img	img;
-//
-//	mlx.x = 0;
-//	mlx.y = 0;
-//	img.img_width = 0;
-//	img.img_width = 0;
-//	img.img = mlx_xpm_file_to_image(mlx.mlx_ptr, WOODEN_FLOOR,
-//			&img.img_width, &img.img_height);
-//	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr,img.img,
-//	mlx.x * 100, mlx.y * 100);
-//}
+void	put_fish(t_mlx *mlx, int w, int h)
+{
+	t_img	img;
+
+	img.img_width = 0;
+	img.img_width = 0;
+	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, FISH,
+			&img.img_width, &img.img_height);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,img.img,
+	w * 64, h * 64);
+}
 
 void	put_grass(t_mlx *mlx, int w, int h)
 {
@@ -105,6 +103,11 @@ void	draw_map(t_map *map, t_mlx *mlx)
 			{
 				put_grass(mlx, j, i);
 				put_stairs(mlx, j, i);
+			}
+			else if (map->data[i][j] == 'C')
+			{
+				put_grass(mlx, j, i);
+				put_fish(mlx, j, i);
 			}
 		}
 	}
