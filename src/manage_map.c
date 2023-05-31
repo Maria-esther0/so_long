@@ -56,6 +56,7 @@ int	get_w_h_map(int fd, t_map **map)
 //		ft_printf("Map Height : %d\n", (*map)->map_height);
 //		ft_printf("Map Width : %d\n", (*map)->map_width);
 	}
+//	(*map)->map_height++;
 	free(tmp);
 	tmp = NULL;
 	return (0);

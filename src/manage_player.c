@@ -23,5 +23,5 @@ void	put_player(t_mlx *mlx, int x, int y)
 	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, CAT_SPRITE1,
 			&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-			img.img, x, y);
+			img.img, x * 64, y * 64);
 }

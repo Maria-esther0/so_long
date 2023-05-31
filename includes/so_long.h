@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 // definition de la resolution de mes images
-# define WINDOW_WIDTH 500
+# define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 500
 
 // definition des touches
@@ -43,6 +43,7 @@
 # define CAT_SPRITE2 "./img/cat_sprite2_64.xpm"
 # define CAT_SPRITE3 "./img/cat_sprite3_64.xpm"
 # define CAT_SPRITE4 "./img/cat_sprite4_64.xpm"
+# define STAIRS "./img/stairs_64.xpm"
 # define WALL "./img/wall.xpm"
 
 // includes & paths
@@ -110,6 +111,7 @@ void	player_sprites(t_map *map, int width, int x, int y);
 void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
 void	put_wall(t_mlx mlx);
+void	put_stairs(t_mlx *mlx, int i, int j);
 void	draw_wall(t_mlx *mlx, int w, int h);
 void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
 void	load_cat_frame(t_mlx *mlx, t_img *img);
