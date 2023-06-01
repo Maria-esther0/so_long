@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "so_long::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-so_long-Debug-31c3ee9298c76c8ff0dd.json",
+					"jsonFile" : "target-so_long-Debug-0dde54966e74cad26faa.json",
 					"name" : "so_long",
 					"projectIndex" : 0
 				}
@@ -55,6 +55,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }

@@ -14,10 +14,15 @@
 
 int	key_hooks(int key, t_mlx *mlx)
 {
+//	t_map map;
+
 	if (key == K_ESC)
 		close_window();
 	else if (key == K_W)
+	{
+//		player_move(&map, map.map_height, map.map_width);
 		ft_printf("Pressed W\n");
+	}
 	else if (key == K_S)
 		ft_printf("Pressed S\n");
 	else if (key == K_A)
@@ -34,10 +39,4 @@ int	key_hooks(int key, t_mlx *mlx)
 		ft_printf("Pressed Right key\n");
 	(void)mlx;
 	return 0;
-}
-
-void	movement(int key, t_mlx *mlx, int y, int x)
-{
-	if (key == K_W)
-		player_move(mlx, x, y);
 }

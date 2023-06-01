@@ -41,6 +41,7 @@
 # define CAT_SPRITE4 "./img/cat_sprite4_64.xpm"
 # define STAIRS "./img/stairs_64.xpm"
 # define FISH "./img/fish_64.xpm"
+# define SHRIMP "./img/shrimp_64.xpm"
 
 // includes & paths
 # include <fcntl.h>
@@ -108,6 +109,7 @@ void	img_init(t_img *img);
 void	draw_wooden_floor(t_mlx *mlx, int w, int h);
 void	put_wall(t_mlx mlx);
 void	put_fish(t_mlx *mlx, int w, int h);
+void	put_shrimp(t_mlx *mlx, int w, int h);
 void	put_stairs(t_mlx *mlx, int i, int j);
 void	draw_wall(t_mlx *mlx, int w, int h);
 void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
@@ -116,8 +118,8 @@ void	load_img(t_mlx *mlx, t_img *img);
 
 // player functions
 void	put_player(t_mlx *mlx, int x, int y);
-void	player_move(t_mlx *mlx, int x, int y);
-void	movements(int key, t_mlx *mlx, int y, int x);
+void	player_move(t_map *map, int x, int y);
+void	movements(t_map *map, int y, int x);
 
 // hook functions
 int		key_hooks(int key, t_mlx *mlx);

@@ -11,31 +11,31 @@
 			"cmake" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake",
 			"cpack" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack",
 			"ctest" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest",
-			"root" : "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.22"
+			"root" : "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 22,
-			"patch" : 3,
-			"string" : "3.22.3",
+			"minor" : 25,
+			"patch" : 2,
+			"string" : "3.25.2",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-084d99107ac38b4b952c.json",
+			"jsonFile" : "codemodel-v2-8421d2e659d5c215951d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 3
+				"minor" : 4
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-d6826b9b12596bb599c2.json",
+			"jsonFile" : "cache-v2-4dd67f4e74027d525f45.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-7e6afcfb2e88d77a01ad.json",
+			"jsonFile" : "cmakeFiles-v1-1dbf6f1dcbf76773cfd0.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-d6826b9b12596bb599c2.json",
+			"jsonFile" : "cache-v2-4dd67f4e74027d525f45.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-7e6afcfb2e88d77a01ad.json",
+			"jsonFile" : "cmakeFiles-v1-1dbf6f1dcbf76773cfd0.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -86,12 +86,12 @@
 		},
 		"codemodel-v2" : 
 		{
-			"jsonFile" : "codemodel-v2-084d99107ac38b4b952c.json",
+			"jsonFile" : "codemodel-v2-8421d2e659d5c215951d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 3
+				"minor" : 4
 			}
 		},
 		"toolchains-v1" : 

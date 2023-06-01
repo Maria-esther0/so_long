@@ -70,7 +70,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics"
 				},
 				{
 					"backtrace" : 4,
@@ -184,19 +184,11 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "-framework",
+				"fragment" : "-Xlinker -framework -Xlinker OpenGL",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "OpenGL",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-framework",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "AppKit",
+				"fragment" : "-Xlinker -framework -Xlinker AppKit",
 				"role" : "libraries"
 			}
 		],

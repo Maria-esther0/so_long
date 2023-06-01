@@ -12,8 +12,9 @@
 
 #include "../includes/so_long.h"
 
-void	player_move(t_mlx *mlx, int x, int y)
+void	movement(t_map *map, int y, int x)
 {
-	mlx->y += y;
-	mlx->x += x;
+	char	next;
+
+	next = map->data[map->map_width + map->map_height]
 }

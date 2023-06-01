@@ -24,6 +24,18 @@ void	put_fish(t_mlx *mlx, int w, int h)
 	w * 64, h * 64);
 }
 
+void	put_shrimp(t_mlx *mlx, int w, int h)
+{
+	t_img	img;
+
+	img.img_width = 0;
+	img.img_width = 0;
+	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, SHRIMP,
+									&img.img_width, &img.img_height);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,img.img,
+							w * 64, h * 64);
+}
+
 void	put_grass(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
@@ -78,7 +90,6 @@ void	put_stairs(t_mlx *mlx, int w, int h)
 
 // faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les
 // images avec leur char
-
 void	draw_map(t_map *map, t_mlx *mlx)
 {
 	int 	i;
@@ -108,8 +119,8 @@ void	draw_map(t_map *map, t_mlx *mlx)
 			{
 				put_grass(mlx, j, i);
 				put_fish(mlx, j, i);
+//				put_shrimp(mlx, j, i);
 			}
 		}
 	}
 }
-
