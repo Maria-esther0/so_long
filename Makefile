@@ -17,6 +17,10 @@ SRC		= 	src/main.c\
 			src/move_player.c\
 			src/create_map.c\
 			src/manage_hook.c\
+			src/check_if_map.c\
+			src/draw_player.c\
+			src/free.c\
+			src/init_map.c\
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

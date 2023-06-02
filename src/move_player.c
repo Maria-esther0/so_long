@@ -12,9 +12,16 @@
 
 #include "../includes/so_long.h"
 
-void	movement(t_map *map, int y, int x)
+/*void	movement(t_map *map, int y, int x)
 {
 	char	next;
 
-	next = map->data[map->map_width + map->map_height]
-}
+	next = map->data[map->map_width + map->map_width][map->map_height + map->map_height];
+    if (next == '0' || next == 'C' || next == 'P')
+    {
+        if (next == 'C')
+        {
+
+        }
+    }
+}*/

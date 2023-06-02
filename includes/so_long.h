@@ -30,11 +30,6 @@
 // definition des paths des sprints, el path tiene que estar escrito de la
 // siguiente manera con un punto al comienzo sino hace errores raros que no entiendo
 # define WOODEN_FLOOR "./img/wooden.xpm"
-# define STILL_CAT "./img/still_cat.xpm"
-# define JUMPING_CAT "./img/jumping_cat.xpm"
-# define STANDING_CAT "./img/standing_cat.xpm"
-# define MOVING_CAT "./img/moving_cat.xmp"
-# define GRASS "./img/grass.xpm"
 # define CAT_SPRITE1 "./img/cat_sprite1_64.xpm"
 # define CAT_SPRITE2 "./img/cat_sprite2_64.xpm"
 # define CAT_SPRITE3 "./img/cat_sprite3_64.xpm"
@@ -42,6 +37,12 @@
 # define STAIRS "./img/stairs_64.xpm"
 # define FISH "./img/fish_64.xpm"
 # define SHRIMP "./img/shrimp_64.xpm"
+/* ----------------------------*/
+# define CAPYBARA "./img/capy_64.xpm"
+# define COIN "./img/coin_64.xpm"
+# define GRASS "./img/grass_64.xpm"
+# define DIRT "./img/dirt_64.xpm"
+# define DOOR "./img/open_door_64.xpm"
 
 // includes & paths
 # include <fcntl.h>
@@ -106,11 +107,11 @@ void	draw_map(t_map *map, t_mlx *mlx);
 void	put_grass(t_mlx *mlx, int w, int h);
 void	player_sprites(t_map *map, int width, int x, int y);
 void	img_init(t_img *img);
-void	draw_wooden_floor(t_mlx *mlx, int w, int h);
+void	draw_dirt(t_mlx *mlx, int w, int h);
 void	put_wall(t_mlx mlx);
-void	put_fish(t_mlx *mlx, int w, int h);
+void	put_coin(t_mlx *mlx, int w, int h);
 void	put_shrimp(t_mlx *mlx, int w, int h);
-void	put_stairs(t_mlx *mlx, int i, int j);
+void	put_door(t_mlx *mlx, int i, int j);
 void	draw_wall(t_mlx *mlx, int w, int h);
 void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
 void	load_cat_frame(t_mlx *mlx, t_img *img);
