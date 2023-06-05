@@ -77,3 +77,5 @@ int	map_check(char *name)
 //	}
 	return (0);
 }
+
+//int	check_move(t_map *map, int )

@@ -29,15 +29,6 @@
 
 // definition des paths des sprints, el path tiene que estar escrito de la
 // siguiente manera con un punto al comienzo sino hace errores raros que no entiendo
-# define WOODEN_FLOOR "./img/wooden.xpm"
-# define CAT_SPRITE1 "./img/cat_sprite1_64.xpm"
-# define CAT_SPRITE2 "./img/cat_sprite2_64.xpm"
-# define CAT_SPRITE3 "./img/cat_sprite3_64.xpm"
-# define CAT_SPRITE4 "./img/cat_sprite4_64.xpm"
-# define STAIRS "./img/stairs_64.xpm"
-# define FISH "./img/fish_64.xpm"
-# define SHRIMP "./img/shrimp_64.xpm"
-/* ----------------------------*/
 # define CAPYBARA "./img/capy_64.xpm"
 # define COIN "./img/coin_64.xpm"
 # define GRASS "./img/grass_64.xpm"
@@ -68,12 +59,6 @@ typedef struct s_img
 	int		img_width;
 	int		img_height;
 	void	*img;
-	void	*load_cat[4];
-	void	*wooden_floor;
-	void	*still_cat;
-	void	*jumping_cat;
-	void	*standing_cat;
-	void	*moving_cat;
 	int 	lignes;
 	char	*img_path;
 	t_mlx	game;
@@ -82,6 +67,9 @@ typedef struct s_img
 typedef struct s_map
 {
 	t_mlx	map;
+//	void	player;
+	int 	x_player;
+	int 	y_player;
 	int 	map_width;
 	int 	map_height;
 	char	*name;
@@ -89,7 +77,6 @@ typedef struct s_map
 }	t_map;
 
 // map functions
-
 t_map	*init_map(int fd, char *av);
 //int	map_check(char *name);
 int	read_map(t_map **m, char *av);
@@ -105,16 +92,11 @@ int		close_window(void);
 // drawing functions
 void	draw_map(t_map *map, t_mlx *mlx);
 void	put_grass(t_mlx *mlx, int w, int h);
-void	player_sprites(t_map *map, int width, int x, int y);
 void	img_init(t_img *img);
 void	draw_dirt(t_mlx *mlx, int w, int h);
-void	put_wall(t_mlx mlx);
 void	put_coin(t_mlx *mlx, int w, int h);
-void	put_shrimp(t_mlx *mlx, int w, int h);
 void	put_door(t_mlx *mlx, int i, int j);
-void	draw_wall(t_mlx *mlx, int w, int h);
 void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
-void	load_cat_frame(t_mlx *mlx, t_img *img);
 void	load_img(t_mlx *mlx, t_img *img);
 
 // player functions
@@ -127,7 +109,6 @@ int		key_hooks(int key, t_mlx *mlx);
 
 // other utils
 int		ft_strcmp(char *str1, char *str2);
-//int		going_forward(int key, t_mlx mlx);
 void	ft_free(char **tab);
 void	exit_error(const char *error_msg);
 int		count_moves(void);

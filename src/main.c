@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 			"NEW WINDOW");
 	draw_map(map, &mlx);
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
-//	mlx_key_hook(mlx.win_ptr, going_forward, (void *)0);
+//	mlx_key_hook(mlx.win_ptr, move_player, (void *)0);
 	mlx_key_hook(mlx.win_ptr, key_hooks, (void *)0);
 	mlx_hook(mlx.win_ptr, 17, 0, close_window, NULL);
 	mlx_loop(mlx.mlx_ptr);

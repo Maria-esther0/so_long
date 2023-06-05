@@ -12,35 +12,6 @@
 
 #include "../includes/so_long.h"
 
-int map_height(int fd)
-{
-	int lines;
-	char *tmp;
-
-	lines = 0;
-	tmp = get_next_line(fd);
-	while (tmp)
-	{
-		free(tmp);
-		tmp = get_next_line(fd);
-		lines++;
-	}
-	return (lines);
-}
-
-int map_width(int fd)
-{
-	int 	width;
-	char	*ligne;
-
-	width = 0;
-	ligne = get_next_line(fd);
-	width = (int)ft_strlen(ligne);
-	free (ligne);
-	close(fd);
-	return (width);
-}
-
 int	get_w_h_map(int fd, t_map **map)
 {
 	char *tmp;

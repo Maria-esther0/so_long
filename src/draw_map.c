@@ -24,18 +24,6 @@ void	put_coin(t_mlx *mlx, int w, int h)
 	w * 64, h * 64);
 }
 
-void	put_shrimp(t_mlx *mlx, int w, int h)
-{
-	t_img	img;
-
-	img.img_width = 0;
-	img.img_width = 0;
-	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, SHRIMP,
-									&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,img.img,
-							w * 64, h * 64);
-}
-
 void	put_grass(t_mlx *mlx, int w, int h)
 {
 	t_img	img;

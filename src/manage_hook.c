@@ -29,14 +29,14 @@ int	key_hooks(int key, t_mlx *mlx)
 		ft_printf("Pressed A\n");
 	else if (key == K_D)
 		ft_printf("Pressed D\n");
-	else if (key == K_UP)
-		ft_printf("Pressed Up key\n");
-	else if (key == K_DOWN)
-		ft_printf("Pressed Down key\n");
-	else if (key == K_LEFT)
-		ft_printf("Pressed Left key\n");
-	else if (key == K_RIGHT)
-		ft_printf("Pressed Right key\n");
+//	else if (key == K_UP)
+//		ft_printf("Pressed Up key\n");
+//	else if (key == K_DOWN)
+//		ft_printf("Pressed Down key\n");
+//	else if (key == K_LEFT)
+//		ft_printf("Pressed Left key\n");
+//	else if (key == K_RIGHT)
+//		ft_printf("Pressed Right key\n");
 	(void)mlx;
 	return 0;
 }
