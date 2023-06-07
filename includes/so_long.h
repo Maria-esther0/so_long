@@ -24,11 +24,7 @@
 # define K_A 0
 # define K_D 2
 
-// taille des images
-# define IMG_SIZE 	64
-
-// definition des paths des sprints, el path tiene que estar escrito de la
-// siguiente manera con un punto al comienzo sino hace errores raros que no entiendo
+// definition des paths des images xpm
 # define CAPYBARA "./img/capy_64.xpm"
 # define COIN "./img/coin_64.xpm"
 # define GRASS "./img/grass_64.xpm"
@@ -102,7 +98,7 @@ void	load_img(t_mlx *mlx, t_img *img);
 // player functions
 void	put_player(t_mlx *mlx, int x, int y);
 void	player_move(t_map *map, int x, int y);
-void	movements(t_map *map, int y, int x);
+void	movement(t_map *map, int y, int x);
 
 // hook functions
 int		key_hooks(int key, t_mlx *mlx);
