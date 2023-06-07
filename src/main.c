@@ -29,7 +29,6 @@ int	main(int ac, char **av)
 	}
 	map = manage_fd(av[1]);
 	mlx.mlx_ptr = mlx_init();
-//	mlx->win_ptr = mlx_new_window(mlx.mlx_ptr, map->map_width, map->map_height, "NEW WINDOW");
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, map->map_width * 64, map->map_height * 64,
 			"NEW WINDOW");
 	draw_map(map, &mlx);

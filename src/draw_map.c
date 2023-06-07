@@ -19,9 +19,9 @@ void	put_coin(t_mlx *mlx, int w, int h)
 	img.img_width = 0;
 	img.img_width = 0;
 	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, COIN,
-			&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,img.img,
-	w * 64, h * 64);
+				&img.img_width, &img.img_height);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
+				img.img, w * 64, h * 64);
 }
 
 void	put_grass(t_mlx *mlx, int w, int h)
@@ -45,7 +45,7 @@ void	draw_dirt(t_mlx *mlx, int w, int h)
 	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, DIRT,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-							img.img, w * 64, h * 64);
+				img.img, w * 64, h * 64);
 }
 
 void	put_door(t_mlx *mlx, int w, int h)
@@ -55,25 +55,23 @@ void	put_door(t_mlx *mlx, int w, int h)
 	img.img_width = 0;
 	img.img_width = 0;
 	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, DOOR,
-									&img.img_width, &img.img_height);
+				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-							img.img, w * 64, h * 64);
+				img.img, w * 64, h * 64);
 }
 
 //void	img_init(t_img *img)
 //{
 //	img->img_height = ;
 //	img->img_width = ;
-//	img->wooden_floor = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			WOODEN_FLOOR, &img->img_width, &img->img_height);
-//	img->standing_cat = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			STANDING_CAT, &img->img_width, &img->img_height);
-//	img->jumping_cat = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			JUMPING_CAT, &img->img_width, &img->img_height);
-//	img->still_cat = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			STILL_CAT, &img->img_width, &img->img_height);
-//	img->moving_cat = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			MOVING_CAT, &img->img_width, &img->img_height);
+//	img->player = mlx_xpm_file_to_image(img->game.mlx_ptr,
+//			CAPYBARA, &img->img_width, &img->img_height);
+//	img->coin = mlx_xpm_file_to_image(img->game.mlx_ptr,
+//			COIN, &img->img_width, &img->img_height);
+//	img->grass = mlx_xpm_file_to_image(img->game.mlx_ptr,
+//			GRASS, &img->img_width, &img->img_height);
+//	img->dirt = mlx_xpm_file_to_image(img->game.mlx_ptr,
+//			DIRT, &img->img_width, &img->img_height);
 //}
 
 // faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les

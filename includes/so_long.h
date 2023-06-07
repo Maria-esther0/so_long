@@ -55,6 +55,10 @@ typedef struct s_img
 	int		img_width;
 	int		img_height;
 	void	*img;
+	int 	player;
+	int 	coin;
+	int 	grass;
+	int 	dirt;
 	int 	lignes;
 	char	*img_path;
 	t_mlx	game;
@@ -98,7 +102,7 @@ void	load_img(t_mlx *mlx, t_img *img);
 // player functions
 void	put_player(t_mlx *mlx, int x, int y);
 void	player_move(t_map *map, int x, int y);
-void	movement(t_map *map, int y, int x);
+void	movement(t_map *map, int new_x, int new_y);
 
 // hook functions
 int		key_hooks(int key, t_mlx *mlx);

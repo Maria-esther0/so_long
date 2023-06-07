@@ -12,16 +12,10 @@
 
 #include "../includes/so_long.h"
 
-void	movement(t_map *map, int x, int y)
+void	movement(t_map *map, int new_x, int new_y)
 {
-	char	next;
-
-	next = map->data[map->map_width + map->map_width]
-			[map->map_height + map->map_height];
-    if (next == '0' || next == 'C' || next == 'P')
-    {
-
-    }
+	map->map_width += new_x;
+	map->map_height += new_y;
 }
 
 //void	set_move(t_map *map, int key)
@@ -38,68 +32,69 @@ void	movement(t_map *map, int x, int y)
 //	if (key == K_D)
 //		move_right(map, );
 //}
-
-
-void	move_left(t_map *map, int x, int y)
-{
-	int i;
-	int j;
-
-	i = -1;
-	while (i++ < map->map_height)
-	{
-		j = -1;
-		while (++j < map->map_width)
-		{
-			movement(map, x, y);
-		}
-	}
-}
-
-void	move_right(t_map *map, int x, int y)
-{
-	int i;
-	int j;
-
-	i = -1;
-	while (i++ < map->map_height)
-	{
-		j = -1;
-		while (++j < map->map_width)
-		{
-			movement(map, x, y);
-		}
-	}
-}
-
-void	move_up(t_map *map, int x, int y)
-{
-	int i;
-	int j;
-
-	i = -1;
-	while (i++ < map->map_height)
-	{
-		j = -1;
-		while (++j < map->map_width)
-		{
-			movement(map, x, y);
-		}
-	}
-}
-
-void	move_down(t_map *map, int x, int y)
-{
-	int i;
-	int j;
-
-	i = -1;
-	while (i++ < map->map_height)
-	{
-		j = -1;
-		while (++j < map->map_width)
-		{
-			movement(map, x, y);
-		}
-	}
-}
+//
+//
+//void	move_left(t_map *map, int x, int y)
+//{
+//	int i;
+//	int j;
+//
+//	i = 0;
+//	while (i < map->map_height)
+//	{
+//		j = -1;
+//		while (++j < map->map_width)
+//		{
+//			movement(map, x, y);
+//		}
+//		i++;
+//	}
+//}
+//
+//void	move_right(t_map *map, int x, int y)
+//{
+//	int i;
+//	int j;
+//
+//	i = -1;
+//	while (i++ < map->map_height)
+//	{
+//		j = -1;
+//		while (++j < map->map_width)
+//		{
+//			movement(map, x, y);
+//		}
+//	}
+//}
+//
+//void	move_up(t_map *map, int x, int y)
+//{
+//	int i;
+//	int j;
+//
+//	i = -1;
+//	while (i++ < map->map_height)
+//	{
+//		j = -1;
+//		while (++j < map->map_width)
+//		{
+//			movement(map, x, y);
+//		}
+//	}
+//}
+//
+//void	move_down(t_map *map, int x, int y)
+//{
+//	int i;
+//	int j;
+//
+//	i = -1;
+//	while (i++ < map->map_height)
+//	{
+//		j = -1;
+//		while (++j < map->map_width)
+//		{
+//			movement(map, x, y);
+//		}
+//	}
+//}
