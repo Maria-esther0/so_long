@@ -55,10 +55,6 @@ typedef struct s_img
 	int		img_width;
 	int		img_height;
 	void	*img;
-	int 	player;
-	int 	coin;
-	int 	grass;
-	int 	dirt;
 	int 	lignes;
 	char	*img_path;
 	t_mlx	game;
@@ -67,7 +63,13 @@ typedef struct s_img
 typedef struct s_map
 {
 	t_mlx	map;
-//	void	player;
+	void	*player;
+	void	*coin;
+	void	*grass;
+	void	*dirt;
+	void	*door;
+	int 	nbr_coins;
+	int 	nbr_steps;
 	int 	x_player;
 	int 	y_player;
 	int 	map_width;
@@ -78,34 +80,31 @@ typedef struct s_map
 
 // map functions
 t_map	*init_map(int fd, char *av);
-//int	map_check(char *name);
-int	read_map(t_map **m, char *av);
-//int		check_map_name(char *av);
-//int		map_is_valid(char *file);
-int 	map_height(int fd);
-int 	map_width(int fd);
-t_map		*manage_fd(char *av);
+t_map	*manage_fd(char *av);
+int		read_map(t_map **m, char *av);
 
 // window functions
 int		close_window(void);
 
+// moving funcions
+void	move(t_map *map, int pos_y, int pos_x);
+void	exit_move(t_map *map, char next);
+void	player_pos(t_map *map);
+
 // drawing functions
 void	draw_map(t_map *map, t_mlx *mlx);
 void	put_grass(t_mlx *mlx, int w, int h);
-void	img_init(t_img *img);
-void	draw_dirt(t_mlx *mlx, int w, int h);
+void	put_dirt(t_mlx *mlx, int w, int h);
 void	put_coin(t_mlx *mlx, int w, int h);
-void	put_door(t_mlx *mlx, int i, int j);
-void	load_frames(t_mlx *mlx, char **frames, int num_frames, void **dest);
-void	load_img(t_mlx *mlx, t_img *img);
+void	put_door(t_mlx *mlx, int w, int h);
+void	put_img(t_map *map, int x, int y, void *img);
 
-// player functions
+// P/C/1/0/E functions
 void	put_player(t_mlx *mlx, int x, int y);
-void	player_move(t_map *map, int x, int y);
-void	movement(t_map *map, int new_x, int new_y);
+int		item_check(t_map *map);
 
 // hook functions
-int		key_hooks(int key, t_mlx *mlx);
+int		key_hooks(int key, t_map *map);
 
 // other utils
 int		ft_strcmp(char *str1, char *str2);

@@ -68,3 +68,8 @@ void	exit_error(const char *error_msg)
 //	close(fd);
 //	return (width);
 //}
+
+void	put_img(t_map *map, int x, int y, void *img)
+{
+	mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr, img, x, y);
+}

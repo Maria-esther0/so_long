@@ -15,10 +15,11 @@
 void	put_coin(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
+	t_img	map;
 
 	img.img_width = 0;
 	img.img_width = 0;
-	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, COIN,
+	map.coin = mlx_xpm_file_to_image(mlx->mlx_ptr, COIN,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
 				img.img, w * 64, h * 64);
@@ -27,37 +28,40 @@ void	put_coin(t_mlx *mlx, int w, int h)
 void	put_grass(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
+	t_map	map;
 
 	img.img_width = 0;
 	img.img_height = 0;
-	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, GRASS,
+	map.grass = mlx_xpm_file_to_image(mlx->mlx_ptr, GRASS,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				img.img, w * 64, h * 64);
+				map.grass, w * 64, h * 64);
 }
 
-void	draw_dirt(t_mlx *mlx, int w, int h)
+void	put_dirt(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
+	t_map	map;
 
 	img.img_width = 0;
 	img.img_width = 0;
-	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, DIRT,
+	map.dirt = mlx_xpm_file_to_image(mlx->mlx_ptr, DIRT,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				img.img, w * 64, h * 64);
+				map.dirt, w * 64, h * 64);
 }
 
 void	put_door(t_mlx *mlx, int w, int h)
 {
+	t_map	map;
 	t_img	img;
 
 	img.img_width = 0;
 	img.img_width = 0;
-	img.img = mlx_xpm_file_to_image(mlx->mlx_ptr, DOOR,
+	map.door = mlx_xpm_file_to_image(mlx->mlx_ptr, DOOR,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				img.img, w * 64, h * 64);
+				map.door, w * 64, h * 64);
 }
 
 //void	img_init(t_img *img)
@@ -88,7 +92,7 @@ void	draw_map(t_map *map, t_mlx *mlx)
 		while (++j < map->map_width)
 		{
 			if (map->data[i][j] == '1')
-				draw_dirt(mlx, j, i);
+				put_dirt(mlx, j, i);
 			else if (map->data[i][j] == 'P')
 				put_player(mlx, j, i);
 			else if (map->data[i][j] == '0')

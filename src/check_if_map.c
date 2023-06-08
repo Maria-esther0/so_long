@@ -45,6 +45,7 @@ int	check_map_name(char *av)
 {
 	int i;
 
+
 	i = 0;
 	while (!av)
 		return (0);
@@ -78,4 +79,9 @@ int	map_check(char *name)
 	return (0);
 }
 
-//int	check_move(t_map *map, int )
+int item_check(t_map *map)
+{
+	if (map->coin == map->nbr_coins)
+		return (1);
+	return (0);
+}

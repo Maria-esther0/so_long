@@ -12,89 +12,60 @@
 
 #include "../includes/so_long.h"
 
-void	movement(t_map *map, int new_x, int new_y)
+void	move(t_map *map, int pos_y, int pos_x)
 {
-	map->map_width += new_x;
-	map->map_height += new_y;
+	char	next;
+
+	next = map->data[map->x_player + pos_x][map->y_player + pos_y];
+	if (next == '0' || next == 'P' || next == 'C')
+	{
+		if (next == 'C')
+		{
+			map->coin++;
+			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
+		}
+		put_img(map, 64 * map->x_player, 64 * map->y_player, map->grass);
+		map->x_player += pos_x;
+		map->y_player += pos_y;
+		put_img(map, 64 * map->x_player + pos_x, 64 * map->y_player + pos_y, map->player);
+		map->nbr_steps++;
+		ft_printf("You made %d steps\n", map->nbr_steps);
+	}
+	exit_move(map, next);
 }
 
-//void	set_move(t_map *map, int key)
-//{
-//	int x;
-//	int y;
-//
-//	if (key == K_W)
-//		move_up( );
-//	if (key == K_A)
-//		move_left(map, );
-//	if (key == K_S)
-//		move_down(map, );
-//	if (key == K_D)
-//		move_right(map, );
-//}
-//
-//
-//void	move_left(t_map *map, int x, int y)
-//{
-//	int i;
-//	int j;
-//
-//	i = 0;
-//	while (i < map->map_height)
-//	{
-//		j = -1;
-//		while (++j < map->map_width)
-//		{
-//			movement(map, x, y);
-//		}
-//		i++;
-//	}
-//}
-//
-//void	move_right(t_map *map, int x, int y)
-//{
-//	int i;
-//	int j;
-//
-//	i = -1;
-//	while (i++ < map->map_height)
-//	{
-//		j = -1;
-//		while (++j < map->map_width)
-//		{
-//			movement(map, x, y);
-//		}
-//	}
-//}
-//
-//void	move_up(t_map *map, int x, int y)
-//{
-//	int i;
-//	int j;
-//
-//	i = -1;
-//	while (i++ < map->map_height)
-//	{
-//		j = -1;
-//		while (++j < map->map_width)
-//		{
-//			movement(map, x, y);
-//		}
-//	}
-//}
-//
-//void	move_down(t_map *map, int x, int y)
-//{
-//	int i;
-//	int j;
-//
-//	i = -1;
-//	while (i++ < map->map_height)
-//	{
-//		j = -1;
-//		while (++j < map->map_width)
-//		{
-//			movement(map, x, y);
-//		}
-//	}
-//}
+void	player_pos(t_map *map)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (map->data[i])
+	{
+		while (map->data[i][j])
+		{
+			if (map->data[i][j] == 'P')
+			{
+				map->x_player = j;
+				map->y_player = i;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+}
+
+void	exit_move(t_map *map, char next)
+{
+	if (next == 'E')
+	{
+		if (item_check(map) == 1)
+		{
+			map->nbr_coins++;
+		 	ft_printf("Coins collected: %d\n", map->nbr_coins);
+		}
+		close_window();
+	}
+}
