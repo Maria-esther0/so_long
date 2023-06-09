@@ -15,7 +15,7 @@
 void	put_coin(t_mlx *mlx, int w, int h)
 {
 	t_img	img;
-	t_img	map;
+	t_map	map;
 
 	img.img_width = 0;
 	img.img_width = 0;

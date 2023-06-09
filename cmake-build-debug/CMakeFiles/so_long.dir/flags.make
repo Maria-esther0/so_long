@@ -4,7 +4,9 @@
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/System/Library/Frameworks -I/Users/mvillarr/Documents/so_long_new/includes -I/Users/mvillarr/Documents/so_long_new/mlx -I/Users/mvillarr/Documents/so_long_new/src/libft -I/Users/mvillarr/Documents/so_long_new/src/libft/printf -I/Users/mvillarr/Documents/so_long_new/src/libft/get_next_line
+C_INCLUDES = -I/System/Library/Frameworks -I/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/includes -I/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/mlx -I/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft -I/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/printf -I/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/get_next_line
 
-C_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics -Wall -Werror -Wextra -std=gnu99
+C_FLAGSx86_64 = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.5 -fcolor-diagnostics -Wall -Werror -Wextra -std=gnu99
+
+C_FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.5 -fcolor-diagnostics -Wall -Werror -Wextra -std=gnu99
 

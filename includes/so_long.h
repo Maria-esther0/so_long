@@ -68,7 +68,7 @@ typedef struct s_map
 	void	*grass;
 	void	*dirt;
 	void	*door;
-	int 	nbr_coins;
+	void 	*nbr_coins;
 	int 	nbr_steps;
 	int 	x_player;
 	int 	y_player;

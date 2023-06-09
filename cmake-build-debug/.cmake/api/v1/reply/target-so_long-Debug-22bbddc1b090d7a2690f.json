@@ -70,7 +70,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -fcolor-diagnostics"
+					"fragment" : "-g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.5 -fcolor-diagnostics"
 				},
 				{
 					"backtrace" : 4,
@@ -96,23 +96,23 @@
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/so_long_new/includes"
+					"path" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/includes"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/so_long_new/mlx"
+					"path" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/mlx"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/so_long_new/src/libft"
+					"path" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/so_long_new/src/libft/printf"
+					"path" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/printf"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/so_long_new/src/libft/get_next_line"
+					"path" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/get_next_line"
 				}
 			],
 			"language" : "C",
@@ -156,21 +156,21 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/so_long_new/src/libft",
+				"fragment" : "-L/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/so_long_new/src/libft/printf",
+				"fragment" : "-L/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/printf",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/so_long_new/mlx",
+				"fragment" : "-L/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/mlx",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/mvillarr/Documents/so_long_new/src/libft -Wl,-rpath,/Users/mvillarr/Documents/so_long_new/src/libft/printf -Wl,-rpath,/Users/mvillarr/Documents/so_long_new/mlx",
+				"fragment" : "-Wl,-rpath,/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft -Wl,-rpath,/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/src/libft/printf -Wl,-rpath,/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/mlx",
 				"role" : "libraries"
 			},
 			{

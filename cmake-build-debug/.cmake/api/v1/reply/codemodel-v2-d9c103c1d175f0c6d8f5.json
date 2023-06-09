@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "so_long::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-so_long-Debug-9895b8810ffa3f6f269f.json",
+					"jsonFile" : "target-so_long-Debug-22bbddc1b090d7a2690f.json",
 					"name" : "so_long",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/mvillarr/Documents/so_long_new/cmake-build-debug",
-		"source" : "/Users/mvillarr/Documents/so_long_new"
+		"build" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long/cmake-build-debug",
+		"source" : "/Users/mariavillarroel/Documents/GitHub/cursus42/so_long"
 	},
 	"version" : 
 	{
