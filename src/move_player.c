@@ -17,13 +17,16 @@ void	move(t_map *map, int pos_y, int pos_x)
 	char	next;
 
 	next = map->data[map->x_player + pos_x][map->y_player + pos_y];
+	ft_printf("next %c\n", next);
 	if (next == '0' || next == 'P' || next == 'C')
 	{
-		if (next == 'C')
-		{
-			map->coin++;
-			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
-		}
+//		if (next == 'C')
+//		{
+//			map->coin++;
+//			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
+//		}
+		ft_printf("y %d\n", map->y_player);
+		ft_printf("x %d\n", map->y_player);
 		put_img(map, 64 * map->x_player, 64 * map->y_player, map->grass);
 		map->x_player += pos_x;
 		map->y_player += pos_y;

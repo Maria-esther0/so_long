@@ -80,7 +80,7 @@ typedef struct s_map
 
 // map functions
 t_map	*init_map(int fd, char *av);
-t_map	*manage_fd(char *av);
+t_map	manage_fd(char *av);
 int		read_map(t_map **m, char *av);
 
 // window functions
@@ -104,7 +104,9 @@ void	put_player(t_mlx *mlx, int x, int y);
 int		item_check(t_map *map);
 
 // hook functions
-int		key_hooks(int key, t_map *map);
+int 	key_hooks(int key, t_map *map);
+void	key_process(int key, t_map *map);
+//int	key_hooks(int key, t_mlx *mlx);
 
 // other utils
 int		ft_strcmp(char *str1, char *str2);

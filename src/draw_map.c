@@ -22,7 +22,7 @@ void	put_coin(t_mlx *mlx, int w, int h)
 	map.coin = mlx_xpm_file_to_image(mlx->mlx_ptr, COIN,
 				&img.img_width, &img.img_height);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				img.img, w * 64, h * 64);
+				map.coin, w * 64, h * 64);
 }
 
 void	put_grass(t_mlx *mlx, int w, int h)

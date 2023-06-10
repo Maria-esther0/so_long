@@ -21,20 +21,27 @@ int close_window(void)
 int	main(int ac, char **av)
 {
 	t_mlx mlx;
-	t_map *map;
+	t_map map;
 	if (ac != 2)
 	{
 		printf("Usage: ./%s <path/to/map.ber>\n", av[0]);
 		return (1);
 	}
 	map = manage_fd(av[1]);
+	if (!map.data)
+	{
+		printf("error in map\n");
+		return (1);
+	}
+	map.y_player = 0;
+	map.x_player = 0;
 	mlx.mlx_ptr = mlx_init();
-	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, map->map_width * 64, map->map_height * 64,
+	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, map.map_width * 64, map.map_height * 64,
 			"NEW WINDOW");
-	draw_map(map, &mlx);
+	draw_map(&map, &mlx);
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
 //	mlx_key_hook(mlx.win_ptr, move_player, (void *)0);
-	mlx_key_hook(mlx.win_ptr, key_hooks, (void *)0);
+	mlx_key_hook(mlx.win_ptr, key_hooks, &map);
 	mlx_hook(mlx.win_ptr, 17, 0, close_window, NULL);
 	mlx_loop(mlx.mlx_ptr);
 	return (0);
