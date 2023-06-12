@@ -46,7 +46,7 @@ int	read_map(t_map **m, char *av)
 	while (i < (*m)->map_height)
 	{
 		(*m)->data[i] = get_next_line(fd);
-		ft_printf("Map : %s\n", (*m)->data[i]);
+		ft_printf("Map : %s", (*m)->data[i]);
 		i++;
 	}
 	return (0);
@@ -80,6 +80,5 @@ t_map	manage_fd(char *av)
 	map = init_map(fd, av);
 	close(fd);
 	read_map(&map, av);
-//	ft_printf("Reading map : %d\n", &read_map);
 	return (*map);
 }

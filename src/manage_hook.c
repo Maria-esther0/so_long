@@ -29,14 +29,12 @@
 
 int 	key_hooks(int key, t_map *map)
 {
-	ft_printf("map1 %c\n", map->data[0][0]);
 	key_process(key, map);
 	return (0);
 }
 
 void	key_process(int key, t_map *map)
 {
-	ft_printf("map2 %c\n", map->data[0][0]);
 	if (key == K_ESC)
 		close_window();
 //	else if (key == K_W)
@@ -56,7 +54,7 @@ void	key_process(int key, t_map *map)
 //	}
 	if (key == K_D)
 	{
-		move(map, +1, 0);
+		move(map, 1, 0);
 		ft_printf("Pressed D\n");
 	}
 }

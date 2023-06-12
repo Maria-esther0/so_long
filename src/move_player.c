@@ -12,25 +12,32 @@
 
 #include "../includes/so_long.h"
 
-void	move(t_map *map, int pos_y, int pos_x)
+void	move(t_map *map, int pos_x, int pos_y)
 {
 	char	next;
-
+//	t_mlx	*mlx;
+//
+//	mlx = 0;
 	next = map->data[map->x_player + pos_x][map->y_player + pos_y];
 	ft_printf("next %c\n", next);
-	if (next == '0' || next == 'P' || next == 'C')
+	ft_printf("pos x = %d\n", pos_x);
+	ft_printf("pos y = %d\n", pos_y);
+	ft_printf("player x = %d\n", map->x_player);
+	ft_printf("player y = %d\n", map->y_player);
+	if (next == '0' || next == 'P' || next == 'C') // no entra en este bucle
 	{
-//		if (next == 'C')
-//		{
-//			map->coin++;
-//			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
-//		}
+		if (next == 'C')
+		{
+			map->coin++;
+			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
+		}
 		ft_printf("y %d\n", map->y_player);
 		ft_printf("x %d\n", map->y_player);
+//		put_grass(mlx, map->y_player, map->x_player);
 		put_img(map, 64 * map->x_player, 64 * map->y_player, map->grass);
 		map->x_player += pos_x;
 		map->y_player += pos_y;
-		put_img(map, 64 * map->x_player + pos_x, 64 * map->y_player + pos_y, map->player);
+//		put_img(map, 64 * map->x_player + pos_x, 64 * map->y_player + pos_y, map->player);
 		map->nbr_steps++;
 		ft_printf("You made %d steps\n", map->nbr_steps);
 	}
@@ -66,8 +73,8 @@ void	exit_move(t_map *map, char next)
 	{
 		if (item_check(map) == 1)
 		{
-			map->nbr_coins++;
-		 	ft_printf("Coins collected: %d\n", map->nbr_coins);
+			map->nbr_steps++;
+		 	ft_printf("Steps made: %d\n", map->nbr_steps);
 		}
 		close_window();
 	}

@@ -87,7 +87,7 @@ int		read_map(t_map **m, char *av);
 int		close_window(void);
 
 // moving funcions
-void	move(t_map *map, int pos_y, int pos_x);
+void	move(t_map *map, int pos_x, int pos_y);
 void	exit_move(t_map *map, char next);
 void	player_pos(t_map *map);
 
