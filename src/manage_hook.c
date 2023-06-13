@@ -12,8 +12,11 @@
 
 #include "../includes/so_long.h"
 
-//int	key_hooks(int key, t_mlx *mlx)
+//int	key_hooks(int key, t_map *map)
 //{
+//	player_pos(map);
+//	ft_printf("player's position x = %d\n", map->x_player);
+//	ft_printf("player's position y = %d\n", map->y_player);
 //	if (key == K_ESC)
 //		close_window();
 //	else if (key == K_W)
@@ -23,7 +26,7 @@
 //	else if (key == K_A)
 //		ft_printf("Pressed A\n");
 //	else if (key == K_D)
-//	(void)mlx;
+//		ft_printf("Pressed D\n");
 //	return 0;
 //}
 
@@ -37,21 +40,21 @@ void	key_process(int key, t_map *map)
 {
 	if (key == K_ESC)
 		close_window();
-//	else if (key == K_W)
-//	{
-//		move(map, 0, -1);
-//		ft_printf("Pressed W\n");
-//	}
-//	else if (key == K_S)
-//	{
-//		move(map, 0, +1);
-//		ft_printf("Pressed S\n");
-//	}
-//	else if (key == K_A)
-//	{
-//		move(map, -1, 0);
-//		ft_printf("Pressed A\n");
-//	}
+	else if (key == K_W)
+	{
+	 	move(map, 0, -1);
+		ft_printf("Pressed W\n");
+	}
+	else if (key == K_S)
+	{
+		move(map, 0, 1);
+		ft_printf("Pressed S\n");
+	}
+	else if (key == K_A)
+	{
+		move(map, -1, 0);
+		ft_printf("Pressed A\n");
+	}
 	if (key == K_D)
 	{
 		move(map, 1, 0);

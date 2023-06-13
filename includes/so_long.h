@@ -106,7 +106,7 @@ int		item_check(t_map *map);
 // hook functions
 int 	key_hooks(int key, t_map *map);
 void	key_process(int key, t_map *map);
-//int	key_hooks(int key, t_mlx *mlx);
+//int	key_hooks(int key, t_map *map);
 
 // other utils
 int		ft_strcmp(char *str1, char *str2);
