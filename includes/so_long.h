@@ -63,6 +63,7 @@ typedef struct s_img
 typedef struct s_map
 {
 	t_mlx	map;
+	t_mlx	*mlx;
 	void	*player;
 	void	*coin;
 	void	*grass;

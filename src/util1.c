@@ -55,7 +55,7 @@ void	exit_error(const char *error_msg)
 //	}
 //	return (lines);
 //}
-//
+
 //int map_width(int fd)
 //{
 //	int 	width;

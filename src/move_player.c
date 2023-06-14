@@ -15,25 +15,19 @@
 void	move(t_map *map, int pos_x, int pos_y)
 {
 	char	next;
-	t_mlx	*mlx;
+//	t_img	img;
 
-	mlx = NULL;
 	player_pos(map);
 	ft_printf("x player : %d\n", map->x_player);
 	ft_printf("y player : %d\n", map->y_player);
-	if (map->data[map->y_player + pos_y][map->x_player + pos_x] == '0') {
-		next = 0;
-		ft_printf(" si c'est 0 -> %c", next);
-	}
-	else
-		next = map->data[map->y_player + pos_y][map->x_player + pos_x];
-//	next = '0';
-	ft_printf("next %c\n", next);
 	ft_printf("pos x = %d\n", pos_x);
 	ft_printf("pos y = %d\n", pos_y);
 	ft_printf("player x = %d\n", map->x_player);
 	ft_printf("player y = %d\n", map->y_player);
-	if (next == 0 || next == 'P' || next == 'C') // no entra en este bucle
+	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
+	ft_printf("next %c\n", next);
+	next = '0';
+	if (next == '0') // no entra en este bucle
 	{
 		if (next == 'C')
 		{
@@ -42,12 +36,12 @@ void	move(t_map *map, int pos_x, int pos_y)
 		}
 		ft_printf("y %d\n", map->y_player);
 		ft_printf("x %d\n", map->y_player);
-//		mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
-//		put_player(mlx, map->x_player, map->y_player);
-//		put_img(map, 64 * map->x_player, 64 * map->y_player, map->grass);
+		put_grass(map->mlx, map->x_player, map->y_player);
+//		put_player(map->mlx->mlx_ptr, map->x_player, map->x_player);
+//		mlx_put_image_to_window(map->mlx->mlx_ptr, map->mlx->win_ptr,
+//				 map->grass, map->x_player * 64, map->y_player * 64);
 		map->x_player += pos_x;
 		map->y_player += pos_y;
-//		put_img(map, 64 * map->x_player + pos_x, 64 * map->y_player + pos_y, map->player);
 		map->nbr_steps++;
 		ft_printf("You made %d steps\n", map->nbr_steps);
 	}
@@ -76,7 +70,6 @@ void	player_pos(t_map *map)
 
 	i = 0;
 	j = 0;
-	ft_printf("\n\n\ntest : %s\n", map->data[0]);
 	while (map->data[i])
 	{
 		while (map->data[i][j])
@@ -92,6 +85,9 @@ void	player_pos(t_map *map)
 		i++;
 		j = 0;
 	}
+	ft_printf("function player pos => x_player = %d\n", map->x_player);
+	ft_printf("function player pos => x_player = %d\n", map->x_player);
+
 }
 
 void	exit_move(t_map *map, char next)
