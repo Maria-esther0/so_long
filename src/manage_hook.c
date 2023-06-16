@@ -36,7 +36,7 @@ int 	key_hooks(int key, t_map *map)
 	return (0);
 }
 
-void	key_process(int key, t_map *map)
+int	key_process(int key, t_map *map)
 {
 	if (key == K_ESC)
 		close_window();
@@ -60,4 +60,5 @@ void	key_process(int key, t_map *map)
 		move(map, 1, 0);
 		ft_printf("Pressed D\n");
 	}
+	return (0);
 }

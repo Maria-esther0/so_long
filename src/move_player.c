@@ -27,7 +27,7 @@ void	move(t_map *map, int pos_x, int pos_y)
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	ft_printf("next %c\n", next);
 	next = '0';
-	if (next == '0') // no entra en este bucle
+	if (next == '0')
 	{
 		if (next == 'C')
 		{
@@ -36,9 +36,7 @@ void	move(t_map *map, int pos_x, int pos_y)
 		}
 		ft_printf("y %d\n", map->y_player);
 		ft_printf("x %d\n", map->y_player);
-		put_grass(map->mlx, map->x_player, map->y_player);
-//		put_player(map->mlx->mlx_ptr, map->x_player, map->x_player);
-//		mlx_put_image_to_window(map->mlx->mlx_ptr, map->mlx->win_ptr,
+//		mlx_put_image_to_window(map->mlx.mlx_ptr, map->mlx.win_ptr,
 //				 map->grass, map->x_player * 64, map->y_player * 64);
 		map->x_player += pos_x;
 		map->y_player += pos_y;
@@ -85,9 +83,6 @@ void	player_pos(t_map *map)
 		i++;
 		j = 0;
 	}
-	ft_printf("function player pos => x_player = %d\n", map->x_player);
-	ft_printf("function player pos => x_player = %d\n", map->x_player);
-
 }
 
 void	exit_move(t_map *map, char next)

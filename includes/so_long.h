@@ -63,7 +63,7 @@ typedef struct s_img
 typedef struct s_map
 {
 	t_mlx	map;
-	t_mlx	*mlx;
+	t_mlx	mlx;
 	void	*player;
 	void	*coin;
 	void	*grass;
@@ -98,7 +98,7 @@ void	put_grass(t_mlx *mlx, int w, int h);
 void	put_dirt(t_mlx *mlx, int w, int h);
 void	put_coin(t_mlx *mlx, int w, int h);
 void	put_door(t_mlx *mlx, int w, int h);
-void	put_img(t_map *map, int x, int y, void *img);
+//void	put_img(t_map *map, int x, int y, void *img);
 
 // P/C/1/0/E functions
 void	put_player(t_mlx *mlx, int x, int y);
@@ -106,7 +106,7 @@ int		item_check(t_map *map);
 
 // hook functions
 int 	key_hooks(int key, t_map *map);
-void	key_process(int key, t_map *map);
+int 	key_process(int key, t_map *map);
 //int	key_hooks(int key, t_map *map);
 
 // other utils
