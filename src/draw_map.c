@@ -43,6 +43,7 @@ void	put_dirt(t_mlx *mlx, int w, int h)
 	t_img	img;
 	t_map	map;
 
+//	map.dirt =
 	img.img_width = 0;
 	img.img_width = 0;
 	map.dirt = mlx_xpm_file_to_image(mlx->mlx_ptr, DIRT,

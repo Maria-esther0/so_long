@@ -15,18 +15,15 @@
 void	move(t_map *map, int pos_x, int pos_y)
 {
 	char	next;
-//	t_img	img;
+	t_img	img;
 
 	player_pos(map);
-	ft_printf("x player : %d\n", map->x_player);
-	ft_printf("y player : %d\n", map->y_player);
 	ft_printf("pos x = %d\n", pos_x);
 	ft_printf("pos y = %d\n", pos_y);
 	ft_printf("player x = %d\n", map->x_player);
 	ft_printf("player y = %d\n", map->y_player);
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	ft_printf("next %c\n", next);
-	next = '0';
 	if (next == '0')
 	{
 		if (next == 'C')
@@ -36,8 +33,10 @@ void	move(t_map *map, int pos_x, int pos_y)
 		}
 		ft_printf("y %d\n", map->y_player);
 		ft_printf("x %d\n", map->y_player);
-//		mlx_put_image_to_window(map->mlx.mlx_ptr, map->mlx.win_ptr,
-//				 map->grass, map->x_player * 64, map->y_player * 64);
+		map->grass = mlx_xpm_file_to_image(map->map.mlx_ptr, GRASS,
+					&img.img_width, &img.img_height);
+		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
+				 map->grass, map->map_width * 64, map->map_height * 64);
 		map->x_player += pos_x;
 		map->y_player += pos_y;
 		map->nbr_steps++;
