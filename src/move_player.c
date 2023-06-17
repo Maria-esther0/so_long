@@ -16,12 +16,13 @@ void	move(t_map *map, int pos_x, int pos_y)
 {
 	char	next;
 	t_img	img;
+	int res1, res2, res3, res4;
 
 	player_pos(map);
-	ft_printf("pos x = %d\n", pos_x);
-	ft_printf("pos y = %d\n", pos_y);
-	ft_printf("player x = %d\n", map->x_player);
-	ft_printf("player y = %d\n", map->y_player);
+//	ft_printf("pos x = %d\n", pos_x);
+//	ft_printf("pos y = %d\n", pos_y);
+//	ft_printf("player x = %d\n", map->x_player);
+//	ft_printf("player y = %d\n", map->y_player);
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	ft_printf("next %c\n", next);
 	if (next == '0')
@@ -31,16 +32,31 @@ void	move(t_map *map, int pos_x, int pos_y)
 			map->coin++;
 			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
 		}
-		ft_printf("y %d\n", map->y_player);
-		ft_printf("x %d\n", map->y_player);
+		map->player = mlx_xpm_file_to_image(map->map.mlx_ptr, CAPYBARA,
+					&img.img_width, &img.img_height);
+		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
+					map->player, (map->x_player + pos_x) * 64, (map->y_player + pos_y) * 64);
 		map->grass = mlx_xpm_file_to_image(map->map.mlx_ptr, GRASS,
 					&img.img_width, &img.img_height);
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
-				 map->grass, map->map_width * 64, map->map_height * 64);
+								map->grass, map->x_player + pos_y * 64, map->y_player + pos_y * 64);
 		map->x_player += pos_x;
 		map->y_player += pos_y;
+//		ft_printf("new pos x = %d\n", pos_x);
+//		ft_printf("new pos y = %d\n", pos_y);
+		res1 = map->x_player - map->map_width;
+		res2 = map->y_player - map->map_height;
+		res3 = map->map_width - map->x_player;
+		res4 = map->map_height - map->y_player;
+		ft_printf("new player x = %d\n", map->x_player);
+		ft_printf("new player y = %d\n", map->y_player);
+		ft_printf("map width = %d\n", map->map_width);
+		ft_printf("map height = %d\n\n", map->map_height);
+		ft_printf("(x player) %d - (map width) %d => %d\n", map->x_player, map->map_width, res1);
+		ft_printf("(y player) %d - (map height) %d => %d\n\n", map->y_player,map->map_height, res2);
+		ft_printf("(map width) %d - (x player) %d => %d\n", map->map_width, map->x_player, res3);
+		ft_printf("(map height) %d - (y player) %d => %d\n", map->map_height, map->y_player, res4);
 		map->nbr_steps++;
-		ft_printf("You made %d steps\n", map->nbr_steps);
 	}
 	exit_move(map, next);
 }
