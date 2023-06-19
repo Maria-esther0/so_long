@@ -42,7 +42,6 @@ int	main(int ac, char **av)
 	draw_map(&map, &mlx);
 	map.map = mlx;
 //	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
-//	mlx_key_hook(mlx.win_ptr, move_player, (void *)0);
 	mlx_key_hook(mlx.win_ptr, key_hooks, &map);
 	mlx_hook(mlx.win_ptr, 17, 0, close_window, &map);
 	mlx_loop(mlx.mlx_ptr);

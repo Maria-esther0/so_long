@@ -42,22 +42,22 @@ int	key_process(int key, t_map *map)
 		close_window();
 	else if (key == K_W)
 	{
-	 	move(map, 0, -1);
+	 	move(map, 0, map->y_player--);
 		ft_printf("Pressed W\n");
 	}
 	else if (key == K_S)
 	{
-		move(map, 0, 1);
+		move(map, 0, map->y_player++);
 		ft_printf("Pressed S\n");
 	}
 	else if (key == K_A)
 	{
-		move(map, -1, 0);
+		move(map, map->x_player--, 0);
 		ft_printf("Pressed A\n");
 	}
 	if (key == K_D)
 	{
-		move(map, 1, 0);
+		move(map, map->x_player++, 0);
 		ft_printf("Pressed D\n");
 	}
 	return (0);
