@@ -24,7 +24,6 @@ void	move(t_map *map, int pos_x, int pos_y)
 	char	next;
 	t_img	img;
 
-//	player_pos(map);
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	ft_printf("next before the movement %c => x=%d	y=%d\n", next, map->x_player, map->y_player);
 	if (next == '0' || next == 'C' || next != '1')
@@ -50,8 +49,6 @@ void	move(t_map *map, int pos_x, int pos_y)
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
 								map->grass,  64 * (map->x_player), 64 * (map->y_player));
 		update_player_position(pos_x, pos_y, map);
-//		map->x_player += pos_x;
-//		map->y_player += pos_y;
 		ft_printf("next after the movement %c => x=%d	y=%d\n", next, map->x_player, map->y_player);
 	}
 	exit_move(map, next);
