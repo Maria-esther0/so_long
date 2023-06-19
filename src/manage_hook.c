@@ -36,29 +36,57 @@ int 	key_hooks(int key, t_map *map)
 	return (0);
 }
 
+//int	key_process(int key, t_map *map)
+//{
+//	if (key == K_ESC)
+//		close_window();
+//	else if (key == K_W)
+//	{
+//	 	move(map, 0, map->y_player--);
+//		ft_printf("Pressed W\n");
+//	}
+//	else if (key == K_S)
+//	{
+//		move(map, 0, map->y_player++);
+//		ft_printf("Pressed S\n");
+//	}
+//	else if (key == K_A)
+//	{
+//		move(map, map->x_player--, 0);
+//		ft_printf("Pressed A\n");
+//	}
+//	if (key == K_D)
+//	{
+//		move(map, map->x_player++, 0);
+//		ft_printf("Pressed D\n");
+//	}
+//	return (0);
+//}
+
 int	key_process(int key, t_map *map)
 {
 	if (key == K_ESC)
 		close_window();
 	else if (key == K_W)
 	{
-	 	move(map, 0, map->y_player--);
+		move(map, 0, -1);
 		ft_printf("Pressed W\n");
 	}
 	else if (key == K_S)
 	{
-		move(map, 0, map->y_player++);
+		move(map, 0, 1);
 		ft_printf("Pressed S\n");
 	}
 	else if (key == K_A)
 	{
-		move(map, map->x_player--, 0);
+		move(map, -1, 0);
 		ft_printf("Pressed A\n");
 	}
 	if (key == K_D)
 	{
-		move(map, map->x_player++, 0);
+		move(map, 1, 0);
 		ft_printf("Pressed D\n");
 	}
 	return (0);
 }
+

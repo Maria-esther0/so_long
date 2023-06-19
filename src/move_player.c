@@ -12,54 +12,50 @@
 
 #include "../includes/so_long.h"
 
+void	update_player_position(int new_x, int new_y, t_map *map)
+{
+	map->x_player += new_x;
+	map->y_player += new_y;
+	ft_printf("x = %d\ny = %d\n\n", map->x_player, map->y_player);
+}
+
 void	move(t_map *map, int pos_x, int pos_y)
 {
 	char	next;
 	t_img	img;
 
-	player_pos(map);
-//	ft_printf("pos x = %d\n", pos_x);
-//	ft_printf("pos y = %d\n", pos_y);
-//	ft_printf("player x = %d\n", map->x_player);
-//	ft_printf("player y = %d\n", map->y_player);
+//	player_pos(map);
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	ft_printf("next before the movement %c => x=%d	y=%d\n", next, map->x_player, map->y_player);
 	if (next == '0' || next == 'C' || next != '1')
 	{
 //		if (next == 'C')
 //		{
-//			map->coin++;
+//			map->nbr_coins++;
 //			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
+//			map->grass = mlx_xpm_file_to_image(map->map.mlx_ptr, GRASS,
+//											   &img.img_width, &img.img_height);
+//			mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
+//									map->grass,  64 * map->x_player + pos_x, 64 * map->y_player + pos_y);
 //		}
 		map->player = mlx_xpm_file_to_image(map->map.mlx_ptr, CAPYBARA,
 					&img.img_width, &img.img_height);
+		ft_printf("position apres du move X %d\n\n", map->x_player + pos_x);
+		ft_printf("position apres du move Y %d\n\n", map->y_player + pos_y);
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
 					map->player, (map->x_player + pos_x) * 64, (map->y_player + pos_y) * 64);
+		ft_printf("hello");
 		map->grass = mlx_xpm_file_to_image(map->map.mlx_ptr, GRASS,
 					&img.img_width, &img.img_height);
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
-								map->grass,  64 * map->x_player + pos_x, 64 * map->y_player + pos_y);
-		map->x_player += pos_x;
-		map->y_player += pos_y;
+								map->grass,  64 * (map->x_player), 64 * (map->y_player));
+		update_player_position(pos_x, pos_y, map);
+//		map->x_player += pos_x;
+//		map->y_player += pos_y;
 		ft_printf("next after the movement %c => x=%d	y=%d\n", next, map->x_player, map->y_player);
 	}
 	exit_move(map, next);
 }
-
-//void	moves(t_map *map, int pos_x, int pos_y)
-//{
-//	char next;
-//
-//	next = map->data[map->x_player][map->y_player];
-//	while (next == '1')
-//	{
-//		map->x_player++;
-//	}
-//	if (next == '0')
-//	{
-//
-//	}
-//}
 
 void	player_pos(t_map *map)
 {
