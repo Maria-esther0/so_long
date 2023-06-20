@@ -12,18 +12,6 @@
 
 #include "../includes/so_long.h"
 
-int count_moves(void)
-{
-	static int mv;
-
-	if (!mv)
-		return (0);
-	while (mv)
-		mv++;
-	ft_printf("mv %d\n", mv);
-	return (0);
-}
-
 int	ft_strcmp(char *str1, char *str2)
 {
 	int	i;
