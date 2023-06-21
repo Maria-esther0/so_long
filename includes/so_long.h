@@ -91,6 +91,8 @@ int		close_window(void);
 void	move(t_map *map, int pos_x, int pos_y);
 void	exit_move(t_map *map, char next);
 void	player_pos(t_map *map);
+void	update_player_position(int new_x, int new_y, t_map *map);
+void	collect_coins(t_map *map, char next, int pos_x, int pos_y);
 
 // drawing functions
 void	draw_map(t_map *map, t_mlx *mlx);

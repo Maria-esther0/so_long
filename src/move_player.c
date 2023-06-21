@@ -18,11 +18,17 @@ void	update_player_position(int new_x, int new_y, t_map *map)
 	map->y_player += new_y;
 }
 
-void	collect_coins(t_map *map, char next)
+void	collect_coins(t_map *map, char next, int pos_x, int pos_y)
 {
+	(void)pos_x;
+	(void)pos_y;
+
 	if (next == 'C')
 	{
 		map->nbr_coins += 1;
+		ft_printf("\nx player %d - pos_x %d = %d\n",map->x_player, pos_x, map->x_player - pos_x);
+		ft_printf("y player %d - pos_y %d = %d\n\n", map->y_player, pos_y, map->y_player - pos_y);
+		// falta poner una linea de codigo que remplace el 1 por 0 cuando el personaje coja la moneda
 		ft_printf("you collected %d coins!\n", map->nbr_coins);
 	}
 }
@@ -35,12 +41,7 @@ void	move(t_map *map, int pos_x, int pos_y)
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	if (next == '0' || next == 'C' || next != '1')
 	{
-		collect_coins(map, next);
-//			map->data[map->x_player + pos_x][map->y_player + pos_y] = 0;
-//			map->grass = mlx_xpm_file_to_image(map->map.mlx_ptr, GRASS,
-//											   &img.img_width, &img.img_height);
-//			mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
-//									map->grass,  64 * map->x_player + pos_x, 64 * map->y_player + pos_y);
+		collect_coins(map, next, pos_x, pos_y);
 		map->player = mlx_xpm_file_to_image(map->map.mlx_ptr, CAPYBARA,
 					&img.img_width, &img.img_height);
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
