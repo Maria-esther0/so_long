@@ -14,21 +14,25 @@
 
 int	map_is_rectangle(t_map *map)
 {
-	long unsigned int	width;
-	int 				i;
+	int	line;
+	int i;
+	int j;
 
-	i = -1;
-	width = ft_strlen(map->data[i]);
-	if (map == NULL || map->data == NULL || map->map_width <= 0
-		|| map->map_height <= 0)
-		return (0);
-	while (++i < map->map_height)
+	line = map->map_width;
+	i = 1;
+	while (i < map->map_height)
 	{
-		if (ft_strlen(map->data[i]) != width)
+		j = 0;
+		while (map->data[i][j] != '\n' && map->data[i][j])
+			j++;
+		if (j != line)
 			return (0);
+		i++;
 	}
 	return (1);
 }
+
+
 
 int	there_is_a_map(char	*name)
 {
@@ -78,6 +82,8 @@ int	map_check(char *name)
 //	}
 	return (0);
 }
+
+//int 	check_
 
 int item_check(t_map *map)
 {

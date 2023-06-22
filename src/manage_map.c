@@ -80,7 +80,5 @@ t_map	manage_fd(char *av)
 	map = init_map(fd, av);
 	close(fd);
 	read_map(&map, av);
-	ft_printf("map data h :%c\n", map->data[0][1]);
-	ft_printf("map data w :%c\n", map->data[1][1]);
 	return (*map);
 }
