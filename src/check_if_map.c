@@ -14,24 +14,20 @@
 
 int	map_check(char *name, t_map map)
 {
-//	if (!check_map_name(name))
+//	if (!there_is_a_map(name))
 //	{
-//		ft_printf("\nMap's name is not valid ! \n");
+//		ft_printf("\nNo map found\n");
 //		return (0);
 //	}
-	if (!there_is_a_map(name))
-	{
-		ft_printf("\nNo map found\n");
-		return (0);
-	}
-	else if (!map_is_rectangle(&map))
+	(void)name;
+	if (!map_is_rectangle(&map))
 	{
 		ft_printf("\nMap is not valid: not rectangular map!\n");
 		return (0);
 	}
 	else if (!check_wall(&map))
 	{
-		ft_printf("\nMap does not end with "".ber""\n");
+		ft_printf("\nMap does not have valid walls\n");
 		return (0);
 	}
 	return (1);
@@ -45,14 +41,14 @@ int check_args(int ac, char **av)
 	if (ac != 2)
 	{
 		printf("Usage: %s <path/to/map.ber>\n", av[0]);
-		close_window();
+		exit (0);
 	}
 	while (av[1][av_size] != '\0')
 		av_size++;
 	if (check_map_name(av_size, av) == 1)
 	{
-		ft_printf("\\nMap does not end with \"\".ber\"\"\\n");
-		close_window();
+		ft_printf("\nMap does not end with '.ber'\n");
+		exit (0);
 	}
 	return (0);
 }
@@ -79,30 +75,9 @@ int	map_is_rectangle(t_map *map)
 }
 
 //fonction does not work
-int	there_is_a_map(char	*av)
-{
-	int fd;
-
-	fd = open(av, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	close(fd);
-	return (1);
-}
-
-//fonction does not work
-//int	check_map_name(char *av)
+//int	there_is_a_map(char	*av)
 //{
-//	int i;
-//
-//	i = 0;
-//	while (!av)
-//		return (0);
-//	if (av[i])
-//		i++;
-//	i -= 1;
-//	if (av[i] == 'r' && av[i - 1] == 'e' && av[i - 2] == 'b'
-//		&& av[i - 3] == '.' )
+//	if (ft_strlen(av) != 0)
 //		return (0);
 //	return (1);
 //}

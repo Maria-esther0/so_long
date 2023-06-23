@@ -29,13 +29,10 @@ int	main(int ac, char **av)
 	t_mlx mlx;
 	t_map map;
 
-//	if (ac != 2)
-//	{
-//		printf("Usage: %s <path/to/map.ber>\n", av[0]);
-//		return (1);
-//	}
+//	sleep(10);
 	check_args(ac, av);
-	map = manage_fd(av[1]);
+	//generate game map
+	manage_fd(av[1], &map);
 	if (!map.data)
 	{
 		printf("error in map\n");
@@ -48,7 +45,7 @@ int	main(int ac, char **av)
 			"NEW WINDOW");
 	draw_map(&map, &mlx);
 	if (!map_check(av[1], map))
-		close_window();
+		exit (0);
 	map.map = mlx;
 	player_pos(&map);
 	map.nbr_coins = 0;

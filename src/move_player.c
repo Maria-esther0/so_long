@@ -41,6 +41,7 @@ void	move(t_map *map, int pos_x, int pos_y)
 	next = map->data[map->y_player + pos_y][map->x_player + pos_x];
 	if (next == '0' || next == 'C' || next != '1')
 	{
+		map->nbr_steps++;
 		collect_coins(map, next, pos_x, pos_y);
 		map->player = mlx_xpm_file_to_image(map->map.mlx_ptr, CAPYBARA,
 					&img.img_width, &img.img_height);

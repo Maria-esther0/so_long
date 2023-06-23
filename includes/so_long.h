@@ -80,8 +80,8 @@ typedef struct s_map
 }	t_map;
 
 // map functions
-t_map	*init_map(int fd, char *av);
-t_map	manage_fd(char *av);
+void	init_map(int fd, char	*av, t_map *map);
+void	manage_fd(char *av, t_map *map);
 int		read_map(t_map **m, char *av);
 //int		check_map_name(char *av);
 int 	check_map_name(int av_size, char **av);

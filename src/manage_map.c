@@ -52,24 +52,18 @@ int	read_map(t_map **m, char *av)
 	return (0);
 }
 
-t_map	*init_map(int fd, char	*av)
+void init_map(int fd, char	*av, t_map *map)
 {
-	t_map	*map;
 	(void)av;
 
-	map = (t_map *)malloc(sizeof (t_map));
-	if (!map)
-		exit(EXIT_FAILURE);
 	map->map_width = 0;
 	map->map_height = 0;
 	get_w_h_map(fd, &map);
-	return (map);
 }
 
-t_map	manage_fd(char *av)
+void	manage_fd(char *av, t_map *map)
 {
 	int		fd;
-	t_map	*map;
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
@@ -77,8 +71,7 @@ t_map	manage_fd(char *av)
 		perror("Found Error in file\n");
 		exit(EXIT_FAILURE);
 	}
-	map = init_map(fd, av);
+	init_map(fd, av, map);
 	close(fd);
 	read_map(&map, av);
-	return (*map);
 }
