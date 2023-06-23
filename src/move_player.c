@@ -28,18 +28,8 @@ void	collect_coins(t_map *map, char next, int pos_x, int pos_y)
 	if (next == 'C')
 	{
 		map->nbr_coins ++;
-//		ft_printf("y_player %d + pos_y %d = %d\n", map->y_player, pos_y, map->y_player + pos_y);
-//		ft_printf("x_player %d + pos_x %d = %d\n", map->x_player, pos_x, map->x_player + pos_x);
 		map->data[map->y_player + pos_y][map->x_player + pos_x] = '0';
 		ft_printf("you collected %d coins!\n", map->nbr_coins);
-//		ft_printf("%c - ", map->data[1][0]);
-//		ft_printf("%c - ", map->data[1][1]);
-//		ft_printf("%c - ", map->data[1][2]); //?
-//		ft_printf("%c - ", map->data[1][3]); //?
-//		ft_printf("%c - ", map->data[1][4]);
-//		ft_printf("%c - ", map->data[1][5]);
-//		ft_printf("%c - ", map->data[1][6]);
-//		ft_printf("%c - ", map->data[1][7]);
 	}
 }
 
@@ -61,21 +51,8 @@ void	move(t_map *map, int pos_x, int pos_y)
 		mlx_put_image_to_window(map->map.mlx_ptr, map->map.win_ptr,
 								map->grass,  64 * (map->x_player), 64 * (map->y_player));
 		update_player_position(pos_x, pos_y, map);
-//		map->nbr_steps++;
 	}
 	exit_move(map, next);
-}
-
-int count_moves(void)
-{
-	static int mv;
-
-	if (!mv)
-		return (0);
-	while (mv)
-		mv++;
-	ft_printf("mv %d\n", mv);
-	return (0);
 }
 
 void	player_pos(t_map *map)

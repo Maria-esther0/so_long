@@ -83,6 +83,13 @@ typedef struct s_map
 t_map	*init_map(int fd, char *av);
 t_map	manage_fd(char *av);
 int		read_map(t_map **m, char *av);
+//int		check_map_name(char *av);
+int 	check_map_name(int av_size, char **av);
+int		there_is_a_map(char	*name);
+int		map_is_rectangle(t_map *map);
+int		map_check(char *name, t_map map);
+int		check_wall(t_map *map);
+int		check_args(int ac, char **av);
 
 // window functions
 int		close_window(void);
@@ -115,6 +122,5 @@ int 	key_process(int key, t_map *map);
 int		ft_strcmp(char *str1, char *str2);
 void	ft_free(char **tab);
 void	exit_error(const char *error_msg);
-int		count_moves(void);
 
 #endif

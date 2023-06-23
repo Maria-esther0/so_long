@@ -15,7 +15,13 @@
 int close_window(void)
 {
 	ft_printf("\nGame closed successfully!\n");
-	exit(0);
+	exit (0);
+}
+
+int failed_map(void)
+{
+	ft_printf("\n\nThe map format you gave me is shit\n");
+	exit (0);
 }
 
 int	main(int ac, char **av)
@@ -23,11 +29,12 @@ int	main(int ac, char **av)
 	t_mlx mlx;
 	t_map map;
 
-	if (ac != 2)
-	{
-		printf("Usage: %s <path/to/map.ber>\n", av[0]);
-		return (1);
-	}
+//	if (ac != 2)
+//	{
+//		printf("Usage: %s <path/to/map.ber>\n", av[0]);
+//		return (1);
+//	}
+	check_args(ac, av);
 	map = manage_fd(av[1]);
 	if (!map.data)
 	{
@@ -40,8 +47,9 @@ int	main(int ac, char **av)
 	mlx.win_ptr = mlx_new_window(mlx.mlx_ptr, map.map_width * 64, map.map_height * 64,
 			"NEW WINDOW");
 	draw_map(&map, &mlx);
+	if (!map_check(av[1], map))
+		close_window();
 	map.map = mlx;
-//	mlx_key_hook(mlx.win_ptr, count_moves, (void *)0);
 	player_pos(&map);
 	map.nbr_coins = 0;
 	map.nbr_steps = 1;
