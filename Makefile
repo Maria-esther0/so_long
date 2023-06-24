@@ -7,20 +7,15 @@ LIB		= src/libft/libft.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
-			src/util1.c\
 			src/draw_map.c\
 			src/manage_map.c\
-			src/manage_player.c\
 			src/move_player.c\
-			src/create_map.c\
 			src/manage_hook.c\
 			src/check_if_map.c\
-			src/draw_player.c\
 			src/free.c\
-			src/init_map.c\
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

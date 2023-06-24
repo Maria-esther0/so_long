@@ -3,105 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   draw_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvillarr <mvillarr@student.42.ch>          +#+  +:+       +#+        */
+/*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 15:18:35 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/05/15 15:18:37 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/06/24 19:39:21 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	put_coin(t_mlx *mlx, int w, int h)
+void	img_init(t_mlx *mlx, t_img *dst, char *path)
 {
-	t_img	img;
-	t_map	map;
-
-	img.img_width = 0;
-	img.img_width = 0;
-	map.coin = mlx_xpm_file_to_image(mlx->mlx_ptr, COIN,
-				&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				map.coin, w * 64, h * 64);
+	dst->width = 0;
+	dst->height = 0;
+	dst->mlx_img = mlx_xpm_file_to_image(mlx->mlx_ptr, path,
+				&dst->width, &dst->height);
+	dst->img_path = path;
 }
 
-void	put_grass(t_mlx *mlx, int w, int h)
+void init_atlas(t_scene *sc)
 {
-	t_img	img;
-	t_map	map;
-
-	img.img_width = 0;
-	img.img_height = 0;
-	map.grass = mlx_xpm_file_to_image(mlx->mlx_ptr, GRASS,
-				&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				map.grass, w * 64, h * 64);
+	img_init(&sc->mlx, &sc->atlas.player, CAPYBARA);
+	img_init(&sc->mlx, &sc->atlas.coin, COIN);
+	img_init(&sc->mlx, &sc->atlas.grass, GRASS);
+	img_init(&sc->mlx, &sc->atlas.dirt, DIRT);
+	img_init(&sc->mlx, &sc->atlas.door, DOOR);
 }
 
-void	put_dirt(t_mlx *mlx, int w, int h)
+
+void put_img_to_window(t_mlx *mlx, t_img *img, int w, int h)
 {
-	t_img	img;
-	t_map	map;
-
-//	map.dirt =
-	img.img_width = 0;
-	img.img_width = 0;
-	map.dirt = mlx_xpm_file_to_image(mlx->mlx_ptr, DIRT,
-				&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				map.dirt, w * 64, h * 64);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, img->mlx_img, w * 64, h * 64);
 }
-
-void	put_door(t_mlx *mlx, int w, int h)
-{
-	t_map	map;
-	t_img	img;
-
-	img.img_width = 0;
-	img.img_width = 0;
-	map.door = mlx_xpm_file_to_image(mlx->mlx_ptr, DOOR,
-				&img.img_width, &img.img_height);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr,
-				map.door, w * 64, h * 64);
-}
-
-//void	img_init(t_img *img)
-//{
-//	img->img_height = ;
-//	img->img_width = ;
-//	img->player = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			CAPYBARA, &img->img_width, &img->img_height);
-//	img->coin = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			COIN, &img->img_width, &img->img_height);
-//	img->grass = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			GRASS, &img->img_width, &img->img_height);
-//	img->dirt = mlx_xpm_file_to_image(img->game.mlx_ptr,
-//			DIRT, &img->img_width, &img->img_height);
-//}
 
 // faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les
 // images avec leur char
-void	draw_map(t_map *map, t_mlx *mlx)
+void	draw_map(t_scene *sc, t_mlx *mlx)
 {
 	int 	i;
 	int 	j;
 
 	i = -1;
-	while (++i < map->map_height)
+	while (++i < sc->map_height)
 	{
 		j = -1;
-		while (++j < map->map_width)
+		while (++j < sc->map_width)
 		{
-			if (map->data[i][j] == '1')
-				put_dirt(mlx, j, i);
-			else if (map->data[i][j] == 'P')
-				put_player(mlx, j, i);
-			else if (map->data[i][j] == '0')
-				put_grass(mlx, j, i);
-			else if (map->data[i][j] == 'E')
-				put_door(mlx, j, i);
-			else if (map->data[i][j] == 'C')
-				put_coin(mlx, j, i);
+			if (sc->data[i][j] == '1')
+				put_img_to_window(mlx, &sc->atlas.dirt, j, i);
+			else if (sc->data[i][j] == 'P')
+				put_img_to_window(mlx, &sc->atlas.player, j, i);
+			else if (sc->data[i][j] == '0')
+				put_img_to_window(mlx, &sc->atlas.grass, j, i);
+			else if (sc->data[i][j] == 'E')
+				put_img_to_window(mlx, &sc->atlas.door, j, i);
+			else if (sc->data[i][j] == 'C')
+				put_img_to_window(mlx, &sc->atlas.coin, j, i);
 		}
 	}
 }

@@ -31,6 +31,7 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	stash = stash_filling(fd, stash, buffer);
+	free (buffer);
 	if (*stash == 0)
 	{
 		free(stash);

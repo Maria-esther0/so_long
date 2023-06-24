@@ -3,40 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvillarr <mvillarr@student.42.ch>          +#+  +:+       +#+        */
+/*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 14:21:09 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/05/20 14:21:11 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/06/24 20:11:54 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../includes/so_long.h"
 
-void	free_the_map(t_map	*map)
+void	free_the_map(t_scene	*sc)
 {
 	int	i;
 
+	//todo free atlas and
 	i = 0;
-	if (!map)
+	if (!sc)
 		return;
-	if (map->data)
+	if (sc->data)
 	{
-		while (i < map->map_height)
+		while (i < sc->map_height)
 		{
-			free(map->data[i]);
-			map->data[i] = NULL;
+			free(sc->data[i]);
+			sc->data[i] = NULL;
 			i++;
 		}
-		free(map->data);
-		map->data = NULL;
+		free(sc->data);
+		sc->data = NULL;
 	}
-	if (map->name)
+	if (sc->name)
 	{
-		free(map->name);
-		map->name = NULL;
+		free(sc->name);
+		sc->name = NULL;
 	}
-	free(map);
-	map = NULL;
+	sc = NULL;
 }
 
 void	ft_free(char **tab)
