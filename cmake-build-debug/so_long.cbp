@@ -94,19 +94,10 @@
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/check_if_map.c">
 			<Option target="so_long"/>
 		</Unit>
-		<Unit filename="/Users/mvillarr/Documents/so_long/src/create_map.c">
-			<Option target="so_long"/>
-		</Unit>
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/draw_map.c">
 			<Option target="so_long"/>
 		</Unit>
-		<Unit filename="/Users/mvillarr/Documents/so_long/src/draw_player.c">
-			<Option target="so_long"/>
-		</Unit>
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/free.c">
-			<Option target="so_long"/>
-		</Unit>
-		<Unit filename="/Users/mvillarr/Documents/so_long/src/init_map.c">
 			<Option target="so_long"/>
 		</Unit>
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/main.c">
@@ -118,13 +109,7 @@
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/manage_map.c">
 			<Option target="so_long"/>
 		</Unit>
-		<Unit filename="/Users/mvillarr/Documents/so_long/src/manage_player.c">
-			<Option target="so_long"/>
-		</Unit>
 		<Unit filename="/Users/mvillarr/Documents/so_long/src/move_player.c">
-			<Option target="so_long"/>
-		</Unit>
-		<Unit filename="/Users/mvillarr/Documents/so_long/src/util1.c">
 			<Option target="so_long"/>
 		</Unit>
 		<Unit filename="/Users/mvillarr/Documents/so_long/CMakeLists.txt">

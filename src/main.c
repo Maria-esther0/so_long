@@ -6,7 +6,7 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:10:12 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/24 19:36:28 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/06/26 20:13:14 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int ac, char **av)
 {
 	t_scene sc;
 
+	sleep(10);
 	check_args(ac, av);
 	manage_fd(av[1], &sc);
 	if (!sc.data)
@@ -31,22 +32,16 @@ int	main(int ac, char **av)
 	}
 	sc.y_player = 0;
 	sc.x_player = 0;
-
 	sc.mlx.mlx_ptr = mlx_init();
 	sc.mlx.win_ptr = mlx_new_window(sc.mlx.mlx_ptr, sc.map_width * 64, sc.map_height * 64,
 			"NEW WINDOW");
 	init_atlas(&sc);
-
-	draw_map(&sc, &sc.mlx);
-
-
 	if (!map_check(av[1], sc))
 		exit (0);
-		
+	draw_map(&sc, &sc.mlx);
 	player_pos(&sc);
 	sc.nbr_coins = 0;
 	sc.nbr_steps = 1;
-	
 	mlx_key_hook(sc.mlx.win_ptr, key_hooks, &sc);
 	mlx_hook(sc.mlx.win_ptr, 17, 1L << 17, close_window, &sc);
 	mlx_loop(sc.mlx.mlx_ptr);

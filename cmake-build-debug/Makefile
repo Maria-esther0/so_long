@@ -156,30 +156,6 @@ src/check_if_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/check_if_map.c.s
 .PHONY : src/check_if_map.c.s
 
-src/create_map.o: src/create_map.c.o
-.PHONY : src/create_map.o
-
-# target to build an object file
-src/create_map.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/create_map.c.o
-.PHONY : src/create_map.c.o
-
-src/create_map.i: src/create_map.c.i
-.PHONY : src/create_map.i
-
-# target to preprocess a source file
-src/create_map.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/create_map.c.i
-.PHONY : src/create_map.c.i
-
-src/create_map.s: src/create_map.c.s
-.PHONY : src/create_map.s
-
-# target to generate assembly for a file
-src/create_map.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/create_map.c.s
-.PHONY : src/create_map.c.s
-
 src/draw_map.o: src/draw_map.c.o
 .PHONY : src/draw_map.o
 
@@ -204,30 +180,6 @@ src/draw_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/draw_map.c.s
 .PHONY : src/draw_map.c.s
 
-src/draw_player.o: src/draw_player.c.o
-.PHONY : src/draw_player.o
-
-# target to build an object file
-src/draw_player.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/draw_player.c.o
-.PHONY : src/draw_player.c.o
-
-src/draw_player.i: src/draw_player.c.i
-.PHONY : src/draw_player.i
-
-# target to preprocess a source file
-src/draw_player.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/draw_player.c.i
-.PHONY : src/draw_player.c.i
-
-src/draw_player.s: src/draw_player.c.s
-.PHONY : src/draw_player.s
-
-# target to generate assembly for a file
-src/draw_player.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/draw_player.c.s
-.PHONY : src/draw_player.c.s
-
 src/free.o: src/free.c.o
 .PHONY : src/free.o
 
@@ -251,30 +203,6 @@ src/free.s: src/free.c.s
 src/free.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/free.c.s
 .PHONY : src/free.c.s
-
-src/init_map.o: src/init_map.c.o
-.PHONY : src/init_map.o
-
-# target to build an object file
-src/init_map.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/init_map.c.o
-.PHONY : src/init_map.c.o
-
-src/init_map.i: src/init_map.c.i
-.PHONY : src/init_map.i
-
-# target to preprocess a source file
-src/init_map.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/init_map.c.i
-.PHONY : src/init_map.c.i
-
-src/init_map.s: src/init_map.c.s
-.PHONY : src/init_map.s
-
-# target to generate assembly for a file
-src/init_map.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/init_map.c.s
-.PHONY : src/init_map.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -348,30 +276,6 @@ src/manage_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/manage_map.c.s
 .PHONY : src/manage_map.c.s
 
-src/manage_player.o: src/manage_player.c.o
-.PHONY : src/manage_player.o
-
-# target to build an object file
-src/manage_player.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/manage_player.c.o
-.PHONY : src/manage_player.c.o
-
-src/manage_player.i: src/manage_player.c.i
-.PHONY : src/manage_player.i
-
-# target to preprocess a source file
-src/manage_player.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/manage_player.c.i
-.PHONY : src/manage_player.c.i
-
-src/manage_player.s: src/manage_player.c.s
-.PHONY : src/manage_player.s
-
-# target to generate assembly for a file
-src/manage_player.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/manage_player.c.s
-.PHONY : src/manage_player.c.s
-
 src/move_player.o: src/move_player.c.o
 .PHONY : src/move_player.o
 
@@ -396,30 +300,6 @@ src/move_player.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/move_player.c.s
 .PHONY : src/move_player.c.s
 
-src/util1.o: src/util1.c.o
-.PHONY : src/util1.o
-
-# target to build an object file
-src/util1.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/util1.c.o
-.PHONY : src/util1.c.o
-
-src/util1.i: src/util1.c.i
-.PHONY : src/util1.i
-
-# target to preprocess a source file
-src/util1.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/util1.c.i
-.PHONY : src/util1.c.i
-
-src/util1.s: src/util1.c.s
-.PHONY : src/util1.s
-
-# target to generate assembly for a file
-src/util1.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/util1.c.s
-.PHONY : src/util1.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -432,21 +312,12 @@ help:
 	@echo "... src/check_if_map.o"
 	@echo "... src/check_if_map.i"
 	@echo "... src/check_if_map.s"
-	@echo "... src/create_map.o"
-	@echo "... src/create_map.i"
-	@echo "... src/create_map.s"
 	@echo "... src/draw_map.o"
 	@echo "... src/draw_map.i"
 	@echo "... src/draw_map.s"
-	@echo "... src/draw_player.o"
-	@echo "... src/draw_player.i"
-	@echo "... src/draw_player.s"
 	@echo "... src/free.o"
 	@echo "... src/free.i"
 	@echo "... src/free.s"
-	@echo "... src/init_map.o"
-	@echo "... src/init_map.i"
-	@echo "... src/init_map.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -456,15 +327,9 @@ help:
 	@echo "... src/manage_map.o"
 	@echo "... src/manage_map.i"
 	@echo "... src/manage_map.s"
-	@echo "... src/manage_player.o"
-	@echo "... src/manage_player.i"
-	@echo "... src/manage_player.s"
 	@echo "... src/move_player.o"
 	@echo "... src/move_player.i"
 	@echo "... src/move_player.s"
-	@echo "... src/util1.o"
-	@echo "... src/util1.i"
-	@echo "... src/util1.s"
 .PHONY : help
 
 

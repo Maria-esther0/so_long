@@ -29,15 +29,10 @@ add_executable(
         includes/so_long.h
         src/main.c
         src/check_if_map.c
-        src/create_map.c
         src/draw_map.c
-        src/draw_player.c
         src/free.c
-        src/init_map.c
         src/manage_map.c
-        src/manage_player.c
         src/move_player.c
-        src/util1.c
         src/manage_hook.c
 )
 

@@ -6,7 +6,7 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 15:29:15 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/24 19:02:30 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/06/26 20:17:36 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 int	map_check(char *name, t_scene map)
 {
-//	if (!there_is_a_map(name))
-//	{
-//		ft_printf("\nNo map found\n");
-//		return (0);
-//	}
-	(void)name;
+	int fd;
+
+	fd = open(name, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_printf("\nFile does not exist\n");
+		return (0);
+	}
+	if (!file_is_empty(name))
+	{
+		ft_printf("\nFile is empty!\n");
+		return (0);
+	}
 	if (!map_is_rectangle(&map))
 	{
 		ft_printf("\nMap is not valid: not rectangular map!\n");
@@ -30,6 +37,27 @@ int	map_check(char *name, t_scene map)
 		ft_printf("\nMap does not have valid walls\n");
 		return (0);
 	}
+	else if (!item_check(&map))
+	{
+		ft_printf("\nMap doesnt have the right items0000\n");
+		return (0);
+	}
+	return (1);
+}
+
+int file_is_empty(char *av)
+{
+	char *line;
+	int fd;
+
+	fd = open(av, O_RDONLY);
+	if (fd == -1)
+		return (1);
+	line = get_next_line(fd);
+	close(fd);
+	if (line == NULL)
+		return (0);
+	free(line);
 	return (1);
 }
 
@@ -74,38 +102,6 @@ int	map_is_rectangle(t_scene *sc)
 	return (1);
 }
 
-//int is_file_empty(char *av)
-//{
-//	int		fd;
-//	char	buffer[1];
-//
-//	fd = open(av, O_RDONLY);
-//	if (fd == -1)
-//	{
-//		printf("File could not be opened\n");
-//		exit(1);
-//	}
-//	ssize_t bytes_read = read(fd, buffer, sizeof(buffer));
-//	close(fd);
-//	if (bytes_read == 0)
-//		return 1;
-//	else
-//		return 0;
-//}
-////fonction does not work
-//int	there_is_a_map(char	*av)
-//{
-//	int fd;
-//
-//	fd = open(av, O_RDONLY);
-//	if (fd == -1)
-//		return (0);
-//	close(fd);
-//	if (ft_strlen(av) != 0)
-//		return (0);
-//	return (1);
-//}
-
 int check_map_name(int av_size, char **av)
 {
 	int result;
@@ -141,9 +137,27 @@ int	check_wall(t_scene *sc)
 	return (1);
 }
 
-int item_check(t_scene *sc) //todo
+int item_check(t_scene *sc)
 {
-	if (sc->coin == sc->nbr_coins)
-		return (1);
-	return (0);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (sc->data[i] != NULL)
+	{
+		while (sc->data[i][j] != '\0')
+		{
+			if (sc->data[i][j] != '1' && sc->data[i][j] != '0' && sc->data[i][j] != 'P'
+				&& sc->data[i][j] != 'C' && sc->data[i][j] != 'E' && sc->data[i][j] != '\n' && sc->data[i][j] != '\r')
+			{
+				ft_printf("\n\nsc->data[%d][%d] : %d\n\n", i, j, sc->data[i][j]);
+				return (0);
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (1);
 }

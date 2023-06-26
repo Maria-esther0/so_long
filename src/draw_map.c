@@ -30,14 +30,11 @@ void init_atlas(t_scene *sc)
 	img_init(&sc->mlx, &sc->atlas.door, DOOR);
 }
 
-
 void put_img_to_window(t_mlx *mlx, t_img *img, int w, int h)
 {
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, img->mlx_img, w * 64, h * 64);
 }
 
-// faire une fonction qui lit les donnees de ma structure ou je lis ma map, et je mets les
-// images avec leur char
 void	draw_map(t_scene *sc, t_mlx *mlx)
 {
 	int 	i;

@@ -100,24 +100,10 @@ CMakeFiles/so_long.dir/src/check_if_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/check_if_map.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/check_if_map.c -o CMakeFiles/so_long.dir/src/check_if_map.c.s
 
-CMakeFiles/so_long.dir/src/create_map.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/create_map.c.o: /Users/mvillarr/Documents/so_long/src/create_map.c
-CMakeFiles/so_long.dir/src/create_map.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/so_long.dir/src/create_map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/create_map.c.o -MF CMakeFiles/so_long.dir/src/create_map.c.o.d -o CMakeFiles/so_long.dir/src/create_map.c.o -c /Users/mvillarr/Documents/so_long/src/create_map.c
-
-CMakeFiles/so_long.dir/src/create_map.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/create_map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mvillarr/Documents/so_long/src/create_map.c > CMakeFiles/so_long.dir/src/create_map.c.i
-
-CMakeFiles/so_long.dir/src/create_map.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/create_map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/create_map.c -o CMakeFiles/so_long.dir/src/create_map.c.s
-
 CMakeFiles/so_long.dir/src/draw_map.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/draw_map.c.o: /Users/mvillarr/Documents/so_long/src/draw_map.c
 CMakeFiles/so_long.dir/src/draw_map.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/so_long.dir/src/draw_map.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/so_long.dir/src/draw_map.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/draw_map.c.o -MF CMakeFiles/so_long.dir/src/draw_map.c.o.d -o CMakeFiles/so_long.dir/src/draw_map.c.o -c /Users/mvillarr/Documents/so_long/src/draw_map.c
 
 CMakeFiles/so_long.dir/src/draw_map.c.i: cmake_force
@@ -128,24 +114,10 @@ CMakeFiles/so_long.dir/src/draw_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/draw_map.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/draw_map.c -o CMakeFiles/so_long.dir/src/draw_map.c.s
 
-CMakeFiles/so_long.dir/src/draw_player.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/draw_player.c.o: /Users/mvillarr/Documents/so_long/src/draw_player.c
-CMakeFiles/so_long.dir/src/draw_player.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/so_long.dir/src/draw_player.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/draw_player.c.o -MF CMakeFiles/so_long.dir/src/draw_player.c.o.d -o CMakeFiles/so_long.dir/src/draw_player.c.o -c /Users/mvillarr/Documents/so_long/src/draw_player.c
-
-CMakeFiles/so_long.dir/src/draw_player.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/draw_player.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mvillarr/Documents/so_long/src/draw_player.c > CMakeFiles/so_long.dir/src/draw_player.c.i
-
-CMakeFiles/so_long.dir/src/draw_player.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/draw_player.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/draw_player.c -o CMakeFiles/so_long.dir/src/draw_player.c.s
-
 CMakeFiles/so_long.dir/src/free.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/free.c.o: /Users/mvillarr/Documents/so_long/src/free.c
 CMakeFiles/so_long.dir/src/free.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/so_long.dir/src/free.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/so_long.dir/src/free.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/free.c.o -MF CMakeFiles/so_long.dir/src/free.c.o.d -o CMakeFiles/so_long.dir/src/free.c.o -c /Users/mvillarr/Documents/so_long/src/free.c
 
 CMakeFiles/so_long.dir/src/free.c.i: cmake_force
@@ -156,24 +128,10 @@ CMakeFiles/so_long.dir/src/free.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/free.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/free.c -o CMakeFiles/so_long.dir/src/free.c.s
 
-CMakeFiles/so_long.dir/src/init_map.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/init_map.c.o: /Users/mvillarr/Documents/so_long/src/init_map.c
-CMakeFiles/so_long.dir/src/init_map.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/so_long.dir/src/init_map.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/init_map.c.o -MF CMakeFiles/so_long.dir/src/init_map.c.o.d -o CMakeFiles/so_long.dir/src/init_map.c.o -c /Users/mvillarr/Documents/so_long/src/init_map.c
-
-CMakeFiles/so_long.dir/src/init_map.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/init_map.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mvillarr/Documents/so_long/src/init_map.c > CMakeFiles/so_long.dir/src/init_map.c.i
-
-CMakeFiles/so_long.dir/src/init_map.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/init_map.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/init_map.c -o CMakeFiles/so_long.dir/src/init_map.c.s
-
 CMakeFiles/so_long.dir/src/manage_map.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/manage_map.c.o: /Users/mvillarr/Documents/so_long/src/manage_map.c
 CMakeFiles/so_long.dir/src/manage_map.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/so_long.dir/src/manage_map.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/so_long.dir/src/manage_map.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/manage_map.c.o -MF CMakeFiles/so_long.dir/src/manage_map.c.o.d -o CMakeFiles/so_long.dir/src/manage_map.c.o -c /Users/mvillarr/Documents/so_long/src/manage_map.c
 
 CMakeFiles/so_long.dir/src/manage_map.c.i: cmake_force
@@ -184,24 +142,10 @@ CMakeFiles/so_long.dir/src/manage_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/manage_map.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/manage_map.c -o CMakeFiles/so_long.dir/src/manage_map.c.s
 
-CMakeFiles/so_long.dir/src/manage_player.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/manage_player.c.o: /Users/mvillarr/Documents/so_long/src/manage_player.c
-CMakeFiles/so_long.dir/src/manage_player.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/so_long.dir/src/manage_player.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/manage_player.c.o -MF CMakeFiles/so_long.dir/src/manage_player.c.o.d -o CMakeFiles/so_long.dir/src/manage_player.c.o -c /Users/mvillarr/Documents/so_long/src/manage_player.c
-
-CMakeFiles/so_long.dir/src/manage_player.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/manage_player.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mvillarr/Documents/so_long/src/manage_player.c > CMakeFiles/so_long.dir/src/manage_player.c.i
-
-CMakeFiles/so_long.dir/src/manage_player.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/manage_player.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/manage_player.c -o CMakeFiles/so_long.dir/src/manage_player.c.s
-
 CMakeFiles/so_long.dir/src/move_player.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/move_player.c.o: /Users/mvillarr/Documents/so_long/src/move_player.c
 CMakeFiles/so_long.dir/src/move_player.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/so_long.dir/src/move_player.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/so_long.dir/src/move_player.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/move_player.c.o -MF CMakeFiles/so_long.dir/src/move_player.c.o.d -o CMakeFiles/so_long.dir/src/move_player.c.o -c /Users/mvillarr/Documents/so_long/src/move_player.c
 
 CMakeFiles/so_long.dir/src/move_player.c.i: cmake_force
@@ -212,24 +156,10 @@ CMakeFiles/so_long.dir/src/move_player.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/move_player.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/move_player.c -o CMakeFiles/so_long.dir/src/move_player.c.s
 
-CMakeFiles/so_long.dir/src/util1.c.o: CMakeFiles/so_long.dir/flags.make
-CMakeFiles/so_long.dir/src/util1.c.o: /Users/mvillarr/Documents/so_long/src/util1.c
-CMakeFiles/so_long.dir/src/util1.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/so_long.dir/src/util1.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/util1.c.o -MF CMakeFiles/so_long.dir/src/util1.c.o.d -o CMakeFiles/so_long.dir/src/util1.c.o -c /Users/mvillarr/Documents/so_long/src/util1.c
-
-CMakeFiles/so_long.dir/src/util1.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/so_long.dir/src/util1.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mvillarr/Documents/so_long/src/util1.c > CMakeFiles/so_long.dir/src/util1.c.i
-
-CMakeFiles/so_long.dir/src/util1.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/so_long.dir/src/util1.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mvillarr/Documents/so_long/src/util1.c -o CMakeFiles/so_long.dir/src/util1.c.s
-
 CMakeFiles/so_long.dir/src/manage_hook.c.o: CMakeFiles/so_long.dir/flags.make
 CMakeFiles/so_long.dir/src/manage_hook.c.o: /Users/mvillarr/Documents/so_long/src/manage_hook.c
 CMakeFiles/so_long.dir/src/manage_hook.c.o: CMakeFiles/so_long.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/so_long.dir/src/manage_hook.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/so_long.dir/src/manage_hook.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/so_long.dir/src/manage_hook.c.o -MF CMakeFiles/so_long.dir/src/manage_hook.c.o.d -o CMakeFiles/so_long.dir/src/manage_hook.c.o -c /Users/mvillarr/Documents/so_long/src/manage_hook.c
 
 CMakeFiles/so_long.dir/src/manage_hook.c.i: cmake_force
@@ -244,15 +174,10 @@ CMakeFiles/so_long.dir/src/manage_hook.c.s: cmake_force
 so_long_OBJECTS = \
 "CMakeFiles/so_long.dir/src/main.c.o" \
 "CMakeFiles/so_long.dir/src/check_if_map.c.o" \
-"CMakeFiles/so_long.dir/src/create_map.c.o" \
 "CMakeFiles/so_long.dir/src/draw_map.c.o" \
-"CMakeFiles/so_long.dir/src/draw_player.c.o" \
 "CMakeFiles/so_long.dir/src/free.c.o" \
-"CMakeFiles/so_long.dir/src/init_map.c.o" \
 "CMakeFiles/so_long.dir/src/manage_map.c.o" \
-"CMakeFiles/so_long.dir/src/manage_player.c.o" \
 "CMakeFiles/so_long.dir/src/move_player.c.o" \
-"CMakeFiles/so_long.dir/src/util1.c.o" \
 "CMakeFiles/so_long.dir/src/manage_hook.c.o"
 
 # External object files for target so_long
@@ -260,19 +185,14 @@ so_long_EXTERNAL_OBJECTS =
 
 so_long: CMakeFiles/so_long.dir/src/main.c.o
 so_long: CMakeFiles/so_long.dir/src/check_if_map.c.o
-so_long: CMakeFiles/so_long.dir/src/create_map.c.o
 so_long: CMakeFiles/so_long.dir/src/draw_map.c.o
-so_long: CMakeFiles/so_long.dir/src/draw_player.c.o
 so_long: CMakeFiles/so_long.dir/src/free.c.o
-so_long: CMakeFiles/so_long.dir/src/init_map.c.o
 so_long: CMakeFiles/so_long.dir/src/manage_map.c.o
-so_long: CMakeFiles/so_long.dir/src/manage_player.c.o
 so_long: CMakeFiles/so_long.dir/src/move_player.c.o
-so_long: CMakeFiles/so_long.dir/src/util1.c.o
 so_long: CMakeFiles/so_long.dir/src/manage_hook.c.o
 so_long: CMakeFiles/so_long.dir/build.make
 so_long: CMakeFiles/so_long.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable so_long"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable so_long"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/so_long.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

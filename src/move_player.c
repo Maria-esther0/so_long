@@ -12,8 +12,6 @@
 
 #include "../includes/so_long.h"
 
-
-
 int	has_coin_left(t_scene *sc)
 {
 	int i;
@@ -25,7 +23,8 @@ int	has_coin_left(t_scene *sc)
 	{
 		while (sc->data[i][j])
 		{
-			if (sc->data[i][j] == 'C') {
+			if (sc->data[i][j] == 'C')
+			{
 				ft_printf("There's still some coins on the map !\n");
 				return (1);
 			}
@@ -72,9 +71,8 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 	else if (next == 'E')
 	{
 		if (has_coin_left(sc))
-		{
 			return ;
-		}
+//		ft_printf("steps made: %d", sc->nbr_steps);
 		close_window();
 	}
 }

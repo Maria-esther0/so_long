@@ -41,13 +41,12 @@
 # include "../src/libft/printf/ft_printf.h"
 # include "../src/libft/get_next_line/get_next_line.h"
 
-
 typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-	int 	y;
-	int 	x;
+	int		y;
+	int		x;
 }	t_mlx;
 
 typedef struct s_img
@@ -64,26 +63,20 @@ typedef struct s_atlas {
 	t_img	grass;
 	t_img	dirt;
 	t_img	door;
-} t_atlas;
+}	t_atlas;
 
 typedef struct s_scene
 {
 	t_mlx	mlx;
-	t_atlas atlas;
+	t_atlas	atlas;
 	char	*name;
-	
-	//game logic
-	void	*coin; //total coins should collected
-	void 	*nbr_coins; //nbr_coins collected
-	int 	nbr_steps; //nbr
-	
-	//player_pos
-	int 	x_player;
-	int 	y_player;
-
-	//map
-	int 	map_width;
-	int 	map_height;
+	void	*coin;
+	void	*nbr_coins;
+	int		nbr_steps;
+	int		x_player;
+	int		y_player;
+	int		map_width;
+	int		map_height;
 	char	**data;
 }	t_scene;
 
@@ -93,16 +86,17 @@ void	manage_fd(char *av, t_scene *sc);
 int		read_map(t_scene *m, char *av);
 
 // atlas funcitons
-void init_atlas(t_scene *sc);
+void	init_atlas(t_scene *sc);
 
 //int		check_map_name(char *av);
-int 	check_map_name(int av_size, char **av);
+int		check_map_name(int av_size, char **av);
 int		there_is_a_map(char	*name);
+int		is_file_empty(char *av);
 int		map_is_rectangle(t_scene *sc);
 int		map_check(char *name, t_scene map);
 int		check_wall(t_scene *sc);
 int		check_args(int ac, char **av);
-int		coin_check(t_scene *sc);
+int		file_is_empty(char *av);
 
 // window functions
 int		close_window(void);
@@ -122,7 +116,7 @@ void	put_img_to_window(t_mlx *mlx, t_img *img, int w, int h);
 int		item_check(t_scene *sc);
 
 // hook functions
-int 	key_hooks(int key, t_scene *sc);
+int		key_hooks(int key, t_scene *sc);
 
 // other utils
 int		ft_strcmp(char *str1, char *str2);
