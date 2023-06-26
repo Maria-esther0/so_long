@@ -82,6 +82,7 @@ typedef struct s_scene
 
 // map functions
 void	init_map(int fd, char	*av, t_scene *sc);
+int		init_game(t_scene *sc);
 void	manage_fd(char *av, t_scene *sc);
 int		read_map(t_scene *m, char *av);
 

@@ -12,17 +12,27 @@
 
 #include "../includes/so_long.h"
 
-int close_window(void)
+int	close_window(void)
 {
 	ft_printf("\nGame closed successfully!\n");
 	exit (0);
 }
 
+int	init_game(t_scene *sc)
+{
+	sc->y_player = 0;
+	sc->x_player = 0;
+	sc->mlx.mlx_ptr = mlx_init();
+	sc->mlx.win_ptr = mlx_new_window(sc->mlx.mlx_ptr, sc->map_width * 64,
+			sc->map_height * 64, "NEW WINDOW");
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
-	t_scene sc;
+	t_scene	sc;
 
-	sleep(10);
+//	sleep(10);
 	check_args(ac, av);
 	manage_fd(av[1], &sc);
 	if (!sc.data)
@@ -30,11 +40,7 @@ int	main(int ac, char **av)
 		printf("error in map\n");
 		return (1);
 	}
-	sc.y_player = 0;
-	sc.x_player = 0;
-	sc.mlx.mlx_ptr = mlx_init();
-	sc.mlx.win_ptr = mlx_new_window(sc.mlx.mlx_ptr, sc.map_width * 64, sc.map_height * 64,
-			"NEW WINDOW");
+	init_game(&sc);
 	init_atlas(&sc);
 	if (!map_check(av[1], sc))
 		exit (0);
