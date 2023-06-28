@@ -16,13 +16,12 @@ void	free_the_map(t_scene	*sc)
 {
 	int	i;
 
-	//todo free atlas and
 	i = 0;
 	if (!sc)
 		return;
 	if (sc->data)
 	{
-		while (i < sc->map_height)
+		while (i < sc->map_height && sc->data[i] != NULL)
 		{
 			free(sc->data[i]);
 			sc->data[i] = NULL;
@@ -31,11 +30,11 @@ void	free_the_map(t_scene	*sc)
 		free(sc->data);
 		sc->data = NULL;
 	}
-	if (sc->name)
-	{
-		free(sc->name);
-		sc->name = NULL;
-	}
+//	if (sc->name)
+//	{
+//		free(sc->name);
+//		sc->name = NULL;
+//	}
 	sc = NULL;
 }
 

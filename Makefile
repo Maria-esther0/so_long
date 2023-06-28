@@ -7,7 +7,7 @@ LIB		= src/libft/libft.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror -g #-fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
 			src/draw_map.c\
@@ -82,4 +82,6 @@ docker_run:
 prune:
 	docker system prune -a --volumes
 
+valgrind:
+	valgrind ./$(NAME)
 .PHONY: all clean fclean re norm

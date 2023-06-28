@@ -12,23 +12,21 @@
 
 #include "../includes/so_long.h"
 
-
-
 int	get_w_h_map(int fd, t_scene *sc)
 {
 	char *tmp;
 
-	tmp = get_next_line(fd);
+	tmp = get_next_line_b(fd);
 	if (!tmp)
 		return (1);
 	sc->map_width = ft_strlen(tmp + 1);
-	while (tmp)
-	{
+	while (tmp) {
 		free(tmp);
 		tmp = NULL;
-		tmp = get_next_line(fd);
+		tmp = get_next_line_b(fd);
 		sc->map_height++;
 	}
+	free(tmp);
 	return (0);
 }
 
@@ -50,7 +48,7 @@ int	read_map(t_scene *sc, char *av)
 		sc->data[sc->map_height] = NULL;
 		while (i < sc->map_height)
 		{
-			sc->data[i] = get_next_line(fd);
+			sc->data[i] = get_next_line_b(fd);
 //		ft_printf("Map : %s", sc->data[i]);
 			i++;
 		}

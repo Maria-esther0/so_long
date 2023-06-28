@@ -126,5 +126,6 @@ CMakeFiles/so_long.dir/src/move_player.c.o: \
   /Users/mvillarr/Documents/so_long/src/libft/printf/../libft.h \
   /Users/mvillarr/Documents/so_long/src/libft/get_next_line/get_next_line.h \
   /Users/mvillarr/Documents/so_long/src/libft/get_next_line/../libft.h \
+  /Users/mvillarr/Documents/so_long/src/libft/get_next_line/get_next_line_bonus.h \
   /Users/mvillarr/Documents/so_long/includes/../src/libft/printf/ft_printf.h \
-  /Users/mvillarr/Documents/so_long/includes/../src/libft/get_next_line/get_next_line.h
+  /Users/mvillarr/Documents/so_long/includes/../src/libft/get_next_line/get_next_line_bonus.h

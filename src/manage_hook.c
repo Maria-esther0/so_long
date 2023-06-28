@@ -15,7 +15,7 @@
 int 	key_hooks(int key, t_scene *sc)
 {
 	if (key == K_ESC)
-		close_window();
+		close_window(sc);
 	else if (key == K_W)
 		move(sc, 0, -1);
 	else if (key == K_S)

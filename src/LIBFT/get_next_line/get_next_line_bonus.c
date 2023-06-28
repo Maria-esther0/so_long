@@ -12,7 +12,7 @@
 
 #include "get_next_line_bonus.h"
 
-char	*get_next_line(int fd)
+char	*get_next_line_b(int fd)
 {
 	static char	*stash[4096];
 	char		*line;
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 	if (stash[fd] == NULL)
 		return (NULL);
 	if (*stash[fd] == 0)
-	{	
+	{
 		free(stash[fd]);
 		return (stash[fd] = 0);
 	}
@@ -40,7 +40,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-char	*stash_filling(int fd, char *stash, char *buffer)
+char	*stash_filling_b(int fd, char *stash, char *buffer)
 {
 	ssize_t	n_bytes;
 
@@ -67,7 +67,7 @@ char	*stash_filling(int fd, char *stash, char *buffer)
 	return (stash);
 }
 
-char	*extract_new_stash(char *stash)
+char	*extract_new_stash_b(char *stash)
 {
 	int		len;
 	int		i;
@@ -94,7 +94,7 @@ char	*extract_new_stash(char *stash)
 	return (new_stash);
 }
 
-char	*extract_line(char *stash, char *line)
+char	*extract_line_b(char *stash, char *line)
 {
 	int	len;
 	int	i;

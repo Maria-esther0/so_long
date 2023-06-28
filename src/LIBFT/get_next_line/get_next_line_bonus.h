@@ -21,9 +21,9 @@
 # include <stdio.h>
 # include "../libft.h"
 
-char	*get_next_line(int fd);
-char	*stash_filling(int fd, char *stash, char *buffer);
-char	*extract_new_stash(char *stash);
-char	*extract_line(char *stash, char *line);
-
+char	*get_next_line_b(int fd);
+char	*stash_filling_b(int fd, char *stash, char *buffer);
+char	*extract_new_stash_b(char *stash);
+char	*extract_line_b(char *stash, char *line);
+void	ft_free_b(char **tab);
 #endif

@@ -39,7 +39,7 @@
 # include "../mlx/mlx.h"
 # include "../src/libft/libft.h"
 # include "../src/libft/printf/ft_printf.h"
-# include "../src/libft/get_next_line/get_next_line.h"
+# include "../src/libft/get_next_line/get_next_line_bonus.h"
 
 typedef struct s_mlx
 {
@@ -100,7 +100,9 @@ int		check_args(int ac, char **av);
 int		file_is_empty(char *av);
 
 // window functions
-int		close_window(void);
+//int		close_window(void);
+int	close_window(t_scene *sc);
+void	free_the_map(t_scene	*sc);
 
 // moving funcions
 void	move(t_scene *sc, int pos_x, int pos_y);
@@ -124,4 +126,5 @@ int		ft_strcmp(char *str1, char *str2);
 void	ft_free(char **tab);
 void	exit_error(const char *error_msg);
 
+void	print_map(t_scene *sc);
 #endif

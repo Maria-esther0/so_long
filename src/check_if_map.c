@@ -53,7 +53,7 @@ int file_is_empty(char *av)
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
 		return (1);
-	line = get_next_line(fd);
+	line = get_next_line_b(fd);
 	close(fd);
 	if (line == NULL)
 		return (0);

@@ -12,8 +12,9 @@
 
 #include "../includes/so_long.h"
 
-int	close_window(void)
+int	close_window(t_scene *sc)
 {
+	free_the_map(sc);
 	ft_printf("\nGame closed successfully!\n");
 	exit (0);
 }

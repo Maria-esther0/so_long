@@ -22,6 +22,7 @@
 # include <stdarg.h>
 # include "printf/ft_printf.h"
 # include "get_next_line/get_next_line.h"
+# include "get_next_line/get_next_line_bonus.h"
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);

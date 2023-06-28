@@ -73,7 +73,7 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 		if (has_coin_left(sc))
 			return ;
 //		ft_printf("steps made: %d", sc->nbr_steps);
-		close_window();
+		close_window(sc);
 	}
 }
 
