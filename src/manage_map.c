@@ -49,7 +49,7 @@ int	read_map(t_scene *sc, char *av)
 		while (i < sc->map_height)
 		{
 			sc->data[i] = get_next_line_b(fd);
-//		ft_printf("Map : %s", sc->data[i]);
+			ft_printf("Map : %s", sc->data[i]);
 			i++;
 		}
 	}
