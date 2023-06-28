@@ -12,6 +12,7 @@
 
 #include "../includes/so_long.h"
 
+//possible leak ligne 27
 int	get_w_h_map(int fd, t_scene *sc)
 {
 	char *tmp;
@@ -20,7 +21,8 @@ int	get_w_h_map(int fd, t_scene *sc)
 	if (!tmp)
 		return (1);
 	sc->map_width = ft_strlen(tmp + 1);
-	while (tmp) {
+	while (tmp)
+	{
 		free(tmp);
 		tmp = NULL;
 		tmp = get_next_line_b(fd);
@@ -30,6 +32,7 @@ int	get_w_h_map(int fd, t_scene *sc)
 	return (0);
 }
 
+//possible leak ligne 52
 int	read_map(t_scene *sc, char *av)
 {
 	int		i;

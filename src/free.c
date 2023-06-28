@@ -30,11 +30,6 @@ void	free_the_map(t_scene	*sc)
 		free(sc->data);
 		sc->data = NULL;
 	}
-//	if (sc->name)
-//	{
-//		free(sc->name);
-//		sc->name = NULL;
-//	}
 	sc = NULL;
 }
 

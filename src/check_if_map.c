@@ -14,7 +14,7 @@
 
 int	map_check(char *name, t_scene map)
 {
-	int fd;
+	int	fd;
 
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
@@ -45,10 +45,10 @@ int	map_check(char *name, t_scene map)
 	return (1);
 }
 
-int file_is_empty(char *av)
+int	file_is_empty(char *av)
 {
-	char *line;
-	int fd;
+	char	*line;
+	int		fd;
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)
@@ -61,9 +61,9 @@ int file_is_empty(char *av)
 	return (1);
 }
 
-int check_args(int ac, char **av)
+int	check_args(int ac, char **av)
 {
-	int av_size;
+	int	av_size;
 
 	av_size = 0;
 	if (ac != 2)
@@ -85,8 +85,8 @@ int check_args(int ac, char **av)
 int	map_is_rectangle(t_scene *sc)
 {
 	int	line;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	line = sc->map_width;
 	i = 1;
@@ -102,9 +102,9 @@ int	map_is_rectangle(t_scene *sc)
 	return (1);
 }
 
-int check_map_name(int av_size, char **av)
+int	check_map_name(int av_size, char **av)
 {
-	int result;
+	int	result;
 
 	result = 0;
 	if (av[1][av_size - 4] != '.')
@@ -137,10 +137,10 @@ int	check_wall(t_scene *sc)
 	return (1);
 }
 
-int item_check(t_scene *sc)
+int	item_check(t_scene *sc)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -148,8 +148,10 @@ int item_check(t_scene *sc)
 	{
 		while (sc->data[i][j] != '\0')
 		{
-			if (sc->data[i][j] != '1' && sc->data[i][j] != '0' && sc->data[i][j] != 'P'
-				&& sc->data[i][j] != 'C' && sc->data[i][j] != 'E' && sc->data[i][j] != '\n' && sc->data[i][j] != '\r')
+			if (sc->data[i][j] != '1' && sc->data[i][j] != '0'
+					&& sc->data[i][j] != 'P' && sc->data[i][j] != 'C'
+					&& sc->data[i][j] != 'E' && sc->data[i][j] != '\n'
+					&& sc->data[i][j] != '\r')
 			{
 				ft_printf("\n\nsc->data[%d][%d] : %d\n\n", i, j, sc->data[i][j]);
 				return (0);

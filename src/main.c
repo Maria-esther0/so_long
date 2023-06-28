@@ -25,7 +25,7 @@ int	init_game(t_scene *sc)
 	sc->x_player = 0;
 	sc->mlx.mlx_ptr = mlx_init();
 	sc->mlx.win_ptr = mlx_new_window(sc->mlx.mlx_ptr, sc->map_width * 64,
-			sc->map_height * 64, "NEW WINDOW");
+			sc->map_height * 64, "mvillarr's so_lon");
 	return (0);
 }
 

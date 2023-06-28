@@ -54,14 +54,13 @@ char	*stash_filling_b(int fd, char *stash, char *buffer)
 		{
 			free(stash);
 			free(buffer);
+
 			return (NULL);
 		}
 		buffer[n_bytes] = 0;
 		stash = ft_strjoin(stash, buffer);
 		if (ft_strchr(buffer, '\n'))
-		{
 			break ;
-		}
 	}
 	free(buffer);
 	return (stash);
