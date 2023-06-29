@@ -16,6 +16,8 @@ SRC		= 	src/main.c\
 			src/manage_hook.c\
 			src/check_if_map.c\
 			src/free.c\
+			src/get_next_line_bonus.c\
+			src/ft_strdup.c
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
