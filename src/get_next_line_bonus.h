@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 16:21:20 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/29 14:26:26 by kdi-noce         ###   ########.fr       */
+/*   Created: 2023/01/05 12:36:16 by mvillarr          #+#    #+#             */
+/*   Updated: 2023/06/29 14:31:44 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
@@ -19,12 +19,11 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include "../libft.h"
+# include "libft/libft.h"
 
-//char	*get_next_line(int fd);
-//char	*stash_filling(int fd, char *stash, char *buffer);
-//char	*extract_new_stash(char *stash);
-//char	*extract_line(char *stash, char *line);
-//void	ft_free(char **tab);
-
+char	*get_next_line_b(int fd);
+char	*stash_filling_b(int fd, char *stash, char *buffer);
+char	*extract_new_stash_b(char *stash);
+char	*extract_line_b(char *stash, char *line);
+void	ft_free_b(char **tab);
 #endif

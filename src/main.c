@@ -6,7 +6,7 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:10:12 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/26 20:13:14 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:06:50 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	init_game(t_scene *sc)
 	sc->x_player = 0;
 	sc->mlx.mlx_ptr = mlx_init();
 	sc->mlx.win_ptr = mlx_new_window(sc->mlx.mlx_ptr, sc->map_width * 64,
-			sc->map_height * 64, "mvillarr's so_lon");
+			sc->map_height * 64, "mvillarr's so_long");
 	return (0);
 }
 
