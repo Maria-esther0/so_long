@@ -98,10 +98,11 @@ int		map_check(char *name, t_scene map);
 int		check_wall(t_scene *sc);
 int		check_args(int ac, char **av);
 int		file_is_empty(char *av);
+int		check_fct(t_scene map);
 
 // window functions
 //int		close_window(void);
-int	close_window(t_scene *sc);
+int		close_window(t_scene *sc);
 void	free_the_map(t_scene	*sc);
 
 // moving funcions

@@ -15,7 +15,7 @@
 //possible leak ligne 27
 int	get_w_h_map(int fd, t_scene *sc)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = get_next_line_b(fd);
 	if (!tmp)
@@ -60,10 +60,9 @@ int	read_map(t_scene *sc, char *av)
 	return (sc->data == NULL);
 }
 
-void init_map(int fd, char	*av, t_scene *sc)
+void	init_map(int fd, char	*av, t_scene *sc)
 {
 	(void)av;
-
 	sc->map_width = 0;
 	sc->map_height = 0;
 	get_w_h_map(fd, sc);

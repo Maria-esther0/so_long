@@ -14,8 +14,8 @@
 
 int	has_coin_left(t_scene *sc)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -35,7 +35,6 @@ int	has_coin_left(t_scene *sc)
 	}
 	return (0);
 }
-
 
 void	update_player_position(int new_x, int new_y, t_scene *sc)
 {
@@ -64,8 +63,10 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 	{
 		sc->nbr_steps++;
 		collect_coins(sc, next, pos_x, pos_y);
-		put_img_to_window(&sc->mlx, &sc->atlas.player, (sc->x_player + pos_x), (sc->y_player + pos_y));
-		put_img_to_window(&sc->mlx, &sc->atlas.grass, (sc->x_player), (sc->y_player));
+		put_img_to_window(&sc->mlx, &sc->atlas.player, (sc->x_player + pos_x),
+			(sc->y_player + pos_y));
+		put_img_to_window(&sc->mlx, &sc->atlas.grass, (sc->x_player),
+			(sc->y_player));
 		update_player_position(pos_x, pos_y, sc);
 	}
 	else if (next == 'E')
@@ -79,8 +80,8 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 
 void	player_pos(t_scene *sc)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

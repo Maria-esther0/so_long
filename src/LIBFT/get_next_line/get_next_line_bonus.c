@@ -54,7 +54,6 @@ char	*stash_filling_b(int fd, char *stash, char *buffer)
 		{
 			free(stash);
 			free(buffer);
-
 			return (NULL);
 		}
 		buffer[n_bytes] = 0;

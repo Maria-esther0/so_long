@@ -26,7 +26,6 @@ char	*stash_filling_b(int fd, char *stash, char *buffer)
 		{
 			free(stash);
 			free(buffer);
-
 			return (NULL);
 		}
 		buffer[n_bytes] = 0;
@@ -118,4 +117,3 @@ char	*get_next_line_b(int fd)
 	stash[fd] = extract_new_stash_b(stash[fd]);
 	return (line);
 }
-

@@ -27,22 +27,29 @@ int	map_check(char *name, t_scene map)
 		ft_printf("\nFile is empty!\n");
 		return (0);
 	}
+	if (check_fct(map))
+		return (0);
+	return (1);
+}
+
+int	check_fct(t_scene map)
+{
 	if (!map_is_rectangle(&map))
 	{
 		ft_printf("\nMap is not valid: not rectangular map!\n");
-		return (0);
+		return (1);
 	}
 	else if (!check_wall(&map))
 	{
 		ft_printf("\nMap does not have valid walls\n");
-		return (0);
+		return (1);
 	}
 	else if (!item_check(&map))
 	{
 		ft_printf("\nMap doesnt have the right items0000\n");
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 int	file_is_empty(char *av)
@@ -98,68 +105,6 @@ int	map_is_rectangle(t_scene *sc)
 		if (j != line)
 			return (0);
 		i++;
-	}
-	return (1);
-}
-
-int	check_map_name(int av_size, char **av)
-{
-	int	result;
-
-	result = 0;
-	if (av[1][av_size - 4] != '.')
-		result = 1;
-	else if (av[1][av_size - 3] != 'b')
-		result = 1;
-	else if (av[1][av_size - 2] != 'e')
-		result = 1;
-	else if (av[1][av_size - 1] != 'r')
-		result = 1;
-	return (result);
-}
-
-int	check_wall(t_scene *sc)
-{
-	int	i;
-
-	i = sc->map_width;
-	while (i--)
-	{
-		if (sc->data[0][i] != '1' || sc->data[sc->map_height - 1][i] != '1')
-			return (0);
-	}
-	i = sc->map_height;
-	while (i--)
-	{
-		if (sc->data[i][0] != '1' || sc->data[i][sc->map_width - 1] != '1')
-			return (0);
-	}
-	return (1);
-}
-
-int	item_check(t_scene *sc)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (sc->data[i] != NULL)
-	{
-		while (sc->data[i][j] != '\0')
-		{
-			if (sc->data[i][j] != '1' && sc->data[i][j] != '0'
-					&& sc->data[i][j] != 'P' && sc->data[i][j] != 'C'
-					&& sc->data[i][j] != 'E' && sc->data[i][j] != '\n'
-					&& sc->data[i][j] != '\r')
-			{
-				ft_printf("\n\nsc->data[%d][%d] : %d\n\n", i, j, sc->data[i][j]);
-				return (0);
-			}
-			j++;
-		}
-		i++;
-		j = 0;
 	}
 	return (1);
 }

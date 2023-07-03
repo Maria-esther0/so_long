@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	free_the_map(t_scene	*sc)
 {
@@ -18,7 +18,7 @@ void	free_the_map(t_scene	*sc)
 
 	i = 0;
 	if (!sc)
-		return;
+		return ;
 	if (sc->data)
 	{
 		while (i < sc->map_height && sc->data[i] != NULL)
@@ -47,4 +47,3 @@ void	ft_free(char **tab)
 	tab = NULL;
 	return ;
 }
-

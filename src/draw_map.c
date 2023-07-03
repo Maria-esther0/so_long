@@ -17,11 +17,11 @@ void	img_init(t_mlx *mlx, t_img *dst, char *path)
 	dst->width = 0;
 	dst->height = 0;
 	dst->mlx_img = mlx_xpm_file_to_image(mlx->mlx_ptr, path,
-				&dst->width, &dst->height);
+			&dst->width, &dst->height);
 	dst->img_path = path;
 }
 
-void init_atlas(t_scene *sc)
+void	init_atlas(t_scene *sc)
 {
 	img_init(&sc->mlx, &sc->atlas.player, CAPYBARA);
 	img_init(&sc->mlx, &sc->atlas.coin, COIN);
@@ -30,15 +30,16 @@ void init_atlas(t_scene *sc)
 	img_init(&sc->mlx, &sc->atlas.door, DOOR);
 }
 
-void put_img_to_window(t_mlx *mlx, t_img *img, int w, int h)
+void	put_img_to_window(t_mlx *mlx, t_img *img, int w, int h)
 {
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, img->mlx_img, w * 64, h * 64);
+	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, img->mlx_img,
+		w * 64, h * 64);
 }
 
 void	draw_map(t_scene *sc, t_mlx *mlx)
 {
-	int 	i;
-	int 	j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (++i < sc->map_height)
