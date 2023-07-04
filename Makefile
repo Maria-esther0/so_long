@@ -7,7 +7,7 @@ LIB		= src/libft/libft.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g#3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
 			src/draw_map.c\
@@ -16,8 +16,7 @@ SRC		= 	src/main.c\
 			src/manage_hook.c\
 			src/check_if_map.c\
 			src/free.c\
-			src/get_next_line_bonus.c\
-			src/ft_strdup.c
+			src/get_next_line_bonus.c
 
 OBJ_DIR = obj
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)

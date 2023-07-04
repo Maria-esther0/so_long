@@ -6,114 +6,75 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:35:25 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/29 15:30:01 by kdi-noce         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:30:01 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-
-char	*stash_filling_b(int fd, char *stash, char *buffer)
-{
-	ssize_t	n_bytes;
-
-	n_bytes = 1;
-	if (!stash)
-		stash = ft_strdup("");
-	while (n_bytes > 0)
-	{
-		n_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (n_bytes == -1)
-		{
-			free(stash);
-			free(buffer);
-			return (NULL);
-		}
-		buffer[n_bytes] = 0;
-		stash = ft_strjoin(stash, buffer);
-		if (ft_strchr(buffer, '\n'))
-			break ;
-	}
-	free(buffer);
-	return (stash);
-}
-
-char	*extract_new_stash_b(char *stash)
-{
-	int		len;
-	int		i;
-	char	*new_stash;
-
-	if (stash == NULL)
-		return (NULL);
-	len = 0;
-	while (stash[len] != '\n' && stash[len] != '\0')
-		++len;
-	if (stash[len] == '\n')
-		++len;
-	new_stash = malloc((ft_strlen(stash) - len + 1) * sizeof(char));
-	ft_printf("new_stash = %s\n", new_stash);
-	if (!new_stash)
-		return (NULL);
-	new_stash[ft_strlen(stash) - len] = 0;
-	i = 0;
-	while (stash[len + i])
-	{
-		new_stash[i] = stash[len + i];
-		i++;
-	}
-	free (stash);
-	return (new_stash);
-}
-
-char	*extract_line_b(char *stash, char *line)
-{
-	int	len;
-	int	i;
-
-	len = 0;
-	i = 0;
-	if (stash == NULL)
-		return (NULL);
-	while (stash[len] != '\n' && stash[len])
-		len++;
-	if (stash[len] == '\n')
-		len++;
-	line = malloc ((len + 1) * sizeof(char));
-	if (!line)
-		return (NULL);
-	while (i < len)
-	{
-		line[i] = stash[i];
-		i++;
-	}
-	line[i] = 0;
-	return (line);
-}
 
 char	*get_next_line_b(int fd)
 {
 	static char	*stash[4096];
 	char		*line;
 	char		*buffer;
+	int		n;
 
 	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	buffer = calloc((BUFFER_SIZE + 1), sizeof(char ));
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 4095 || !buffer)
+	n = read(fd, buffer, BUFFER_SIZE);
+	while (n > 0)
 	{
-		free(buffer);
-		stash[fd] = NULL;
-		buffer = NULL;
-		return (NULL);
-	}
-	stash[fd] = stash_filling_b(fd, stash[fd], buffer);
-	if (stash[fd] == NULL)
-		return (NULL);
-	if (*stash[fd] == 0)
-	{
+		buffer[n] = '\0';
+		if (!stash[fd])
+			stash[fd] = ft_strdup("");
+		line = ft_strjoin(stash[fd], buffer);
 		free(stash[fd]);
-		return (stash[fd] = 0);
+		stash[fd] = line;
+		if (ft_strchr(buffer, '\n'))
+			break ;
+		n = read(fd, buffer, BUFFER_SIZE);
 	}
-	line = extract_line_b(stash[fd], line);
-	stash[fd] = extract_new_stash_b(stash[fd]);
-	return (line);
+	free(buffer);
+	buffer = NULL;
+	return (check_and_return(&stash[fd], n, fd));
+}
+
+static char	*return_next_line(char **s)
+{
+	char	*out;
+	char	*line;
+	size_t	len;
+
+	len = 0;
+	out = NULL;
+	while ((*s)[len] != '\n' && (*s)[len])
+		len++;
+	if ((*s)[len] == '\n')
+	{
+		out = ft_substr(*s, 0, len + 1);
+		line = ft_strdup(*s + len + 1);
+		free(*s);
+		*s = line;
+		if (!**s)
+		{
+			free(*s);
+			*s = NULL;
+		}
+		return (out);
+	}
+	out = ft_strdup(*s);
+	free(*s);
+	*s = NULL;
+	return (out);
+}
+
+static char	*check_and_return(char **s, ssize_t n, int fd)
+{
+	if (n < 0)
+		return (NULL);
+	if (!n && (!s[fd] || !*s[fd]))
+		return (NULL);
+	return (return_next_line(&s[fd]));
 }

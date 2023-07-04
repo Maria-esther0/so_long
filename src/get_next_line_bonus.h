@@ -6,7 +6,7 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:36:16 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/29 14:31:44 by kdi-noce         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:31:44 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@
 # include <stdio.h>
 # include "libft/libft.h"
 
-char	*get_next_line_b(int fd);
-char	*stash_filling_b(int fd, char *stash, char *buffer);
-char	*extract_new_stash_b(char *stash);
-char	*extract_line_b(char *stash, char *line);
-void	ft_free_b(char **tab);
+char		*get_next_line_b(int fd);
+static char	*return_next_line(char **s);
+static char	*check_and_return(char **s, ssize_t n, int fd);
+
 #endif
