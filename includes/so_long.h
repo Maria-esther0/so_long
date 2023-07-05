@@ -86,13 +86,11 @@ int		init_game(t_scene *sc);
 void	manage_fd(char *av, t_scene *sc);
 int		read_map(t_scene *m, char *av);
 
-// atlas funcitons
+// atlas functions
 void	init_atlas(t_scene *sc);
 
-//int		check_map_name(char *av);
+// check functions
 int		check_map_name(int av_size, char **av);
-int		there_is_a_map(char	*name);
-int		is_file_empty(char *av);
 int		map_is_rectangle(t_scene *sc);
 int		map_check(char *name, t_scene map);
 int		check_wall(t_scene *sc);
@@ -101,13 +99,11 @@ int		file_is_empty(char *av);
 int		check_fct(t_scene map);
 
 // window functions
-//int		close_window(void);
 int		close_window(t_scene *sc);
 void	free_the_map(t_scene	*sc);
 
 // moving funcions
 void	move(t_scene *sc, int pos_x, int pos_y);
-void	exit_move(t_scene *sc, char next);
 void	player_pos(t_scene *sc);
 void	update_player_position(int new_x, int new_y, t_scene *sc);
 void	collect_coins(t_scene *sc, char next, int pos_x, int pos_y);
@@ -123,9 +119,6 @@ int		item_check(t_scene *sc);
 int		key_hooks(int key, t_scene *sc);
 
 // other utils
-int		ft_strcmp(char *str1, char *str2);
 void	ft_free(char **tab);
-void	exit_error(const char *error_msg);
 
-void	print_map(t_scene *sc);
 #endif

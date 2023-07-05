@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	if (!newstr)
 		return (NULL);
 	ret = ft_memcpy(newstr, s1, ft_strlen(s1) + 1);
-	free((void*)s1);
-	free(newstr);
+	free ((void *)s1);
+	free (newstr);
 	return (ret);
 }

@@ -50,7 +50,7 @@ void	collect_coins(t_scene *sc, char next, int pos_x, int pos_y)
 	{
 		sc->nbr_coins++;
 		sc->data[sc->y_player + pos_y][sc->x_player + pos_x] = '0';
-		ft_printf("you collected %d coins!\n", sc->nbr_coins);
+		ft_printf("You collected %d Capi Coins!\n", sc->nbr_coins);
 	}
 }
 
@@ -61,6 +61,7 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 	next = sc->data[sc->y_player + pos_y][sc->x_player + pos_x];
 	if (next == '0' || next == 'C')
 	{
+		ft_printf("Steps made: %d\n", sc->nbr_steps);
 		sc->nbr_steps++;
 		collect_coins(sc, next, pos_x, pos_y);
 		put_img_to_window(&sc->mlx, &sc->atlas.player, (sc->x_player + pos_x),
@@ -73,7 +74,6 @@ void	move(t_scene *sc, int pos_x, int pos_y)
 	{
 		if (has_coin_left(sc))
 			return ;
-		ft_printf("steps made: %d", sc->nbr_steps);
 		close_window(sc);
 	}
 }

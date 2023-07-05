@@ -33,7 +33,6 @@ int	main(int ac, char **av)
 {
 	t_scene	sc;
 
-//	sleep(10);
 	check_args(ac, av);
 	manage_fd(av[1], &sc);
 	if (!sc.data)

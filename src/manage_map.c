@@ -25,14 +25,13 @@ int	get_w_h_map(int fd, t_scene *sc)
 		free(tmp);
 		tmp = NULL;
 		tmp = get_next_line_b(fd);
-		printf("tmp string: %s\n", tmp);
-		printf("tmp address: %p\n", &tmp);
 		sc->map_height++;
 	}
 	free(tmp);
 	return (0);
 }
 
+// pour print la map, l.53 =>	ft_printf("Map : %s", sc->data[i]);
 int	read_map(t_scene *sc, char *av)
 {
 	int		i;
@@ -52,7 +51,6 @@ int	read_map(t_scene *sc, char *av)
 		while (i < sc->map_height)
 		{
 			sc->data[i] = get_next_line_b(fd);
-			ft_printf("Map : %s", sc->data[i]);
 			i++;
 		}
 	}
