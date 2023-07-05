@@ -204,6 +204,30 @@ src/free.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/free.c.s
 .PHONY : src/free.c.s
 
+src/get_next_line_bonus.o: src/get_next_line_bonus.c.o
+.PHONY : src/get_next_line_bonus.o
+
+# target to build an object file
+src/get_next_line_bonus.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/get_next_line_bonus.c.o
+.PHONY : src/get_next_line_bonus.c.o
+
+src/get_next_line_bonus.i: src/get_next_line_bonus.c.i
+.PHONY : src/get_next_line_bonus.i
+
+# target to preprocess a source file
+src/get_next_line_bonus.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/get_next_line_bonus.c.i
+.PHONY : src/get_next_line_bonus.c.i
+
+src/get_next_line_bonus.s: src/get_next_line_bonus.c.s
+.PHONY : src/get_next_line_bonus.s
+
+# target to generate assembly for a file
+src/get_next_line_bonus.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/so_long.dir/build.make CMakeFiles/so_long.dir/src/get_next_line_bonus.c.s
+.PHONY : src/get_next_line_bonus.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... src/free.o"
 	@echo "... src/free.i"
 	@echo "... src/free.s"
+	@echo "... src/get_next_line_bonus.o"
+	@echo "... src/get_next_line_bonus.i"
+	@echo "... src/get_next_line_bonus.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

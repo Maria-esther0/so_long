@@ -12,33 +12,13 @@
 
 #include "get_next_line_bonus.h"
 
-char	*get_next_line_b(int fd)
+static char	*check_and_return(char **s, ssize_t n, int fd)
 {
-	static char	*stash[4096];
-	char		*line;
-	char		*buffer;
-	int		n;
-
-	line = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (n < 0)
 		return (NULL);
-	buffer = calloc((BUFFER_SIZE + 1), sizeof(char ));
-	n = read(fd, buffer, BUFFER_SIZE);
-	while (n > 0)
-	{
-		buffer[n] = '\0';
-		if (!stash[fd])
-			stash[fd] = ft_strdup("");
-		line = ft_strjoin(stash[fd], buffer);
-		free(stash[fd]);
-		stash[fd] = line;
-		if (ft_strchr(buffer, '\n'))
-			break ;
-		n = read(fd, buffer, BUFFER_SIZE);
-	}
-	free(buffer);
-	buffer = NULL;
-	return (check_and_return(&stash[fd], n, fd));
+	if (!n && (!s[fd] || !*s[fd]))
+		return (NULL);
+	return (return_next_line(&s[fd]));
 }
 
 static char	*return_next_line(char **s)
@@ -70,11 +50,31 @@ static char	*return_next_line(char **s)
 	return (out);
 }
 
-static char	*check_and_return(char **s, ssize_t n, int fd)
+char	*get_next_line_b(int fd)
 {
-	if (n < 0)
+	static char	*stash[4096];
+	char		*line;
+	char		*buffer;
+	int			n;
+
+	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!n && (!s[fd] || !*s[fd]))
-		return (NULL);
-	return (return_next_line(&s[fd]));
+	buffer = calloc((BUFFER_SIZE + 1), sizeof(char ));
+	n = read(fd, buffer, BUFFER_SIZE);
+	while (n > 0)
+	{
+		buffer[n] = '\0';
+		if (!stash[fd])
+			stash[fd] = ft_strdup("");
+		line = ft_strjoin(stash[fd], buffer);
+		free(stash[fd]);
+		stash[fd] = line;
+		if (ft_strchr(buffer, '\n'))
+			break ;
+		n = read(fd, buffer, BUFFER_SIZE);
+	}
+	free(buffer);
+	buffer = NULL;
+	return (check_and_return(stash, n, fd));
 }

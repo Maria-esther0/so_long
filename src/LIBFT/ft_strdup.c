@@ -14,9 +14,13 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*newstr;
+	char	*ret;
 
 	newstr = malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!newstr)
 		return (NULL);
-	return ((char *)ft_memcpy(newstr, s1, ft_strlen(s1) + 1));
+	ret = ft_memcpy(newstr, s1, ft_strlen(s1) + 1);
+	free((void*)s1);
+	free(newstr);
+	return (ret);
 }

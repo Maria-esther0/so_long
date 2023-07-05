@@ -48,21 +48,16 @@ int main(int ac, char **av)
 	int i = 0;
 	int j = 0;
 	int len;
-	char *str; 
-
+	char *str;
 	while(array[i])
-	{
 		i++;
-	}
 	i = 8;
 	len = i;
 	str = (char *) malloc(sizeof(char *) * len + 1);	
 	len => = 8
 	i = 0;
 	while (i != start)
-	{
 		i++;
-	}
 	i = 3;
 	while(array[i])
 	{
@@ -72,5 +67,4 @@ int main(int ac, char **av)
 	}
 	str[j] = '\0';
 	return (str);
-
 */

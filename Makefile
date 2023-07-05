@@ -7,7 +7,7 @@ LIB		= src/libft/libft.a
 MLX		= mlx/libmlx.a
 MAPS	= maps
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g#3 -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 SRC		= 	src/main.c\
 			src/draw_map.c\

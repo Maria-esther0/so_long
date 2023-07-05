@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/so_long.dir/src/draw_map.c.o.d"
   "CMakeFiles/so_long.dir/src/free.c.o"
   "CMakeFiles/so_long.dir/src/free.c.o.d"
+  "CMakeFiles/so_long.dir/src/get_next_line_bonus.c.o"
+  "CMakeFiles/so_long.dir/src/get_next_line_bonus.c.o.d"
   "CMakeFiles/so_long.dir/src/main.c.o"
   "CMakeFiles/so_long.dir/src/main.c.o.d"
   "CMakeFiles/so_long.dir/src/manage_hook.c.o"

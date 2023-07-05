@@ -34,6 +34,8 @@ add_executable(
         src/manage_map.c
         src/move_player.c
         src/manage_hook.c
+        src/get_next_line_bonus.c
+        src/get_next_line_bonus.h
 )
 
 TARGET_LINK_LIBRARIES(so_long ${LIBS})

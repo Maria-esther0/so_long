@@ -47,21 +47,22 @@ void	ft_free(char **tab)
 	tab = NULL;
 	return ;
 }
-//
-//void	fill(char **tab, t_mlx size, t_mlx cur, char to_fill)
-//{
-//	to_fill = '0';
-//	if (cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
-//		|| tab[cur.y][cur.x] != to_fill)
-//		return;
-//	tab[cur.y][cur.x] = 'F';
-//	fill(tab, size, (t_mlx){cur.x - 1, cur.y}, to_fill);
-//	fill(tab, size, (t_mlx){cur.x + 1, cur.y}, to_fill);
-//	fill(tab, size, (t_mlx){cur.x, cur.y - 1}, to_fill);
-//	fill(tab, size, (t_mlx){cur.x, cur.y + 1}, to_fill);
-//}
-//
-//void	flood_fill(char **tab, t_point size, t_point begin)
-//{
-//	fill(tab, size, begin, tab[begin.y][begin.x]);
-//}
+
+void	fill(char **tab, t_mlx size, t_mlx cur, char to_fill)
+{
+	to_fill = '0';
+	if (cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
+		|| (tab[cur.y][cur.x] != to_fill && tab[cur.y][cur.x] != 'C'
+		&& tab[cur.y][cur.x] != 'E' && tab[cur.y][cur.x] != 'P'))
+		return;
+	tab[cur.y][cur.x] = 'F';
+	fill(tab, size, (t_mlx){cur.x - 1, cur.y}, to_fill);
+	fill(tab, size, (t_mlx){cur.x + 1, cur.y}, to_fill);
+	fill(tab, size, (t_mlx){cur.x, cur.y - 1}, to_fill);
+	fill(tab, size, (t_mlx){cur.x, cur.y + 1}, to_fill);
+}
+
+void	flood_fill(char **tab, t_point size, t_point begin)
+{
+	fill(tab, size, begin, tab[begin.y][begin.x]);
+}
