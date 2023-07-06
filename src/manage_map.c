@@ -68,7 +68,7 @@ void	init_map(int fd, char	*av, t_scene *sc)
 
 void	manage_fd(char *av, t_scene *sc)
 {
-	int		fd;
+	int	fd;
 
 	fd = open(av, O_RDONLY);
 	if (fd == -1)

@@ -62,7 +62,6 @@ int	item_check(t_scene *sc)
 				&& sc->data[i][j] != 'E' && sc->data[i][j] != '\n'
 				&& sc->data[i][j] != '\r')
 			{
-				ft_printf("\n\nsc->data[%d][%d] : %d\n\n", i, j, sc->data[i][j]);
 				return (0);
 			}
 			j++;

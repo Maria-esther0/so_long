@@ -33,22 +33,28 @@ void	free_the_map(t_scene	*sc)
 	sc = NULL;
 }
 
-void	ft_free(char **tab)
+int	close_window(t_scene *sc)
 {
-	size_t	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	tab = NULL;
-	return ;
+	free_the_map(sc);
+	ft_printf("\nGame closed successfully!\n");
+	exit (0);
 }
 
-//void	flood_fill(char **map, )
-//{
-//
-//}
+void	fill(char **tmp_map, t_point size, t_point cur, char to_fill)
+{
+	to_fill = '0';
+	if (cur.x < 0 || cur.x >= size.x || cur.y < 0 || cur.y >= size.y
+		|| (tmp_map[cur.y][cur.x] != to_fill && tmp_map[cur.y][cur.x] != 'C'
+			&& tmp_map[cur.y][cur.x] != 'E' && tmp_map[cur.y][cur.x] != 'P'))
+		return ;
+	tmp_map[cur.y][cur.x] = 'F';
+	fill(tmp_map, size, (t_point){cur.x - 1, cur.y}, to_fill);
+	fill(tmp_map, size, (t_point){cur.x + 1, cur.y}, to_fill);
+	fill(tmp_map, size, (t_point){cur.x, cur.y - 1}, to_fill);
+	fill(tmp_map, size, (t_point){cur.x, cur.y + 1}, to_fill);
+}
+
+void	flood_fill(char **tmp_map, t_point size, t_point begin)
+{
+	fill(tmp_map, size, begin, tmp_map[begin.y][begin.x]);
+}

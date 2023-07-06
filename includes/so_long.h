@@ -57,13 +57,20 @@ typedef struct s_img
 	char	*img_path;
 }	t_img;
 
-typedef struct s_atlas {
+typedef struct s_atlas
+{
 	t_img	player;
 	t_img	coin;
 	t_img	grass;
 	t_img	dirt;
 	t_img	door;
 }	t_atlas;
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
 
 typedef struct s_scene
 {
@@ -97,6 +104,8 @@ int		check_wall(t_scene *sc);
 int		check_args(int ac, char **av);
 int		file_is_empty(char *av);
 int		check_fct(t_scene map);
+void	fill(char **tab, t_point size, t_point cur, char to_fill);
+void	flood_fill(char **tab, t_point size, t_point begin);
 
 // window functions
 int		close_window(t_scene *sc);

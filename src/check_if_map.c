@@ -46,7 +46,7 @@ int	check_fct(t_scene map)
 	}
 	else if (!item_check(&map))
 	{
-		ft_printf("\nMap doesnt have the right items0000\n");
+		ft_printf("\nMap doesnt have the right items\n");
 		return (1);
 	}
 	return (0);

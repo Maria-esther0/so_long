@@ -96,23 +96,23 @@
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/pr_so_long/includes"
+					"path" : "/Users/mvillarr/Documents/so_long/includes"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/pr_so_long/mlx"
+					"path" : "/Users/mvillarr/Documents/so_long/mlx"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/pr_so_long/src/libft"
+					"path" : "/Users/mvillarr/Documents/so_long/src/libft"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/pr_so_long/src/libft/printf"
+					"path" : "/Users/mvillarr/Documents/so_long/src/libft/printf"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/Users/mvillarr/Documents/pr_so_long/src/libft/get_next_line"
+					"path" : "/Users/mvillarr/Documents/so_long/src/libft/get_next_line"
 				}
 			],
 			"language" : "C",
@@ -152,21 +152,21 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/pr_so_long/src/libft",
+				"fragment" : "-L/Users/mvillarr/Documents/so_long/src/libft",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/pr_so_long/src/libft/printf",
+				"fragment" : "-L/Users/mvillarr/Documents/so_long/src/libft/printf",
 				"role" : "libraryPath"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-L/Users/mvillarr/Documents/pr_so_long/mlx",
+				"fragment" : "-L/Users/mvillarr/Documents/so_long/mlx",
 				"role" : "libraryPath"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/mvillarr/Documents/pr_so_long/src/libft -Wl,-rpath,/Users/mvillarr/Documents/pr_so_long/src/libft/printf -Wl,-rpath,/Users/mvillarr/Documents/pr_so_long/mlx",
+				"fragment" : "-Wl,-rpath,/Users/mvillarr/Documents/so_long/src/libft -Wl,-rpath,/Users/mvillarr/Documents/so_long/src/libft/printf -Wl,-rpath,/Users/mvillarr/Documents/so_long/mlx",
 				"role" : "libraries"
 			},
 			{

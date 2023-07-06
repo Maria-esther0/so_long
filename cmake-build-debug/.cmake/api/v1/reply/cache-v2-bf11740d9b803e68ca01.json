@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/mvillarr/Documents/pr_so_long/cmake-build-debug"
+			"value" : "/Users/mvillarr/Documents/so_long/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -455,7 +455,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/mvillarr/Documents/pr_so_long/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/mvillarr/Documents/so_long/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/mvillarr/Documents/pr_so_long"
+			"value" : "/Users/mvillarr/Documents/so_long"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/mvillarr/Documents/pr_so_long/cmake-build-debug"
+			"value" : "/Users/mvillarr/Documents/so_long/cmake-build-debug"
 		},
 		{
 			"name" : "so_long_IS_TOP_LEVEL",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/mvillarr/Documents/pr_so_long"
+			"value" : "/Users/mvillarr/Documents/so_long"
 		}
 	],
 	"kind" : "cache",
