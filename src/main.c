@@ -58,6 +58,7 @@ void	validate_map(t_scene *sc, char **tmp)
 		ft_printf("There's no exit in the map\n");
 		exit(1);
 	}
+	else if (end.x || end.y)
 	flood_fill(tmp, (t_point){sc->map_width, sc->map_height},
 		(t_point){sc->x_player, sc->y_player});
 	path_valid = (tmp[end.x][end.y] == 'F');
@@ -107,56 +108,3 @@ int	main(int ac, char **av)
 	mlx_loop(sc.mlx.mlx_ptr);
 	return (0);
 }
-
-//int	main(int ac, char **av)
-//{
-//	t_scene	sc;
-//	t_point	end;
-//	char	**tmp;
-//	int		path_valid;
-//	int		i;
-//
-//	check_args(ac, av);
-//	manage_fd(av[1], &sc);
-//	if (!sc.data)
-//	{
-//		printf("Error in map!\n");
-//		return (1);
-//	}
-//	init_game(&sc);
-//	init_atlas(&sc);
-//	if (!map_check(av[1], sc))
-//		exit (0);
-//	draw_map(&sc, &sc.mlx);
-//	player_pos(&sc);
-//	sc.nbr_coins = 0;
-//	sc.nbr_steps = 1;
-//	tmp = malloc(sizeof(char *) * sc.map_height);
-//	if (!tmp)
-//		return (1);
-//	i = -1;
-//	while (++i < sc.map_height)
-//		tmp[i] = ft_strdup(sc.data[i]);
-//	end = find_position (&sc, 'E');
-//	if (!end.y || !end.x)
-//	{
-//		ft_printf("There's no exit in the map\n");
-//		exit(1);
-//	}
-//	flood_fill(tmp, (t_point){sc.map_width, sc.map_height},
-//		(t_point){sc.x_player, sc.y_player});
-//	path_valid = (tmp[end.x][end.y] == 'F');
-//	i = -1;
-//	while (++i < sc.map_height)
-//		free(tmp[i]);
-//	free(tmp);
-//	if (!path_valid)
-//	{
-//		ft_printf("Map not valid!\n");
-//		exit(1);
-//	}
-//	mlx_key_hook(sc.mlx.win_ptr, key_hooks, &sc);
-//	mlx_hook(sc.mlx.win_ptr, 17, 1L << 17, close_window, &sc);
-//	mlx_loop(sc.mlx.mlx_ptr);
-//	return (0);
-//}
