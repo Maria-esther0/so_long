@@ -6,12 +6,11 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:35:25 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/07/07 17:28:45 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:02:09 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/get_next_line_bonus.h"
-
 
 static char	*return_next_line(char **s)
 {

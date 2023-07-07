@@ -6,10 +6,9 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 14:30:20 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/07/07 17:20:31 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:05:26 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
@@ -40,8 +39,8 @@
 # include "../mlx/mlx.h"
 # include "../src/libft/libft.h"
 # include "../src/libft/printf/ft_printf.h"
-#include "get_next_line_bonus.h"
-//# include "../src/libft/get_next_line/get_next_line_bonus.h"
+# include "get_next_line_bonus.h"
+// # include "../src/libft/get_next_line/get_next_line_bonus.h"
 
 typedef struct s_mlx
 {
