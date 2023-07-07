@@ -1,6 +1,4 @@
-*.o
-a.out
-printf/*.o
-*.a
+**/*.o
+**/*.out
+**/*.a
 .idea/
-get_next_line/*.o

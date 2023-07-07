@@ -1,2 +1,4 @@
-src/LIBFT/printf/obj
-a.out
+**/*.o
+**/*.out
+**/*.a
+./so_long

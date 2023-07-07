@@ -6,20 +6,12 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:35:25 by mvillarr          #+#    #+#             */
-/*   Updated: 2023/06/29 15:30:01 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:28:45 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "../includes/get_next_line_bonus.h"
 
-static char	*check_and_return(char **s, ssize_t n, int fd)
-{
-	if (n < 0)
-		return (NULL);
-	if (!n && (!s[fd] || !*s[fd]))
-		return (NULL);
-	return (return_next_line(&s[fd]));
-}
 
 static char	*return_next_line(char **s)
 {
@@ -48,6 +40,15 @@ static char	*return_next_line(char **s)
 	free(*s);
 	*s = NULL;
 	return (out);
+}
+
+static char	*check_and_return(char **s, ssize_t n, int fd)
+{
+	if (n < 0)
+		return (NULL);
+	if (!n && (!s[fd] || !*s[fd]))
+		return (NULL);
+	return (return_next_line(&s[fd]));
 }
 
 char	*get_next_line_b(int fd)

@@ -48,7 +48,7 @@ SRCS	= 	ft_atoi.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-CCAF 	= gcc -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror
 
 RM		= rm -f
 
@@ -60,7 +60,7 @@ ${NAME}:	$(OBJS)
 all: 		${NAME}
 
 run:		${OBJS}	
-			${CCAF} -o ${NAME} ${SRC}
+			${CFLAGS} -o ${NAME} ${SRC}
 clean:		
 			${RM} ${OBJS}
 

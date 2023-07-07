@@ -6,7 +6,7 @@
 /*   By: mvillarr <mvillarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:46:21 by mvillarr          #+#    #+#             */
-/*   Updated: 2022/11/22 15:43:13 by mvillarr         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:25:09 by mvillarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <xlocale.h>
 # include <stdarg.h>
 # include "printf/ft_printf.h"
-# include "get_next_line/get_next_line.h"
-# include "get_next_line/get_next_line_bonus.h"
+//# include "get_next_line/get_next_line.h"
+//# include "get_next_line/get_next_line_bonus.h"
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
