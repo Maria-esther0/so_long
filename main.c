@@ -12,7 +12,6 @@ int	main(void)
 
 	mlx = mlx_init();
 	mlx = mlx_new_window(mlx, 800, 800, "NEW WINDOW");
-//	img = mlx_png_file_to_image(mlx, relative_path, &img_width, &img_height);
 	printf("img before: %p\n", img);
 	img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
 	printf("img after: %p\n", img);
