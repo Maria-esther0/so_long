@@ -60,3 +60,32 @@ void	draw_map(t_scene *sc, t_mlx *mlx)
 		}
 	}
 }
+
+t_point	find_position(t_scene *sc, char c)
+{
+	int		i;
+	int		j;
+	int		count;
+	t_point	pos;
+
+	i = 0;
+	j = 0;
+	count = 0;
+	while (sc->data[i])
+	{
+		while (sc->data[i][j])
+		{
+			if (sc->data[i][j] == c)
+			{
+				count++;
+				check_count(count);
+				pos.x = i;
+				pos.y = j;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return ((t_point){pos.x, pos.y});
+}

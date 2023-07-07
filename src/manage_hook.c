@@ -87,3 +87,12 @@ int	check_map_name(int av_size, char **av)
 		result = 1;
 	return (result);
 }
+
+void	check_count(int count)
+{
+	if (count > 1)
+	{
+		ft_printf("Double exit on the map!\n");
+		exit(1);
+	}
+}

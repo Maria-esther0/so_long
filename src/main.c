@@ -12,41 +12,6 @@
 
 #include "../includes/so_long.h"
 
-t_point	find_position(t_scene *sc, char c)
-{
-	int	i;
-	int	j;
-	int count;
-	t_point pos;
-
-	i = 0;
-	j = 0;
-	count = 0;
-	while (sc->data[i])
-	{
-		while (sc->data[i][j])
-		{
-			if (sc->data[i][j] == c)
-			{
-				count++;
-				if (count > 1)
-				{
-					ft_printf("Double exit on the map!\n");
-					exit(1);
-				}
-				pos.x = i;
-				pos.y = j;
-//				return ((t_point){i, j});
-			}
-			j++;
-		}
-		i++;
-		j = 0;
-	}
-//	return ((t_point){i, j});
-	return ((t_point){pos.x, pos.y});
-}
-
 int	init_game(t_scene *sc)
 {
 	sc->y_player = 0;
@@ -55,6 +20,18 @@ int	init_game(t_scene *sc)
 	sc->mlx.win_ptr = mlx_new_window(sc->mlx.mlx_ptr, sc->map_width * 64,
 			sc->map_height * 64, "mvillarr's so_long");
 	return (0);
+}
+
+void	check_end(t_point end, char **tmp, t_scene *sc)
+{
+	if (!end.y || !end.x)
+	{
+		ft_printf("Error on the exit of the map!\n");
+		exit(1);
+	}
+	else if (end.x || end.y)
+		flood_fill(tmp, (t_point){sc->map_width, sc->map_height},
+			(t_point){sc->x_player, sc->y_player});
 }
 
 void	validate_map(t_scene *sc, char **tmp)
@@ -67,14 +44,7 @@ void	validate_map(t_scene *sc, char **tmp)
 	while (++i < sc->map_height)
 		tmp[i] = ft_strdup(sc->data[i]);
 	end = find_position(sc, 'E');
-	if (!end.y || !end.x)
-	{
-		ft_printf("Error on the exit of the map!\n");
-		exit(1);
-	}
-	else if (end.x || end.y)
-		flood_fill(tmp, (t_point){sc->map_width, sc->map_height},
-	(t_point){sc->x_player, sc->y_player});
+	check_end(end, tmp, sc);
 	path_valid = (tmp[end.x][end.y] == 'F');
 	i = -1;
 	while (++i < sc->map_height)

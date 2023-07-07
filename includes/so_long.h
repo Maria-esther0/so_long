@@ -106,6 +106,9 @@ int		file_is_empty(char *av);
 int		check_fct(t_scene map);
 void	fill(char **tab, t_point size, t_point cur, char to_fill);
 void	flood_fill(char **tab, t_point size, t_point begin);
+void	check_count(int count);
+t_point	find_position(t_scene *sc, char c);
+void	validate_map(t_scene *sc, char **tmp);
 
 // window functions
 int		close_window(t_scene *sc);
@@ -129,5 +132,6 @@ int		key_hooks(int key, t_scene *sc);
 
 // other utils
 void	ft_free(char **tab);
+void	free_tmp(char **tmp, int map_height);
 
 #endif

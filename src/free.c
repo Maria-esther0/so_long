@@ -58,3 +58,13 @@ void	flood_fill(char **tmp_map, t_point size, t_point begin)
 {
 	fill(tmp_map, size, begin, tmp_map[begin.y][begin.x]);
 }
+
+void	free_tmp(char **tmp, int map_height)
+{
+	int	i;
+
+	i = -1;
+	while (++i < map_height)
+		free(tmp[i]);
+	free(tmp);
+}
