@@ -71,6 +71,7 @@ t_point	find_position(t_scene *sc, char c)
 	i = 0;
 	j = 0;
 	count = 0;
+	pos = (t_point){0, 0};
 	while (sc->data[i])
 	{
 		while (sc->data[i][j])
@@ -79,8 +80,7 @@ t_point	find_position(t_scene *sc, char c)
 			{
 				count++;
 				check_count(count);
-				pos.x = i;
-				pos.y = j;
+				pos = (t_point){i, j};
 			}
 			j++;
 		}

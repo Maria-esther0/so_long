@@ -19,12 +19,12 @@ int	map_check(char *name, t_scene map)
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_printf("\nFile does not exist\n");
+		ft_printf("Error : File does not exist\n");
 		return (0);
 	}
 	if (!file_is_empty(name))
 	{
-		ft_printf("\nFile is empty!\n");
+		ft_printf("Error : File is empty!\n");
 		return (0);
 	}
 	if (check_fct(map))
@@ -36,17 +36,17 @@ int	check_fct(t_scene map)
 {
 	if (!map_is_rectangle(&map))
 	{
-		ft_printf("\nMap is not valid: not rectangular map!\n");
+		ft_printf("Error : Map is not valid: not rectangular map!\n");
 		return (1);
 	}
 	else if (!check_wall(&map))
 	{
-		ft_printf("\nMap does not have valid walls\n");
+		ft_printf("Error : Map does not have valid walls\n");
 		return (1);
 	}
 	else if (!item_check(&map))
 	{
-		ft_printf("\nMap doesnt have the right items\n");
+		ft_printf("Error : Map doesnt have the right items\n");
 		return (1);
 	}
 	return (0);
@@ -75,14 +75,14 @@ int	check_args(int ac, char **av)
 	av_size = 0;
 	if (ac != 2)
 	{
-		printf("Usage: %s <path/to/map.ber>\n", av[0]);
+		printf("Error : Usage: %s <path/to/map.ber>\n", av[0]);
 		exit (0);
 	}
 	while (av[1][av_size] != '\0')
 		av_size++;
 	if (check_map_name(av_size, av) == 1)
 	{
-		ft_printf("\nMap does not end with '.ber'\n");
+		ft_printf("Error : Map does not end with '.ber'\n");
 		exit (0);
 	}
 	return (0);

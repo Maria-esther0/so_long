@@ -26,12 +26,14 @@ void	check_end(t_point end, char **tmp, t_scene *sc)
 {
 	if (!end.y || !end.x)
 	{
-		ft_printf("Error on the exit of the map!\n");
+		ft_printf("Error : Error on the exit of the map!\n");
 		exit(1);
 	}
 	else if (end.x || end.y)
+	{
 		flood_fill(tmp, (t_point){sc->map_width, sc->map_height},
 			(t_point){sc->x_player, sc->y_player});
+	}
 }
 
 void	validate_map(t_scene *sc, char **tmp)
@@ -52,7 +54,7 @@ void	validate_map(t_scene *sc, char **tmp)
 	free(tmp);
 	if (!path_valid)
 	{
-		ft_printf("Map not valid!\n");
+		ft_printf("Error : Map not valid!\n");
 		exit(1);
 	}
 }
@@ -65,7 +67,7 @@ void	setup_game(t_scene *sc, char **av, int ac)
 	manage_fd(av[1], sc);
 	if (!sc->data)
 	{
-		ft_printf("Error in map!\n");
+		ft_printf("Error : Error in map!\n");
 		exit(1);
 	}
 	init_game(sc);

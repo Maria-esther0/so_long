@@ -50,25 +50,28 @@ int	item_check(t_scene *sc)
 {
 	int	i;
 	int	j;
+	int	player_count;
 
 	i = 0;
 	j = 0;
+	player_count = 0;
 	while (sc->data[i] != NULL)
 	{
 		while (sc->data[i][j] != '\0')
 		{
-			if (sc->data[i][j] != '1' && sc->data[i][j] != '0'
-				&& sc->data[i][j] != 'P' && sc->data[i][j] != 'C'
-				&& sc->data[i][j] != 'E' && sc->data[i][j] != '\n'
-				&& sc->data[i][j] != '\r')
-			{
+			if (sc->data[i][j] == 'P')
+				player_count++;
+			else if (sc->data[i][j] != '1' && sc->data[i][j] != '0'
+				&& sc->data[i][j] != 'C' && sc->data[i][j] != 'E'
+				&& sc->data[i][j] != '\n' && sc->data[i][j] != '\r')
 				return (0);
-			}
 			j++;
 		}
 		i++;
 		j = 0;
 	}
+	if (player_count != 1)
+		return (0);
 	return (1);
 }
 
@@ -92,7 +95,7 @@ void	check_count(int count)
 {
 	if (count > 1)
 	{
-		ft_printf("Double exit on the map!\n");
+		ft_printf("Error : Two or more exits on the map!\n");
 		exit(1);
 	}
 }

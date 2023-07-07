@@ -36,7 +36,7 @@ void	free_the_map(t_scene	*sc)
 int	close_window(t_scene *sc)
 {
 	free_the_map(sc);
-	ft_printf("\nGame closed successfully!\n");
+	ft_printf("Game closed successfully!\n");
 	exit (0);
 }
 
